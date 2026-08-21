@@ -9718,3 +9718,56 @@ main > .old-home-hero:first-child,
     display: grid;
   }
 }
+
+/* Mobile header: keep only the logo and site search visible while scrolling. */
+.mobile-sticky-identity {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    position: relative;
+    top: auto;
+    margin-top: 80px;
+  }
+
+  .site-header .header-left-stack {
+    display: none;
+  }
+
+  .mobile-sticky-identity {
+    position: fixed;
+    top: max(8px, env(safe-area-inset-top));
+    left: 10px;
+    right: 10px;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: auto;
+    min-width: 0;
+    min-height: 62px;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 229, 255, 0.28);
+    border-radius: 8px;
+    background:
+      radial-gradient(circle at 5% 20%, rgba(0, 229, 255, 0.18), transparent 38%),
+      radial-gradient(circle at 96% 8%, rgba(138, 92, 255, 0.16), transparent 38%),
+      rgba(3, 4, 7, 0.92);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2), 0 0 60px rgba(138, 92, 255, 0.12);
+    backdrop-filter: blur(20px);
+  }
+
+  .mobile-sticky-identity .brand {
+    flex: 0 0 auto;
+  }
+
+  .mobile-sticky-identity .brand-logo {
+    width: clamp(112px, 28vw, 138px);
+  }
+
+  .mobile-sticky-identity .header-search {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
