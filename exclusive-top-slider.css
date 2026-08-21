@@ -1,0 +1,121 @@
+.exclusive-top-slider {
+  position: relative;
+  width: min(calc(100% - 40px), 1920px);
+  margin: 20px auto 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 215, 255, 0.34);
+  border-radius: 8px;
+  background: #03090f;
+}
+
+.exclusive-top-slider__viewport {
+  overflow: hidden;
+}
+
+.exclusive-top-slider__track {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.exclusive-top-slider__slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+  height: clamp(280px, 31vw, 520px);
+  background: #02070b;
+}
+
+.exclusive-top-slider__slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: filter 0.25s ease, transform 0.5s ease;
+}
+
+.exclusive-top-slider__slide:hover img {
+  filter: brightness(1.08);
+}
+
+.exclusive-top-slider__arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 46px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid rgba(0, 215, 255, 0.45);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(2, 9, 15, 0.78);
+  font: 300 34px/1 Arial, sans-serif;
+  cursor: pointer;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+}
+
+.exclusive-top-slider__arrow:hover {
+  color: #08dcff;
+  border-color: #08dcff;
+}
+
+.exclusive-top-slider__arrow--prev {
+  left: 16px;
+}
+
+.exclusive-top-slider__arrow--next {
+  right: 16px;
+}
+
+.exclusive-top-slider__dots {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 14px;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.exclusive-top-slider__dot {
+  width: 28px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.42);
+  cursor: pointer;
+}
+
+.exclusive-top-slider__dot.is-active {
+  background: linear-gradient(90deg, #08dcff, #7558ff);
+}
+
+@media (max-width: 760px) {
+  .exclusive-top-slider {
+    width: calc(100% - 20px);
+  }
+
+  .exclusive-top-slider__slide {
+    grid-template-columns: 1fr;
+    height: clamp(240px, 62vw, 390px);
+  }
+
+  .exclusive-top-slider__slide img:nth-child(2) {
+    display: none;
+  }
+
+  .exclusive-top-slider__arrow {
+    width: 40px;
+    height: 54px;
+  }
+
+  .exclusive-top-slider__arrow--prev {
+    left: 8px;
+  }
+
+  .exclusive-top-slider__arrow--next {
+    right: 8px;
+  }
+}

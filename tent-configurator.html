@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конфигуратор шатров — ИвентЭкспоСервис</title>
+  <meta name="description" content="Конфигуратор шатров и тентовых конструкций: выберите формат, размер, стены, пол, климат и оснащение для мероприятия.">
+  <link rel="stylesheet" href="expo-ees-neon-style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="glow glow-cyan"></div>
+  <div class="glow glow-blue"></div>
+
+  <header class="site-header">
+    <div class="header-top-row">
+      <div class="header-left-stack">
+        <a class="brand" href="expo-ees-neon-concept.html#top" aria-label="ИвентЭкспоСервис">
+          <img class="brand-logo" src="assets/site/logo-light.png" alt="ИвентЭкспоСервис">
+        </a>
+        <form class="header-search" role="search" action="service-page.html">
+          <input type="search" name="q" placeholder="Поиск по сайту..." aria-label="Поиск по сайту">
+          <button type="submit" aria-label="Найти"></button>
+        </form>
+      </div>
+      <div class="header-address" aria-label="Адрес и график">
+        <strong>г. Казань, ул. Дубравная, д. 1/104к1</strong>
+        <span>ежедневно с 08:00 до 20:00</span>
+      </div>
+      <div class="header-messengers" aria-label="Способы связи">
+        <div class="header-socials">
+          <a class="header-social header-social-tg" href="https://t.me/Romslk" target="_blank" rel="noreferrer" aria-label="Telegram"></a>
+          <a class="header-social header-social-chat" href="https://max.ru/" target="_blank" rel="noreferrer" aria-label="MAX"></a>
+        </div>
+        <a href="mailto:info@expo-ees.ru">info@expo-ees.ru</a>
+      </div>
+      <div class="header-phone-grid" aria-label="Телефоны">
+        <a href="tel:+79872978845">+7 (987) 297-88-45</a>
+        <a href="tel:+79872128845">+7 (987) 212-88-45</a>
+        <a href="tel:+79872228845">+7 (987) 222-88-45</a>
+        <a href="tel:+79872858845">+7 (987) 285-88-45</a>
+      </div>
+    </div>
+    <div class="header-bottom-row">
+      <nav class="main-nav" aria-label="Основная навигация">
+        <div class="nav-group">
+          <a class="nav-trigger" href="expo-ees-neon-concept.html#catalog">Услуги</a>
+          <div class="nav-dropdown nav-mega">
+            <div class="nav-column">
+              <span>Стенды</span>
+              <a href="service-page.html?slug=eksklyuzivnyye_vystavochnyye_stendy">Эксклюзивные выставочные стенды</a>
+              <a href="service-page.html?slug=standartnyye_vystavochnyye_stendy">Стандартные выставочные стенды</a>
+            </div>
+            <div class="nav-column">
+              <span>Шатры</span>
+              <a href="service-page.html?slug=arenda-shatrov-i-tentovyh-konstrukczij">Шатры и тентовые конструкции</a>
+              <a href="service-page.html?slug=arenda-shatrov-i-tentovyh-konstrukczij-2">Аренда шатров</a>
+              <a href="service-page.html?slug=osteklenie-shatrov">Остекление шатров</a>
+              <a href="service-page.html?slug=drapirovka-shatrov">Драпировка шатров</a>
+              <a href="service-page.html?slug=klimat-kontrol-shatrov">Климат-контроль шатров</a>
+            </div>
+            <div class="nav-column">
+              <span>Оборудование</span>
+              <a href="service-page.html?slug=arenda-mebeli-i-oborudovaniya">Аренда мебели</a>
+              <a href="service-page.html?slug=garderob">Аренда гардероба</a>
+              <a href="service-page.html?slug=klimaticheskoe-oborudovanie">Климатическое оборудование</a>
+              <a href="service-page.html?slug=arenda-multimedijnogo-oborudovaniya">Мультимедийное оборудование</a>
+            </div>
+          </div>
+        </div>
+        <a href="service-page.html?slug=portfolio">Портфолио</a>
+        <a href="service-page.html?slug=news">Статьи</a>
+        <a href="service-page.html?slug=meropriyatiya">Мероприятия</a>
+        <a href="expo-ees-neon-concept.html#contact">Контакты</a>
+      </nav>
+      <a class="header-configurator is-active" href="tent-configurator.html">Конфигуратор шатров</a>
+      <a class="header-request" href="expo-ees-neon-concept.html#contact">Оставить заявку</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="tent-configurator-page">
+      <div class="tent-configurator-hero">
+        <div>
+          <p class="eyebrow">Конфигуратор шатров</p>
+          <h1>Соберите шатер под формат мероприятия</h1>
+          <p>Выберите тип конструкции, размер и оснащение. Итоговый расчет покажет площадь, вместимость и ориентировочный бюджет для подготовки заявки.</p>
+        </div>
+        <figure>
+          <img src="assets/home/service-tents-old.jpg" alt="Аренда шатров и тентовых конструкций">
+        </figure>
+      </div>
+
+      <div class="tent-configurator-grid" data-tent-configurator>
+        <form class="tent-configurator-panel" aria-label="Параметры шатра">
+          <fieldset>
+            <legend>Тип шатра</legend>
+            <label class="config-option">
+              <input type="radio" name="tentType" value="arched" data-label="Арочный шатер" data-price="1450" checked>
+              <span>Арочный шатер</span>
+            </label>
+            <label class="config-option">
+              <input type="radio" name="tentType" value="pagoda" data-label="Пагода / купольный шатер" data-price="1850">
+              <span>Пагода / купольный шатер</span>
+            </label>
+            <label class="config-option">
+              <input type="radio" name="tentType" value="pavilion" data-label="Большой тентовый павильон" data-price="2200">
+              <span>Большой тентовый павильон</span>
+            </label>
+          </fieldset>
+
+          <div class="config-range-row">
+            <label>
+              <span>Длина, м</span>
+              <input type="range" name="length" min="3" max="30" value="10" step="1">
+              <output data-output="length">10 м</output>
+            </label>
+            <label>
+              <span>Ширина, м</span>
+              <input type="range" name="width" min="3" max="20" value="10" step="1">
+              <output data-output="width">10 м</output>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>Оснащение</legend>
+            <label class="config-check">
+              <input type="checkbox" name="walls" data-label="ПВХ стены" data-price="420">
+              <span>ПВХ стены</span>
+            </label>
+            <label class="config-check">
+              <input type="checkbox" name="glass" data-label="Остекление" data-price="950">
+              <span>Остекление</span>
+            </label>
+            <label class="config-check">
+              <input type="checkbox" name="floor" data-label="Пол и ковролин" data-price="780">
+              <span>Пол и ковролин</span>
+            </label>
+            <label class="config-check">
+              <input type="checkbox" name="light" data-label="Свет" data-price="260">
+              <span>Свет</span>
+            </label>
+            <label class="config-check">
+              <input type="checkbox" name="climate" data-label="Климат-контроль" data-price="520">
+              <span>Климат-контроль</span>
+            </label>
+            <label class="config-check">
+              <input type="checkbox" name="drape" data-label="Драпировка" data-price="360">
+              <span>Драпировка</span>
+            </label>
+          </fieldset>
+        </form>
+
+        <aside class="tent-configurator-preview" aria-live="polite">
+          <figure>
+            <img data-preview-image src="assets/home/service-tents-old.jpg" alt="Выбранный формат шатра">
+          </figure>
+          <div class="tent-configurator-total">
+            <p class="eyebrow" data-summary-type>Арочный шатер</p>
+            <h2 data-summary-size>10 × 10 м</h2>
+            <div class="config-metrics">
+              <article>
+                <strong data-summary-area>100 м²</strong>
+                <span>площадь</span>
+              </article>
+              <article>
+                <strong data-summary-capacity>до 100 гостей</strong>
+                <span>ориентир</span>
+              </article>
+              <article>
+                <strong data-summary-price>от 145 000 ₽</strong>
+                <span>расчет</span>
+              </article>
+            </div>
+            <div class="config-selected">
+              <span>В составе:</span>
+              <ul data-summary-options>
+                <li>Базовая конструкция</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="expo-ees-neon-concept.html#contact">Отправить заявку</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const root = document.querySelector("[data-tent-configurator]");
+      if (!root) return;
+
+      const form = root.querySelector("form");
+      const typeOutput = root.querySelector("[data-summary-type]");
+      const sizeOutput = root.querySelector("[data-summary-size]");
+      const areaOutput = root.querySelector("[data-summary-area]");
+      const capacityOutput = root.querySelector("[data-summary-capacity]");
+      const priceOutput = root.querySelector("[data-summary-price]");
+      const optionsOutput = root.querySelector("[data-summary-options]");
+      const lengthOutput = root.querySelector("[data-output='length']");
+      const widthOutput = root.querySelector("[data-output='width']");
+      const lengthInput = form.querySelector("[name='length']");
+      const widthInput = form.querySelector("[name='width']");
+      const preview = root.querySelector("[data-preview-image]");
+      const previews = {
+        arched: "assets/home/service-tents-old.jpg",
+        pagoda: "assets/site/service-tents.jpg",
+        pavilion: "assets/home/home-slide-02.jpg"
+      };
+
+      const formatMoney = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(value / 1000) * 1000);
+
+      const update = () => {
+        const type = form.querySelector("input[name='tentType']:checked");
+        const length = Number(lengthInput.value);
+        const width = Number(widthInput.value);
+        const area = length * width;
+        const options = [...form.querySelectorAll("input[type='checkbox']:checked")];
+        const optionRate = options.reduce((sum, item) => sum + Number(item.dataset.price || 0), 0);
+        const baseRate = Number(type.dataset.price || 0);
+        const total = area * (baseRate + optionRate);
+
+        lengthOutput.textContent = `${length} м`;
+        widthOutput.textContent = `${width} м`;
+        typeOutput.textContent = type.dataset.label;
+        sizeOutput.textContent = `${length} × ${width} м`;
+        areaOutput.textContent = `${area} м²`;
+        capacityOutput.textContent = `до ${Math.max(10, Math.round(area * 1.05))} гостей`;
+        priceOutput.textContent = `от ${formatMoney(total)} ₽`;
+        preview.src = previews[type.value] || previews.arched;
+
+        const selected = ["Базовая конструкция", ...options.map((item) => item.dataset.label)];
+        optionsOutput.innerHTML = selected.map((item) => `<li>${item}</li>`).join("");
+      };
+
+      form.addEventListener("input", update);
+      form.addEventListener("change", update);
+      update();
+    })();
+  </script>
+</body>
+</html>

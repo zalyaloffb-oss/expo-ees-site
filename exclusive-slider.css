@@ -1,0 +1,113 @@
+.ees-ex-slider {
+  grid-column: 1 / -1;
+  position: relative;
+  width: 100%;
+  margin: 0 0 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 216, 255, 0.38);
+  border-radius: 8px;
+  background: rgba(4, 10, 18, 0.78);
+}
+
+.ees-ex-slider__viewport {
+  overflow: hidden;
+}
+
+.ees-ex-slider__track {
+  display: flex;
+  transition: transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.ees-ex-slider__slide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 0 0 100%;
+  gap: 8px;
+  padding: 8px;
+}
+
+.ees-ex-slider__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.ees-ex-slider__arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 42px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid rgba(0, 216, 255, 0.6);
+  border-radius: 6px;
+  color: #fff;
+  background: rgba(3, 10, 18, 0.82);
+  font: 400 32px/1 Arial, sans-serif;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.ees-ex-slider__arrow:hover,
+.ees-ex-slider__arrow:focus-visible {
+  border-color: #00d8ff;
+  background: rgba(0, 119, 158, 0.92);
+}
+
+.ees-ex-slider__arrow--prev {
+  left: 18px;
+}
+
+.ees-ex-slider__arrow--next {
+  right: 18px;
+}
+
+.ees-ex-slider__dots {
+  position: absolute;
+  z-index: 2;
+  bottom: 16px;
+  left: 50%;
+  display: flex;
+  gap: 7px;
+  transform: translateX(-50%);
+}
+
+.ees-ex-slider__dot {
+  width: 24px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.48);
+  cursor: pointer;
+}
+
+.ees-ex-slider__dot.is-active {
+  background: linear-gradient(90deg, #00d8ff, #7657ff);
+}
+
+@media (max-width: 720px) {
+  .ees-ex-slider__slide {
+    grid-template-columns: 1fr;
+  }
+
+  .ees-ex-slider__slide .ees-ex-slider__image:nth-child(2) {
+    display: none;
+  }
+
+  .ees-ex-slider__arrow {
+    width: 36px;
+    height: 54px;
+  }
+
+  .ees-ex-slider__arrow--prev {
+    left: 12px;
+  }
+
+  .ees-ex-slider__arrow--next {
+    right: 12px;
+  }
+}

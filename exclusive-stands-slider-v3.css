@@ -1,0 +1,113 @@
+.exclusive-stands-slider {
+  position: relative;
+  width: min(calc(100% - 40px), 1920px);
+  margin: 20px auto 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 214, 255, .32);
+  border-radius: 8px;
+  background: rgba(3, 8, 16, .78);
+}
+
+.exclusive-stands-slider__track {
+  display: flex;
+  transition: transform .65s cubic-bezier(.22, .61, .36, 1);
+}
+
+.exclusive-stands-slider__slide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 100%;
+  height: clamp(280px, 31vw, 520px);
+}
+
+.exclusive-stands-slider__media {
+  min-width: 0;
+  overflow: hidden;
+  background: #05080d;
+}
+
+.exclusive-stands-slider__media + .exclusive-stands-slider__media {
+  border-left: 1px solid rgba(0, 214, 255, .22);
+}
+
+.exclusive-stands-slider__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .7s ease, filter .35s ease;
+}
+
+.exclusive-stands-slider__media:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+.exclusive-stands-slider__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 46px;
+  height: 64px;
+  border: 1px solid rgba(0, 214, 255, .5);
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(2, 8, 15, .72);
+  backdrop-filter: blur(12px);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.exclusive-stands-slider__arrow:hover {
+  color: #00dcff;
+  border-color: #00dcff;
+}
+
+.exclusive-stands-slider__arrow--prev { left: 14px; }
+.exclusive-stands-slider__arrow--next { right: 14px; }
+
+.exclusive-stands-slider__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  z-index: 3;
+  display: flex;
+  gap: 7px;
+  transform: translateX(-50%);
+}
+
+.exclusive-stands-slider__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .45);
+  cursor: pointer;
+}
+
+.exclusive-stands-slider__dot.is-active {
+  width: 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00d9ff, #7858ff);
+}
+
+@media (max-width: 720px) {
+  .exclusive-stands-slider {
+    width: calc(100% - 20px);
+  }
+
+  .exclusive-stands-slider__slide {
+    grid-template-columns: 1fr;
+    height: clamp(240px, 62vw, 390px);
+  }
+
+  .exclusive-stands-slider__media:nth-child(2) {
+    display: none;
+  }
+
+  .exclusive-stands-slider__arrow {
+    width: 40px;
+    height: 54px;
+  }
+}
