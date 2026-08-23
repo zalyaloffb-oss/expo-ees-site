@@ -9724,6 +9724,10 @@ main > .old-home-hero:first-child,
   display: none;
 }
 
+.mobile-header-toggle {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .site-header {
     position: relative;
@@ -9733,6 +9737,57 @@ main > .old-home-hero:first-child,
 
   .site-header .header-left-stack {
     display: none;
+  }
+
+  .mobile-header-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 46px;
+    padding: 0 16px;
+    border: 1px solid rgba(0, 229, 255, 0.34);
+    border-radius: 7px;
+    color: #f4fbff;
+    background: linear-gradient(90deg, rgba(0, 229, 255, 0.1), rgba(138, 92, 255, 0.12));
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .mobile-header-toggle i {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 180ms ease;
+  }
+
+  .site-header.is-mobile-expanded .mobile-header-toggle i {
+    transform: translateY(3px) rotate(225deg);
+  }
+
+  .site-header:not(.is-mobile-expanded) .header-top-row,
+  .site-header:not(.is-mobile-expanded) .header-bottom-row {
+    display: none;
+  }
+
+  .site-header:not(.is-mobile-expanded) {
+    min-height: 0;
+    gap: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .site-header.is-mobile-expanded .header-top-row {
+    display: grid;
+  }
+
+  .site-header.is-mobile-expanded .header-bottom-row {
+    display: grid;
   }
 
   .mobile-sticky-identity {
@@ -9769,5 +9824,25 @@ main > .old-home-hero:first-child,
   .mobile-sticky-identity .header-search {
     flex: 1 1 auto;
     min-width: 0;
+  }
+
+  .site-header .main-nav > .nav-group:first-child .nav-mega {
+    margin-top: 5px;
+    padding: 10px 12px 14px;
+  }
+
+  .site-header .main-nav > .nav-group:first-child .nav-column > span,
+  .site-header .main-nav > .nav-group:first-child .nav-column > a {
+    padding: 9px 27px 9px 8px;
+    font-size: 15px;
+    line-height: 1.22;
+  }
+
+  .site-header .main-nav > .nav-group:first-child .nav-column:nth-child(2) > a,
+  .site-header .main-nav > .nav-group:first-child .nav-column:nth-child(3) > a,
+  .site-header .main-nav > .nav-group:first-child .nav-column:nth-child(4) > a {
+    padding: 7px 18px;
+    font-size: 14px;
+    line-height: 1.2;
   }
 }
