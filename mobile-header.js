@@ -13,6 +13,13 @@
     const isExpanded = header.classList.toggle("is-mobile-expanded");
     menuToggle.setAttribute("aria-expanded", String(isExpanded));
     menuToggle.querySelector("span").textContent = isExpanded ? "Свернуть меню" : "Контакты и меню";
+
+    const servicesGroup = header.querySelector(".main-nav > .nav-group:first-child");
+    const servicesTrigger = servicesGroup?.querySelector(":scope > .nav-trigger");
+    if (servicesGroup && servicesTrigger) {
+      servicesGroup.classList.toggle("is-open", isExpanded);
+      servicesTrigger.setAttribute("aria-expanded", String(isExpanded));
+    }
   });
 
   header.prepend(menuToggle);
