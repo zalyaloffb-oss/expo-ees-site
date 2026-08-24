@@ -9222,6 +9222,32 @@ main > .old-home-hero:first-child,
   }
 }
 
+/* Mobile portfolio rail: viewport width, tight header gap and manual navigation. */
+@media (max-width: 640px) {
+  #serviceRoot:has(> .portfolio-page) {
+    margin-top: 10px;
+  }
+
+  .portfolio-page {
+    padding-top: 0;
+  }
+
+  .portfolio-project-nav-shell {
+    width: calc(100% + 4px);
+    max-width: none;
+    margin-top: 0;
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-bottom: 10px;
+    padding-inline: 48px;
+  }
+
+  .portfolio-project-nav {
+    touch-action: pan-x;
+    overscroll-behavior-inline: contain;
+  }
+}
+
 /* Geography projects: interactive map with the details panel on the right. */
 .project-geo-section.qorix-location {
   width: min(100% - 96px, 1880px);
@@ -9879,5 +9905,30 @@ main > .old-home-hero:first-child,
 
   .site-header .main-nav > .nav-group:not(:first-child) {
     background: #ffffff;
+  }
+}
+
+/* Final mobile portfolio rail alignment. */
+@media (max-width: 640px) {
+  #serviceRoot:has(> .portfolio-page) {
+    margin-top: 10px !important;
+  }
+
+  .portfolio-page {
+    padding-top: 0 !important;
+  }
+
+  .portfolio-project-nav-shell {
+    left: auto !important;
+    width: calc(100% + 4px) !important;
+    max-width: none !important;
+    margin: 0 -2px 10px !important;
+    padding-inline: 48px;
+    transform: none !important;
+  }
+
+  .portfolio-project-nav {
+    touch-action: pan-x;
+    overscroll-behavior-inline: contain;
   }
 }

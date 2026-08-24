@@ -1621,33 +1621,7 @@ function initPortfolioNavScroller() {
     const arrows = shell.querySelectorAll("[data-scroll-direction]");
     if (!nav || !arrows.length) return;
 
-    let frame = 0;
-    let direction = 0;
-
-    const stop = () => {
-      direction = 0;
-      if (frame) {
-        cancelAnimationFrame(frame);
-        frame = 0;
-      }
-    };
-
-    const step = () => {
-      if (!direction) return;
-      nav.scrollLeft += direction * 12;
-      frame = requestAnimationFrame(step);
-    };
-
     arrows.forEach((arrow) => {
-      const start = () => {
-        direction = Number(arrow.dataset.scrollDirection || 0);
-        if (!frame) frame = requestAnimationFrame(step);
-      };
-
-      arrow.addEventListener("pointerenter", start);
-      arrow.addEventListener("focus", start);
-      arrow.addEventListener("pointerleave", stop);
-      arrow.addEventListener("blur", stop);
       arrow.addEventListener("click", () => {
         nav.scrollBy({ left: Number(arrow.dataset.scrollDirection || 0) * 460, behavior: "smooth" });
       });
