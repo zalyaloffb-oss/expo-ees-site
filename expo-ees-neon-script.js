@@ -479,6 +479,16 @@ function initProjectGeography() {
     "Саратовская область": ["assets/pages/venues-for-events-02.jpg", "assets/site/portfolio-04.jpg", "assets/pages/portfolio-03.jpg"],
     "Республика Татарстан": ["assets/pages/venues-for-events-06.jpg", "assets/site/case-01.jpg", "assets/pages/portfolio-04.jpg"]
   };
+  const projectTitleByImage = {
+    "assets/pages/portfolio-05.jpg": "OIL EXPO 2023"
+  };
+  const getProjectTitle = (source, index) => {
+    if (projectTitleByImage[source]) return projectTitleByImage[source];
+    if (source.includes("venues-for-events")) return "Оформление мероприятия";
+    if (source.includes("vystavki")) return "Выставочный проект";
+    if (source.includes("case")) return "Проект выставочного стенда";
+    return `Проект №${index + 1}`;
+  };
   const subjectRegions = [...map.querySelectorAll("[data-code][data-title]")];
   subjectRegions.forEach((region) => {
     const name = region.dataset.title;
@@ -810,7 +820,7 @@ function initProjectGeography() {
     }, 220);
   };
 
-  const createGallery = (gallery) => {
+  const createGallery = (gallery, regionTitle) => {
     let activeIndex = 0;
     const prev = document.createElement("button");
     const next = document.createElement("button");
@@ -842,18 +852,40 @@ function initProjectGeography() {
 
     const img = document.createElement("img");
     const counter = document.createElement("span");
+    const caption = document.createElement("figcaption");
     counter.className = "s-location__gallery-counter";
+    caption.className = "s-location__gallery-caption";
 
     const show = (index) => {
       activeIndex = (index + gallery.length) % gallery.length;
       img.src = gallery[activeIndex];
-      img.alt = titlePopup.textContent || "Фото проекта";
+      const projectTitle = getProjectTitle(gallery[activeIndex], activeIndex);
+      img.alt = `${regionTitle}: ${projectTitle}`;
       counter.textContent = `${activeIndex + 1} / ${gallery.length}`;
+      caption.textContent = projectTitle;
+      titlePopup.textContent = `${regionTitle} — ${projectTitle}`;
     };
 
     prev.addEventListener("click", () => show(activeIndex - 1));
     next.addEventListener("click", () => show(activeIndex + 1));
-    figure.append(img, counter);
+    let swipeStartX = 0;
+    let swipeStartY = 0;
+    figure.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse") return;
+      swipeStartX = event.clientX;
+      swipeStartY = event.clientY;
+      figure.setPointerCapture?.(event.pointerId);
+    });
+    figure.addEventListener("pointerup", (event) => {
+      if (event.pointerType === "mouse") return;
+      const deltaX = event.clientX - swipeStartX;
+      const deltaY = event.clientY - swipeStartY;
+      if (Math.abs(deltaX) >= 42 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        show(activeIndex + (deltaX < 0 ? 1 : -1));
+      }
+      figure.releasePointerCapture?.(event.pointerId);
+    });
+    figure.append(img, counter, caption);
     galleryPopup.append(prev, figure, next);
     show(0);
   };
@@ -906,7 +938,7 @@ function initProjectGeography() {
       descrPopup.textContent = dataDescr;
       galleryPopup.innerHTML = "";
       galleryPopup.classList.remove("_summary");
-      createGallery(dataGallery);
+      createGallery(dataGallery, dataTitle);
       popup.classList.add("_active");
     }, delay);
   };

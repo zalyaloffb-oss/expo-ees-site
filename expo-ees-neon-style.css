@@ -7514,6 +7514,17 @@ body.is-geo-modal-open {
   box-shadow: 0 0 14px rgba(24, 216, 255, 0.28);
 }
 
+.qorix-location .s-location__gallery-caption {
+  padding: 10px 12px;
+  border-top: 1px solid rgba(12, 221, 255, 0.16);
+  color: #eefcff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  background: rgba(3, 12, 22, 0.92);
+}
+
 .qorix-location .s-location__gallery-empty {
   display: grid;
   min-height: 180px;
@@ -9245,6 +9256,109 @@ main > .old-home-hero:first-child,
   .portfolio-project-nav {
     touch-action: pan-x;
     overscroll-behavior-inline: contain;
+  }
+
+  .footer-contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+  }
+
+  .footer-contact > h2,
+  .footer-contact > p,
+  .footer-contact > a[href^="mailto:"],
+  .footer-contact > span,
+  .footer-contact > .footer-socials {
+    grid-column: 1 / -1;
+  }
+
+  .footer-contact > a[href^="tel:"] {
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .footer-main-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+  }
+
+  .footer-main-nav > a:first-child {
+    display: none;
+  }
+
+  .project-geo-section .s-location__main {
+    min-height: 350px;
+  }
+
+  .project-geo-section .map-zoom-control {
+    grid-template-columns: 32px 32px;
+  }
+
+  .project-geo-section .map-zoom-range {
+    display: none;
+  }
+
+  .project-geo-section .s-location__popup {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .project-geo-section .s-location__popup-body {
+    min-height: 0;
+    height: auto;
+    padding: 14px;
+  }
+
+  .project-geo-section .s-location__popup-title {
+    margin: 0 0 10px;
+    padding-right: 34px;
+    font-size: 22px;
+    line-height: 1.18;
+  }
+
+  .project-geo-section .s-location__popup-close {
+    right: 9px;
+    top: 9px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .project-geo-section .s-location__popup-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    min-height: 0;
+  }
+
+  .project-geo-section .s-location__popup-gallery figure {
+    width: 100%;
+    touch-action: pan-y;
+  }
+
+  .project-geo-section .s-location__popup-gallery img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-geo-section .s-location__gallery-arrow {
+    display: none;
+  }
+
+  .project-geo-section .s-location__gallery-counter {
+    bottom: 48px;
+  }
+
+  .project-geo-section .s-location__gallery-caption {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .project-geo-section .s-location__popup-wrapper {
+    display: none;
+  }
+
+  .project-geo-section .s-location__popup-btn {
+    order: 3;
+    min-height: 42px;
+    margin-top: 10px;
   }
 }
 
