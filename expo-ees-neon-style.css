@@ -7827,7 +7827,7 @@ body.is-geo-modal-open {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .tent-detail-body,
   .stage-detail-body {
     padding-top: 94px;
@@ -9223,7 +9223,7 @@ main > .old-home-hero:first-child,
 }
 
 /* Mobile portfolio rail: viewport width, tight header gap and manual navigation. */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   #serviceRoot:has(> .portfolio-page) {
     margin-top: 10px;
   }
@@ -9909,20 +9909,22 @@ main > .old-home-hero:first-child,
 }
 
 /* Final mobile portfolio rail alignment. */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   #serviceRoot:has(> .portfolio-page) {
     margin-top: 10px !important;
   }
 
   .portfolio-page {
     padding-top: 0 !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
   }
 
   .portfolio-project-nav-shell {
     left: auto !important;
-    width: calc(100% + 4px) !important;
+    width: 100% !important;
     max-width: none !important;
-    margin: 0 -2px 10px !important;
+    margin: 0 0 10px !important;
     padding-inline: 48px;
     transform: none !important;
   }
