@@ -6773,6 +6773,17 @@ b {
   }
 }
 
+/* The exclusive stands page keeps its gallery sliders on mobile only. */
+@media (min-width: 761px) {
+  .exclusive-top-slider,
+  .exclusive-legacy-slider,
+  .exclusive-stands-slider,
+  .ees-ex-slider,
+  #exclusive-stands-top-slider {
+    display: none !important;
+  }
+}
+
 .project-geo-section {
   width: min(100% - 96px, 1880px);
   margin-inline: auto;
