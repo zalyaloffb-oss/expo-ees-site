@@ -2805,6 +2805,51 @@ const standPages = {
   }
 };
 
+standPages["nestandartnye-konstrukczii-2"] = {
+  kicker: "Рекламные конструкции",
+  title: "Нестандартные рекламные конструкции",
+  lead: "Креативные и инновационные решения, которые помогают компании выделиться среди участников выставки.",
+  hero: "assets/pages/nonstandard-advertising-121313.jpg",
+  sections: [
+    {
+      eyebrow: "О конструкциях",
+      title: "Яркое и запоминающееся присутствие бренда",
+      text: [
+        "Нестандартные рекламные конструкции на выставках представляют собой креативные и инновационные решения, которые помогают компаниям выделиться на фоне тысяч других участников. Эти конструкции могут принимать различные формы, включая масштабные стенды, интерактивные инсталляции, 3D-объекты и мультимедийные презентации."
+      ]
+    },
+    {
+      eyebrow: "Преимущества",
+      title: "Почему нестандартные конструкции эффективны",
+      list: [
+        "Привлечение внимания: необычные формы и яркие визуальные эффекты позволяют бренду оставить сильное впечатление.",
+        "Взаимодействие с аудиторией: виртуальная реальность, сенсорные экраны и другие интерактивные элементы вовлекают посетителей.",
+        "Запоминаемость: уникальная конструкция и оригинальный дизайн делают предложение компании заметнее.",
+        "Увеличение потока посетителей: интересный стенд вызывает любопытство и привлекает больше людей.",
+        "Позиционирование бренда: нестандартные решения подчёркивают индивидуальность и ценности компании."
+      ]
+    },
+    {
+      eyebrow: "Варианты реализации",
+      title: "Примеры нестандартных решений",
+      list: [
+        "Стенды в виде оригинальных объектов — например, автомобиля или представляемого товара.",
+        "Сценарное освещение, создающее атмосферу и выделяющее ключевые элементы стенда.",
+        "Интерактивные панели с возможностью виртуального взаимодействия.",
+        "Природные элементы: водопады, живые растения и другие необычные детали."
+      ]
+    },
+    {
+      eyebrow: "Результат",
+      title: "Узнаваемость, интерес и вовлечённость",
+      text: [
+        "Нестандартные рекламные конструкции на выставках являются эффективным инструментом для повышения узнаваемости бренда, стимулирования интереса и вовлечённости аудитории, а также для создания уникального имиджа компании."
+      ]
+    }
+  ],
+  images: ["assets/pages/nonstandard-advertising-121313.jpg"]
+};
+
 const standSlugs = new Set(Object.keys(standPages));
 
 function renderStandPage() {
@@ -3249,8 +3294,24 @@ function renderContactsPage() {
         </div>
       </div>
 
-      <div class="contacts-grid">
-                <form class="contacts-form reveal is-visible" id="contacts-form">
+      <div class="contacts-map-form-grid">
+        <section class="contacts-yandex reveal is-visible">
+          <div class="contacts-yandex-map" aria-label="Яндекс карта офиса ИвентЭкспоСервис">
+            <iframe
+              title="Яндекс карта офиса ИвентЭкспоСервис"
+              src="${yandexMapSrc}"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a class="contacts-map-link" href="${yandexMapHref}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+          </div>
+          <div class="contacts-map-copy">
+            <h2>Наш офис находится в городе Казань, по адресу ул. Дубравная, дом 1/104к1</h2>
+            <p>Приезжайте для обсуждения проекта, выбора материалов, согласования выставочной застройки и комплектации мероприятия.</p>
+          </div>
+        </section>
+
+        <form class="contacts-form reveal is-visible" id="contacts-form">
           <p class="eyebrow">Заявка</p>
           <h2>Быстрый расчет проекта</h2>
           <div class="contacts-form-fields">
@@ -3268,30 +3329,7 @@ function renderContactsPage() {
           </div>
           <button class="btn btn-primary" type="submit">Отправить заявку</button>
         </form>
-
-        <article class="contacts-office reveal is-visible">
-          <p class="eyebrow">Офис</p>
-          <h2>Наш офис находится в Казани</h2>
-          <p>Можно приехать для обсуждения проекта, согласования материалов, формата застройки и комплектации мероприятия.</p>
-          <div class="contacts-office-map" aria-label="Карта офиса">
-            <span>Казань</span>
-            <strong>Дубравная, 1/104к1</strong>
-          </div>
-        </article>
       </div>
-
-      <section class="contacts-yandex reveal is-visible">
-        <div class="contacts-yandex-map" aria-label="Яндекс карта офиса ИвентЭкспоСервис">
-          <iframe
-            title="Яндекс карта офиса ИвентЭкспоСервис"
-            src="${yandexMapSrc}"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <a class="contacts-map-link" href="${yandexMapHref}" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
-        </div>
-        <p class="contacts-map-caption">Наш офис находится в городе Казань, по адресу ул. Дубравная, дом 1/104к1</p>
-      </section>
 
       <section class="contacts-strip contacts-clients reveal is-visible">
         <div class="contacts-strip-head">
