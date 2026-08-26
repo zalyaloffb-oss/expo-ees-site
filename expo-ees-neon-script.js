@@ -175,8 +175,7 @@ function initMobileServiceMenu() {
   });
 
   [...servicesMenu.querySelectorAll(".nav-column")].forEach((column, index) => {
-    if (isHomeCatalog) return;
-    if (![1, 2, 3].includes(index)) return;
+    if (!isHomeCatalog && ![1, 2, 3].includes(index)) return;
     const heading = column.querySelector(":scope > span");
     if (!heading) return;
     heading.setAttribute("role", "button");

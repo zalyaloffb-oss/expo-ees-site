@@ -40,10 +40,23 @@
   mobileBar.setAttribute("aria-label", "Логотип и поиск по сайту");
 
   const logoLink = mobileBar.querySelector(".brand");
-  logoLink?.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  if (logoLink) logoLink.href = "expo-ees-neon-concept.html";
+
+  if (isHomePage) {
+    const compactToggle = document.createElement("button");
+    compactToggle.className = "mobile-sticky-menu";
+    compactToggle.type = "button";
+    compactToggle.setAttribute("aria-label", "Показать контакты и меню");
+    compactToggle.setAttribute("aria-expanded", "false");
+    compactToggle.innerHTML = "<i></i><i></i><i></i>";
+    compactToggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("is-mobile-aux-open");
+      compactToggle.classList.toggle("is-open", isOpen);
+      compactToggle.setAttribute("aria-expanded", String(isOpen));
+      compactToggle.setAttribute("aria-label", isOpen ? "Скрыть контакты и меню" : "Показать контакты и меню");
+    });
+    mobileBar.appendChild(compactToggle);
+  }
 
   document.body.appendChild(mobileBar);
 })();
