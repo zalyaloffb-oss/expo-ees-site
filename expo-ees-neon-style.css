@@ -10098,6 +10098,224 @@ main > .old-home-hero:first-child,
 }
 
 /* Final mobile portfolio rail alignment. */
+
+/* Yandex reviews on the home page. */
+.home-reviews-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-reviews-section::before {
+  content: "";
+  position: absolute;
+  inset: 18% auto auto 58%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(126, 83, 255, 0.12);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.home-reviews-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(0, 2.28fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.home-reviews-rating,
+.home-review-card {
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(0, 229, 255, 0.1), transparent 42%),
+    linear-gradient(145deg, rgba(7, 25, 37, 0.96), rgba(15, 12, 35, 0.96));
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.24);
+}
+
+.home-reviews-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 290px;
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 18px;
+}
+
+.home-reviews-source {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #eefcff;
+  font-weight: 700;
+}
+
+.home-reviews-source i {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #ffcc00;
+  box-shadow: 0 0 18px rgba(255, 204, 0, 0.45);
+}
+
+.home-reviews-rating strong {
+  margin-top: 16px;
+  color: #ffffff;
+  font-size: clamp(64px, 7vw, 92px);
+  line-height: 0.95;
+  text-shadow: 0 0 28px rgba(0, 229, 255, 0.3);
+}
+
+.home-reviews-stars,
+.home-review-card__head span {
+  color: #ffcc00;
+  letter-spacing: 0.12em;
+}
+
+.home-reviews-stars {
+  margin-top: 16px;
+  font-size: 21px;
+}
+
+.home-reviews-rating p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.home-reviews-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.home-review-card {
+  position: relative;
+  min-width: 0;
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.home-review-card::after {
+  content: "“";
+  position: absolute;
+  right: 18px;
+  top: 8px;
+  color: rgba(0, 229, 255, 0.13);
+  font-size: 76px;
+  line-height: 1;
+}
+
+.home-review-card__head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-review-card__avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  color: #041016 !important;
+  background: linear-gradient(135deg, #00e5ff, #8a5cff);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0 !important;
+}
+
+.home-review-card h3 {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.home-review-card__head div > span {
+  font-size: 13px;
+}
+
+.home-review-card blockquote {
+  margin: 22px 0 0;
+  color: #b5becd;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.home-reviews-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.home-reviews-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid rgba(0, 229, 255, 0.42);
+  border-radius: 14px;
+  color: #eafcff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.home-reviews-secondary:hover {
+  border-color: #00e5ff;
+  background: rgba(0, 229, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1040px) {
+  .home-reviews-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-reviews-rating {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-reviews-list {
+    display: flex;
+    gap: 12px;
+    margin-right: -16px;
+    padding-right: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .home-reviews-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-review-card {
+    flex: 0 0 min(84vw, 340px);
+    padding: 20px;
+    scroll-snap-align: start;
+  }
+
+  .home-reviews-rating {
+    padding: 24px;
+  }
+
+  .home-reviews-rating strong {
+    font-size: 68px;
+  }
+
+  .home-reviews-actions {
+    display: grid;
+  }
+}
+
 @media (max-width: 760px) {
   #serviceRoot:has(> .portfolio-page) {
     margin-top: 10px !important;
