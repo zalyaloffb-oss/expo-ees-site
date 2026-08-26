@@ -322,51 +322,38 @@ if (homeSlider) {
   startHomeSlider();
 }
 
-const toggles = document.querySelectorAll(".toggle");
-const sizeSelect = document.querySelector("#sizeSelect");
-const eventSelect = document.querySelector("#eventSelect");
-const summaryTitle = document.querySelector("#summaryTitle");
-const summaryList = document.querySelector("#summaryList");
+const homePortfolioTabs = [...document.querySelectorAll("[data-portfolio-tab]")];
+const homePortfolioPanels = [...document.querySelectorAll("[data-portfolio-panel]")];
 
-const sizeLabels = {
-  small: "6 x 6 м",
-  medium: "10 x 15 м",
-  large: "20 x 30 м"
-};
+function activateHomePortfolio(category, moveFocus = false) {
+  homePortfolioTabs.forEach((tab) => {
+    const isActive = tab.dataset.portfolioTab === category;
+    tab.classList.toggle("is-active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+    tab.tabIndex = isActive ? 0 : -1;
+    if (isActive && moveFocus) tab.focus();
+  });
 
-const optionLabels = {
-  walls: "Боковые стены и входная группа",
-  light: "Архитектурная подсветка периметра",
-  climate: "Климат-контроль под сезон",
-  furniture: "Мебель и текстиль для гостей",
-  glass: "Остекление фасадной зоны",
-  print: "Брендирование и широкоформатная печать",
-  media: "Экран, звук и мультимедийное оборудование",
-  wardrobe: "Гардеробная зона и стеллажи"
-};
-
-function updateSummary() {
-  if (!summaryTitle || !summaryList || !sizeSelect || !eventSelect) return;
-  const activeOptions = [...document.querySelectorAll(".toggle.is-active")]
-    .map((button) => optionLabels[button.dataset.option]);
-
-  summaryTitle.textContent = `${sizeLabels[sizeSelect.value]} / ${eventSelect.value.toLowerCase()}`;
-  summaryList.innerHTML = activeOptions.length
-    ? activeOptions.map((item) => `<li>${item}</li>`).join("")
-    : "<li>Базовая тентовая конструкция без дополнительных опций</li>";
+  homePortfolioPanels.forEach((panel) => {
+    const isActive = panel.dataset.portfolioPanel === category;
+    panel.hidden = !isActive;
+    panel.classList.toggle("is-active", isActive);
+  });
 }
 
-toggles.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.toggle("is-active");
-    updateSummary();
+homePortfolioTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateHomePortfolio(tab.dataset.portfolioTab));
+  tab.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex = (index + direction + homePortfolioTabs.length) % homePortfolioTabs.length;
+    activateHomePortfolio(homePortfolioTabs[nextIndex].dataset.portfolioTab, true);
   });
 });
 
-if (sizeSelect && eventSelect) {
-  sizeSelect.addEventListener("change", updateSummary);
-  eventSelect.addEventListener("change", updateSummary);
-  updateSummary();
+if (homePortfolioTabs.length) {
+  activateHomePortfolio(homePortfolioTabs.find((tab) => tab.classList.contains("is-active"))?.dataset.portfolioTab || homePortfolioTabs[0].dataset.portfolioTab);
 }
 
 function initTentProductLightbox() {

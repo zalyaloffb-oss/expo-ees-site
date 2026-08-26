@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EventExpoService — neon concept</title>
   <meta name="description" content="Неоновый концепт главной страницы для ИвентЭкспоСервис: шатры, стенды и event-инфраструктура под ключ.">
-  <link rel="stylesheet" href="expo-ees-neon-style.css?v=13">
+  <link rel="stylesheet" href="expo-ees-neon-style.css?v=14">
 </head>
 <body>
   <div class="neon-atmosphere" aria-hidden="true">
@@ -335,60 +335,58 @@
       </div>
     </section>
 
-    <section class="section builder-section" id="builder">
+    <section class="section home-portfolio-section" id="portfolio-showcase">
       <div class="section-head reveal">
-        <p class="eyebrow">Быстрый расчет</p>
-        <h2>Мини-конфигуратор шатра</h2>
-        <p>Это можно собрать в Elementor как интерактивный блок: пользователь выбирает параметры, видит комплектацию и отправляет заявку.</p>
+        <p class="eyebrow">Реализованные проекты</p>
+        <h2>Портфолио</h2>
+        <p>Выберите направление и посмотрите примеры выполненных работ.</p>
       </div>
-      <div class="builder-shell reveal">
-        <div class="builder-controls">
-          <label>
-            Размер
-            <select id="sizeSelect">
-              <option value="small">6 × 6 м</option>
-              <option value="medium" selected>10 × 15 м</option>
-              <option value="large">20 × 30 м</option>
-            </select>
-          </label>
-          <label>
-            Формат
-            <select id="eventSelect">
-              <option>Выставка</option>
-              <option selected>Форум / деловое событие</option>
-              <option>Банкет</option>
-              <option>Уличная презентация</option>
-            </select>
-          </label>
-          <div class="toggle-grid" aria-label="Опции комплектации">
-            <button class="toggle is-active" data-option="walls" type="button">Стены</button>
-            <button class="toggle is-active" data-option="light" type="button">Свет</button>
-            <button class="toggle" data-option="climate" type="button">Климат</button>
-            <button class="toggle is-active" data-option="furniture" type="button">Мебель</button>
-            <button class="toggle" data-option="glass" type="button">Остекление</button>
-            <button class="toggle" data-option="print" type="button">Печать</button>
-            <button class="toggle" data-option="media" type="button">Мультимедиа</button>
-            <button class="toggle" data-option="wardrobe" type="button">Гардероб</button>
-          </div>
+      <div class="home-portfolio-shell reveal">
+        <div class="home-portfolio-tabs" role="tablist" aria-label="Категории портфолио">
+          <button class="home-portfolio-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="portfolio-exclusive" data-portfolio-tab="exclusive">Эксклюзивные стенды</button>
+          <button class="home-portfolio-tab" type="button" role="tab" aria-selected="false" aria-controls="portfolio-standard" data-portfolio-tab="standard">Стандартные стенды</button>
+          <button class="home-portfolio-tab" type="button" role="tab" aria-selected="false" aria-controls="portfolio-tents" data-portfolio-tab="tents">Шатры</button>
+          <button class="home-portfolio-tab" type="button" role="tab" aria-selected="false" aria-controls="portfolio-stages" data-portfolio-tab="stages">Сцены</button>
         </div>
-        <div class="tent-preview" aria-label="Визуальная схема шатра">
-          <div class="tent-roof"></div>
-          <div class="tent-body">
-            <span class="beam beam-left"></span>
-            <span class="beam beam-right"></span>
-            <span class="neon-door"></span>
+
+        <div class="home-portfolio-panel is-active" id="portfolio-exclusive" role="tabpanel" data-portfolio-panel="exclusive">
+          <div class="home-portfolio-gallery">
+            <figure class="is-featured"><img src="assets/exclusive/exclusive-01.jpg" alt="Эксклюзивный выставочный стенд"><figcaption>Эксклюзивная выставочная застройка</figcaption></figure>
+            <figure><img src="assets/exclusive/exclusive-07.jpg" alt="Брендированный выставочный стенд"><figcaption>Брендированные пространства</figcaption></figure>
+            <figure><img src="assets/exclusive/exclusive-13.jpg" alt="Индивидуальный стенд на выставке"><figcaption>Индивидуальный дизайн</figcaption></figure>
+            <figure><img src="assets/exclusive/exclusive-18.jpg" alt="Готовый эксклюзивный стенд"><figcaption>Производство под ключ</figcaption></figure>
           </div>
-          <div class="floor-grid"></div>
+          <a class="home-portfolio-more" href="service-page.html?slug=eksklyuzivnyye_vystavochnyye_stendy">Смотреть все проекты <span aria-hidden="true">→</span></a>
         </div>
-        <div class="builder-summary">
-          <p class="summary-kicker">Комплектация</p>
-          <h3 id="summaryTitle">10 × 15 м / форум</h3>
-          <ul id="summaryList">
-            <li>Тентовая конструкция с боковыми стенами</li>
-            <li>Архитектурная подсветка периметра</li>
-            <li>Мебель для деловой зоны</li>
-          </ul>
-          <a class="btn btn-primary" href="#contact">Получить смету</a>
+
+        <div class="home-portfolio-panel" id="portfolio-standard" role="tabpanel" hidden data-portfolio-panel="standard">
+          <div class="home-portfolio-gallery">
+            <figure class="is-featured"><img src="assets/pages/portfolio-01.jpg" alt="Стандартный выставочный стенд"><figcaption>Стандартные выставочные решения</figcaption></figure>
+            <figure><img src="assets/pages/portfolio-02.jpg" alt="Модульный выставочный стенд"><figcaption>Модульная застройка</figcaption></figure>
+            <figure><img src="assets/pages/portfolio-03.jpg" alt="Оформление стандартного стенда"><figcaption>Оформление стенда</figcaption></figure>
+            <figure><img src="assets/pages/portfolio-04.jpg" alt="Выставочный стенд под ключ"><figcaption>Застройка под ключ</figcaption></figure>
+          </div>
+          <a class="home-portfolio-more" href="service-page.html?slug=standartnyye_vystavochnyye_stendy">Смотреть все проекты <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="home-portfolio-panel" id="portfolio-tents" role="tabpanel" hidden data-portfolio-panel="tents">
+          <div class="home-portfolio-gallery">
+            <figure class="is-featured"><img src="assets/home-portfolio/tent-01.jpg" alt="Шатер для мероприятия"><figcaption>Шатры для мероприятий</figcaption></figure>
+            <figure><img src="assets/home-portfolio/tent-02.jpg" alt="Большой арочный шатер"><figcaption>Арочные конструкции</figcaption></figure>
+            <figure><img src="assets/home-portfolio/tent-03.jpg" alt="Тентовый павильон"><figcaption>Тентовые павильоны</figcaption></figure>
+            <figure><img src="assets/home-portfolio/tent-04.jpg" alt="Оформленный шатер"><figcaption>Комплексное оснащение</figcaption></figure>
+          </div>
+          <a class="home-portfolio-more" href="service-page.html?slug=arenda-shatrov-i-tentovyh-konstrukczij-2">Смотреть все проекты <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="home-portfolio-panel" id="portfolio-stages" role="tabpanel" hidden data-portfolio-panel="stages">
+          <div class="home-portfolio-gallery">
+            <figure class="is-featured"><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-01.jpg" alt="Сцена для мероприятия"><figcaption>Сцены для мероприятий</figcaption></figure>
+            <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-03.jpg" alt="Сценическая конструкция"><figcaption>Сценические конструкции</figcaption></figure>
+            <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-05.jpg" alt="Подиум для выступлений"><figcaption>Подиумы и площадки</figcaption></figure>
+            <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-08.jpg" alt="Оформленная сцена"><figcaption>Монтаж и оформление</figcaption></figure>
+          </div>
+          <a class="home-portfolio-more" href="service-page.html?slug=arenda-sczeny-dlya-meropriyatij">Смотреть все проекты <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -729,6 +727,6 @@
   </footer>
 
   <script src="mobile-header.js?v=4"></script>
-  <script src="expo-ees-neon-script.js?v=5"></script>
+  <script src="expo-ees-neon-script.js?v=6"></script>
 </body>
 </html>
