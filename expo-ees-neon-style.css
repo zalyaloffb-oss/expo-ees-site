@@ -10777,6 +10777,39 @@ main > .old-home-hero:first-child,
   .home-portfolio-request {
     height: 470px;
   }
+
+  .home-portfolio-head .eyebrow {
+    font-size: 15px;
+  }
+
+  .home-portfolio-request-title {
+    font-size: 26px;
+  }
+
+  .home-portfolio-tabs {
+    right: 10px;
+    left: 10px;
+  }
+
+  .home-portfolio-more {
+    bottom: 10px;
+    left: 10px;
+    max-width: calc(100% - 20px);
+    padding: 9px 12px;
+  }
+
+  .home-portfolio-request__head {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .home-portfolio-form {
+    top: 82px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+  }
 }
 
 /* Yandex reviews on the home page. */
