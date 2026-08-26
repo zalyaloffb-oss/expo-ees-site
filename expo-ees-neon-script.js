@@ -164,7 +164,8 @@ function initMobileServiceMenu() {
   const servicesMenu = servicesGroup?.querySelector(":scope > .nav-mega");
   if (!servicesGroup || !servicesTrigger || !servicesMenu) return;
 
-  servicesTrigger.setAttribute("aria-expanded", "false");
+  const isHomeCatalog = Boolean(document.querySelector(".site-header.mobile-home-menu"));
+  servicesTrigger.setAttribute("aria-expanded", servicesGroup.classList.contains("is-open") ? "true" : "false");
 
   servicesTrigger.addEventListener("click", (event) => {
     if (!window.matchMedia("(max-width: 640px)").matches) return;
@@ -174,6 +175,7 @@ function initMobileServiceMenu() {
   });
 
   [...servicesMenu.querySelectorAll(".nav-column")].forEach((column, index) => {
+    if (isHomeCatalog) return;
     if (![1, 2, 3].includes(index)) return;
     const heading = column.querySelector(":scope > span");
     if (!heading) return;
