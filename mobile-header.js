@@ -9,6 +9,7 @@
 
   if (isMobileViewport) {
     header.classList.add("is-mobile-expanded", "mobile-home-menu");
+    if (/service-page\.html$/i.test(window.location.pathname)) header.classList.add("mobile-service-page");
     servicesGroup?.classList.add("is-open");
   }
   if (servicesTrigger && isMobileViewport) {

@@ -237,13 +237,31 @@
 }
 
 .service-catalog-title {
-  margin: 0 0 22px;
+  margin: 0;
   color: #f6fbff;
   font-size: clamp(18px, 1.55vw, 24px);
   font-weight: 950;
   line-height: 1.08;
   white-space: nowrap;
   text-shadow: 0 0 22px rgba(0, 229, 255, 0.36), 0 0 46px rgba(138, 92, 255, 0.18);
+}
+
+.service-catalog-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+}
+
+.service-catalog-toggle i {
+  display: none;
 }
 
 .service-catalog-list,
@@ -10855,6 +10873,40 @@ main > .old-home-hero:first-child,
 
 /* Homepage mobile menu: always open, with one collapsible product catalog. */
 @media (max-width: 640px) {
+  .site-header.mobile-service-page .main-nav > .nav-group:first-child {
+    display: none !important;
+  }
+
+  .service-catalog-toggle {
+    min-height: 42px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+
+  .service-catalog-toggle i {
+    display: block;
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-right: 2px solid var(--cyan);
+    border-bottom: 2px solid var(--cyan);
+    transform: translateY(-3px) rotate(45deg);
+    transition: transform 180ms ease;
+  }
+
+  .service-catalog-sidebar.is-collapsed .service-catalog-toggle {
+    margin-bottom: 0;
+  }
+
+  .service-catalog-sidebar.is-collapsed .service-catalog-toggle i {
+    transform: translateY(3px) rotate(225deg);
+  }
+
+  .service-catalog-sidebar.is-collapsed .service-catalog-list {
+    display: none;
+  }
+
   .site-header.mobile-home-menu {
     display: grid;
     gap: 10px;

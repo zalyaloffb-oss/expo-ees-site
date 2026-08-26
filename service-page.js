@@ -2096,7 +2096,10 @@ function renderServiceCatalogSidebar() {
   const currentSection = sectionForSlug(slug);
   return `
     <aside class="service-catalog-sidebar reveal is-visible" aria-label="Каталог продукции">
-      <p class="service-catalog-title">РљР°С‚Р°Р»РѕРі РїСЂРѕРґСѓРєС†РёРё:</p>
+      <button class="service-catalog-toggle" type="button" aria-expanded="true">
+        <span class="service-catalog-title">РљР°С‚Р°Р»РѕРі РїСЂРѕРґСѓРєС†РёРё:</span>
+        <i aria-hidden="true"></i>
+      </button>
       <nav class="service-catalog-list">
         ${siteSections.map((section) => `
           <div class="service-catalog-group ${section === currentSection ? "is-open" : ""}">
@@ -2118,6 +2121,14 @@ function renderServiceCatalogSidebar() {
 }
 
 function initServiceCatalogSidebar() {
+  document.querySelectorAll(".service-catalog-sidebar").forEach((sidebar) => {
+    const toggle = sidebar.querySelector(".service-catalog-toggle");
+    toggle?.addEventListener("click", () => {
+      const isCollapsed = sidebar.classList.toggle("is-collapsed");
+      toggle.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
+    });
+  });
+
   const groups = [...document.querySelectorAll(".service-catalog-group")];
   groups.forEach((group) => {
     const trigger = group.querySelector(".service-catalog-main");
