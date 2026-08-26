@@ -4,6 +4,7 @@
   if (!header || !source || document.querySelector(".mobile-sticky-identity")) return;
 
   const servicesGroup = header.querySelector(".main-nav > .nav-group:first-child");
+  const mainNav = header.querySelector(".main-nav");
   const isMobileViewport = window.matchMedia("(max-width: 640px)").matches;
   const isHomePage = Boolean(document.querySelector(".old-home-hero"));
 
@@ -13,6 +14,19 @@
       header.classList.add("mobile-service-page");
       document.body.classList.add("mobile-service-catalog-page");
     }
+  }
+
+  if (mainNav) {
+    const homeLink = document.createElement("a");
+    homeLink.className = "mobile-primary-nav-link mobile-primary-home";
+    homeLink.href = "expo-ees-neon-concept.html";
+    homeLink.textContent = "Главная";
+
+    const servicesLink = document.createElement("a");
+    servicesLink.className = "mobile-primary-nav-link mobile-primary-services";
+    servicesLink.href = "service-page.html";
+    servicesLink.textContent = "Услуги";
+    mainNav.append(homeLink, servicesLink);
   }
 
   const mobileBar = source.cloneNode(true);

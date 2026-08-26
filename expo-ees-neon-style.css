@@ -272,6 +272,10 @@
   display: none;
 }
 
+.mobile-primary-nav-link {
+  display: none;
+}
+
 .service-catalog-list,
 .service-catalog-group,
 .service-catalog-sublist {
@@ -10884,6 +10888,18 @@ main > .old-home-hero:first-child,
 
 /* Homepage mobile menu: always open, with one collapsible product catalog. */
 @media (max-width: 640px) {
+  .services-overview-card {
+    height: 99px;
+    aspect-ratio: auto;
+  }
+
+  .services-overview-card-title {
+    top: 10px;
+    left: 12px;
+    right: 12px;
+    font-size: 12.5px;
+  }
+
   .site-header.mobile-home-menu .main-nav > .nav-group:first-child {
     display: none !important;
   }
@@ -11146,6 +11162,18 @@ main > .old-home-hero:first-child,
     font-size: 13px;
     font-weight: 700;
     text-align: center;
+  }
+
+  .site-header.mobile-home-menu.is-mobile-aux-open .main-nav > .mobile-primary-nav-link {
+    display: flex;
+  }
+
+  .site-header.mobile-home-menu .mobile-primary-home {
+    order: -2;
+  }
+
+  .site-header.mobile-home-menu .mobile-primary-services {
+    order: -1;
   }
 
   .site-header.mobile-home-menu .main-nav > a:nth-child(2) { order: 1; }
