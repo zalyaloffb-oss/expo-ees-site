@@ -38,6 +38,14 @@
 
   document.body.appendChild(mobileBar);
 
+  const footerSocials = document.querySelector(".footer-socials");
+  if (footerSocials) {
+    const headerSocials = footerSocials.cloneNode(true);
+    headerSocials.classList.add("mobile-header-socials");
+    headerSocials.setAttribute("aria-label", "Социальные сети и способы связи");
+    header.appendChild(headerSocials);
+  }
+
   if (isMobileViewport && isHomePage && servicesGroup) {
     const homeCatalog = document.createElement("aside");
     homeCatalog.className = "service-catalog-sidebar mobile-home-product-catalog";
@@ -47,7 +55,7 @@
     catalogToggle.className = "service-catalog-toggle";
     catalogToggle.type = "button";
     catalogToggle.setAttribute("aria-expanded", "true");
-    catalogToggle.innerHTML = '<span class="service-catalog-title">Каталог продукции:</span><i aria-hidden="true"></i>';
+    catalogToggle.innerHTML = '<span class="service-catalog-title">каталог продукции:</span><i aria-hidden="true"></i>';
 
     const catalogList = document.createElement("nav");
     catalogList.className = "service-catalog-list";
