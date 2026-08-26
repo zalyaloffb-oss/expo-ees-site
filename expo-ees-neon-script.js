@@ -356,6 +356,35 @@ if (homePortfolioTabs.length) {
   activateHomePortfolio(homePortfolioTabs.find((tab) => tab.classList.contains("is-active"))?.dataset.portfolioTab || homePortfolioTabs[0].dataset.portfolioTab);
 }
 
+homePortfolioPanels.forEach((panel) => {
+  const slides = [...panel.querySelectorAll(".home-portfolio-gallery figure")];
+  const counter = panel.querySelector("[data-portfolio-counter]");
+  const previous = panel.querySelector("[data-portfolio-prev]");
+  const next = panel.querySelector("[data-portfolio-next]");
+  const gallery = panel.querySelector(".home-portfolio-gallery");
+  let currentSlide = 0;
+  let touchStartX = 0;
+
+  const showSlide = (index) => {
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === currentSlide));
+    if (counter) counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+  };
+
+  previous?.addEventListener("click", () => showSlide(currentSlide - 1));
+  next?.addEventListener("click", () => showSlide(currentSlide + 1));
+  gallery?.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0]?.clientX || 0;
+  }, { passive: true });
+  gallery?.addEventListener("touchend", (event) => {
+    const distance = (event.changedTouches[0]?.clientX || 0) - touchStartX;
+    if (Math.abs(distance) < 45) return;
+    showSlide(currentSlide + (distance < 0 ? 1 : -1));
+  }, { passive: true });
+
+  showSlide(0);
+});
+
 function initTentProductLightbox() {
   const groups = [...document.querySelectorAll(".tent-product-card")].map((card) => {
     const title = card.querySelector(".tent-product-copy h3")?.textContent?.trim() || "";

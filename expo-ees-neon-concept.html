@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EventExpoService — neon concept</title>
   <meta name="description" content="Неоновый концепт главной страницы для ИвентЭкспоСервис: шатры, стенды и event-инфраструктура под ключ.">
-  <link rel="stylesheet" href="expo-ees-neon-style.css?v=14">
+  <link rel="stylesheet" href="expo-ees-neon-style.css?v=15">
 </head>
 <body>
   <div class="neon-atmosphere" aria-hidden="true">
@@ -336,12 +336,14 @@
     </section>
 
     <section class="section home-portfolio-section" id="portfolio-showcase">
-      <div class="section-head reveal">
-        <p class="eyebrow">Реализованные проекты</p>
-        <h2>Портфолио</h2>
-        <p>Выберите направление и посмотрите примеры выполненных работ.</p>
-      </div>
-      <div class="home-portfolio-shell reveal">
+      <div class="home-portfolio-split reveal">
+        <div class="home-portfolio-column">
+          <div class="section-head home-portfolio-head">
+            <p class="eyebrow">Реализованные проекты</p>
+            <h2>Портфолио</h2>
+            <p>Выберите направление и посмотрите примеры выполненных работ.</p>
+          </div>
+          <div class="home-portfolio-shell">
         <div class="home-portfolio-tabs" role="tablist" aria-label="Категории портфолио">
           <button class="home-portfolio-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="portfolio-exclusive" data-portfolio-tab="exclusive">Эксклюзивные стенды</button>
           <button class="home-portfolio-tab" type="button" role="tab" aria-selected="false" aria-controls="portfolio-standard" data-portfolio-tab="standard">Стандартные стенды</button>
@@ -356,6 +358,7 @@
             <figure><img src="assets/exclusive/exclusive-13.jpg" alt="Индивидуальный стенд на выставке"><figcaption>Индивидуальный дизайн</figcaption></figure>
             <figure><img src="assets/exclusive/exclusive-18.jpg" alt="Готовый эксклюзивный стенд"><figcaption>Производство под ключ</figcaption></figure>
           </div>
+          <div class="home-portfolio-controls"><button type="button" data-portfolio-prev aria-label="Предыдущее фото">‹</button><span data-portfolio-counter>1 / 4</span><button type="button" data-portfolio-next aria-label="Следующее фото">›</button></div>
           <a class="home-portfolio-more" href="service-page.html?slug=eksklyuzivnyye_vystavochnyye_stendy">Смотреть все проекты <span aria-hidden="true">→</span></a>
         </div>
 
@@ -366,6 +369,7 @@
             <figure><img src="assets/pages/portfolio-03.jpg" alt="Оформление стандартного стенда"><figcaption>Оформление стенда</figcaption></figure>
             <figure><img src="assets/pages/portfolio-04.jpg" alt="Выставочный стенд под ключ"><figcaption>Застройка под ключ</figcaption></figure>
           </div>
+          <div class="home-portfolio-controls"><button type="button" data-portfolio-prev aria-label="Предыдущее фото">‹</button><span data-portfolio-counter>1 / 4</span><button type="button" data-portfolio-next aria-label="Следующее фото">›</button></div>
           <a class="home-portfolio-more" href="service-page.html?slug=standartnyye_vystavochnyye_stendy">Смотреть все проекты <span aria-hidden="true">→</span></a>
         </div>
 
@@ -376,18 +380,45 @@
             <figure><img src="assets/home-portfolio/tent-03.jpg" alt="Тентовый павильон"><figcaption>Тентовые павильоны</figcaption></figure>
             <figure><img src="assets/home-portfolio/tent-04.jpg" alt="Оформленный шатер"><figcaption>Комплексное оснащение</figcaption></figure>
           </div>
+          <div class="home-portfolio-controls"><button type="button" data-portfolio-prev aria-label="Предыдущее фото">‹</button><span data-portfolio-counter>1 / 4</span><button type="button" data-portfolio-next aria-label="Следующее фото">›</button></div>
           <a class="home-portfolio-more" href="service-page.html?slug=arenda-shatrov-i-tentovyh-konstrukczij-2">Смотреть все проекты <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="home-portfolio-panel" id="portfolio-stages" role="tabpanel" hidden data-portfolio-panel="stages">
+            <div class="home-portfolio-panel" id="portfolio-stages" role="tabpanel" hidden data-portfolio-panel="stages">
           <div class="home-portfolio-gallery">
             <figure class="is-featured"><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-01.jpg" alt="Сцена для мероприятия"><figcaption>Сцены для мероприятий</figcaption></figure>
             <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-03.jpg" alt="Сценическая конструкция"><figcaption>Сценические конструкции</figcaption></figure>
             <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-05.jpg" alt="Подиум для выступлений"><figcaption>Подиумы и площадки</figcaption></figure>
             <figure><img src="assets/pages/arenda-sczeny-dlya-meropriyatij-08.jpg" alt="Оформленная сцена"><figcaption>Монтаж и оформление</figcaption></figure>
           </div>
+          <div class="home-portfolio-controls"><button type="button" data-portfolio-prev aria-label="Предыдущее фото">‹</button><span data-portfolio-counter>1 / 4</span><button type="button" data-portfolio-next aria-label="Следующее фото">›</button></div>
           <a class="home-portfolio-more" href="service-page.html?slug=arenda-sczeny-dlya-meropriyatij">Смотреть все проекты <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
+
+        <aside class="home-portfolio-request" id="contact">
+          <div class="home-portfolio-request__head">
+            <p class="eyebrow">Заявка</p>
+            <h2>Обсудим ваш проект</h2>
+            <p>Оставьте контакты — менеджер уточнит задачу и подготовит предварительный расчет.</p>
+          </div>
+          <form class="lead-form home-portfolio-form">
+            <input type="text" placeholder="Ваше имя" aria-label="Ваше имя">
+            <input type="tel" placeholder="Телефон" aria-label="Телефон">
+            <input type="text" placeholder="Дата и город" aria-label="Дата и город">
+            <select aria-label="Что нужно">
+              <option>Эксклюзивный стенд</option>
+              <option>Стандартный стенд</option>
+              <option>Шатер</option>
+              <option>Сцена</option>
+              <option>Другое</option>
+            </select>
+            <button class="btn btn-primary" type="button">Отправить заявку</button>
+          </form>
+          <a class="home-portfolio-phone" href="tel:+79872978845">+7 987 297 88 45</a>
+          <span class="home-portfolio-hours">Ежедневно с 08:00 до 20:00</span>
+        </aside>
       </div>
     </section>
 
@@ -404,33 +435,6 @@
       </ol>
     </section>
 
-    <section class="section contact-panel" id="contact">
-      <div class="contact-copy reveal">
-        <p class="eyebrow">Заявка</p>
-        <h2>Контакты и быстрый расчет</h2>
-        <p>Ежедневно с 08:00 до 20:00. Можно оставить заявку или сразу позвонить менеджеру по мероприятию.</p>
-        <div class="contact-grid">
-          <a href="tel:+79872978845">+7 987 297 88 45</a>
-          <a href="tel:+79872128845">+7 987 212 88 45</a>
-          <a href="tel:+79872228845">+7 987 222 88 45</a>
-          <a href="tel:+79872858845">+7 987 285 88 45</a>
-          <a href="mailto:info@expo-ees.ru">info@expo-ees.ru</a>
-          <span>г. Казань, ул. Дубравная, д. 1/104к1</span>
-        </div>
-      </div>
-      <form class="lead-form reveal">
-        <input type="text" placeholder="Ваше имя" aria-label="Ваше имя">
-        <input type="tel" placeholder="Телефон" aria-label="Телефон">
-        <input type="text" placeholder="Дата и город" aria-label="Дата и город">
-        <select aria-label="Что нужно">
-          <option>Нужен шатер</option>
-          <option>Шатер + мебель</option>
-          <option>Стенд / выставочная зона</option>
-          <option>Другое</option>
-        </select>
-        <button class="btn btn-primary" type="button">Отправить заявку</button>
-      </form>
-    </section>
   </main>
 
   <section class="section clients-section" aria-label="Наши клиенты">
