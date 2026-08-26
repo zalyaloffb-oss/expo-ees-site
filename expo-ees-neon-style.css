@@ -10106,13 +10106,21 @@ main > .old-home-hero:first-child,
 
 .home-portfolio-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
   gap: 16px;
   align-items: stretch;
 }
 
 .home-portfolio-column {
   min-width: 0;
+  padding: clamp(16px, 1.7vw, 24px);
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(0, 229, 255, 0.1), transparent 34%),
+    radial-gradient(circle at 92% 92%, rgba(126, 83, 255, 0.13), transparent 38%),
+    rgba(4, 11, 20, 0.88);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
 }
 
 .home-portfolio-head {
@@ -10133,14 +10141,7 @@ main > .old-home-hero:first-child,
 }
 
 .home-portfolio-shell {
-  padding: 10px;
-  border: 1px solid rgba(0, 229, 255, 0.28);
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(0, 229, 255, 0.1), transparent 34%),
-    radial-gradient(circle at 92% 92%, rgba(126, 83, 255, 0.13), transparent 38%),
-    rgba(4, 11, 20, 0.88);
-  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.28);
+  padding: 0;
 }
 
 .home-portfolio-tabs {
@@ -10198,7 +10199,7 @@ main > .old-home-hero:first-child,
 .home-portfolio-gallery {
   position: relative;
   display: block;
-  min-height: 175px;
+  min-height: 290px;
   touch-action: pan-y;
 }
 
@@ -10211,7 +10212,7 @@ main > .old-home-hero:first-child,
   border-radius: 14px;
   background: #08121d;
   display: none;
-  height: 175px;
+  height: 290px;
 }
 
 .home-portfolio-gallery figure.is-active {
@@ -10328,6 +10329,7 @@ main > .old-home-hero:first-child,
 
 .home-portfolio-form {
   margin-top: auto;
+  grid-template-columns: 1fr;
 }
 
 .home-portfolio-form input,
