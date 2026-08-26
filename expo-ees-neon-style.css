@@ -10300,6 +10300,7 @@ main > .old-home-hero:first-child,
 .home-portfolio-request {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-width: 0;
   padding: clamp(20px, 2.2vw, 30px);
   border: 1px solid rgba(0, 229, 255, 0.32);
@@ -10328,7 +10329,7 @@ main > .old-home-hero:first-child,
 }
 
 .home-portfolio-form {
-  margin-top: auto;
+  margin-top: 0;
   grid-template-columns: 1fr;
 }
 
@@ -10417,6 +10418,185 @@ main > .old-home-hero:first-child,
 
   .home-portfolio-form {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Full-bleed portfolio image with translucent overlay controls. */
+.home-portfolio-column {
+  position: relative;
+  overflow: hidden;
+  min-height: 587px;
+  padding: 0;
+  background: #06101a;
+}
+
+.home-portfolio-head {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 6;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 229, 255, 0.26);
+  border-radius: 9px;
+  background: rgba(2, 8, 16, 0.62);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.home-portfolio-head .eyebrow {
+  margin: 0;
+}
+
+.home-portfolio-shell {
+  position: absolute;
+  inset: 0;
+}
+
+.home-portfolio-tabs {
+  position: absolute;
+  top: 74px;
+  right: 18px;
+  left: 18px;
+  z-index: 6;
+  margin: 0;
+  border-color: rgba(0, 229, 255, 0.28);
+  background: rgba(2, 8, 16, 0.64);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.home-portfolio-tab {
+  color: rgba(235, 246, 255, 0.78);
+}
+
+.home-portfolio-panel {
+  position: absolute;
+  inset: 0;
+}
+
+.home-portfolio-gallery,
+.home-portfolio-gallery figure,
+.home-portfolio-gallery figure.is-active {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+
+.home-portfolio-gallery figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 7, 14, 0.16), transparent 48%, rgba(2, 7, 14, 0.54));
+  pointer-events: none;
+}
+
+.home-portfolio-gallery figcaption {
+  z-index: 2;
+  right: 18px;
+  bottom: 70px;
+  left: 18px;
+  width: max-content;
+  max-width: calc(100% - 36px);
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+  background: rgba(2, 8, 16, 0.62);
+  backdrop-filter: blur(12px);
+}
+
+.home-portfolio-controls {
+  position: static;
+  display: block;
+  margin: 0;
+}
+
+.home-portfolio-controls button {
+  position: absolute;
+  top: 50%;
+  z-index: 7;
+  width: 46px;
+  height: 64px;
+  border-color: rgba(0, 229, 255, 0.5);
+  background: rgba(2, 8, 16, 0.58);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(12px);
+  transform: translateY(-50%);
+}
+
+.home-portfolio-controls [data-portfolio-prev] {
+  left: 18px;
+}
+
+.home-portfolio-controls [data-portfolio-next] {
+  right: 18px;
+}
+
+.home-portfolio-more {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  z-index: 6;
+  width: auto;
+  margin: 0;
+  border-color: rgba(0, 229, 255, 0.35);
+  background: rgba(2, 8, 16, 0.64);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 820px) {
+  .home-portfolio-column {
+    min-height: 520px;
+  }
+
+  .home-portfolio-tabs {
+    right: 12px;
+    left: 12px;
+    margin-right: 0;
+    padding-right: 4px;
+  }
+
+  .home-portfolio-gallery figure,
+  .home-portfolio-gallery figure.is-active {
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-portfolio-column {
+    min-height: 470px;
+  }
+
+  .home-portfolio-head {
+    top: 12px;
+    left: 12px;
+  }
+
+  .home-portfolio-tabs {
+    top: 64px;
+  }
+
+  .home-portfolio-controls button {
+    width: 42px;
+    height: 58px;
+  }
+
+  .home-portfolio-controls [data-portfolio-prev] {
+    left: 12px;
+  }
+
+  .home-portfolio-controls [data-portfolio-next] {
+    right: 12px;
+  }
+
+  .home-portfolio-gallery figcaption,
+  .home-portfolio-more {
+    right: 12px;
+    left: 12px;
   }
 }
 
