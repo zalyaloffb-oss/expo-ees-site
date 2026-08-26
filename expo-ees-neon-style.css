@@ -1269,13 +1269,21 @@
 }
 
 .equipment-product-card img {
-  cursor: zoom-in;
+  cursor: default;
 }
 
-.equipment-product-card img:hover,
-.equipment-product-card img:focus-visible {
-  outline: none;
-  filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.32));
+.equipment-product-card > img.enhanced-product-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  object-position: 50% 50%;
+  background: #777879;
+  border-radius: 0 !important;
+  box-shadow: none;
 }
 
 .equipment-seo-text {

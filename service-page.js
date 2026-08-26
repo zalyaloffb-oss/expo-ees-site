@@ -2223,7 +2223,7 @@ function renderFurnitureCatalog() {
   };
   const cards = items.map((item) => `
     <article class="product-card">
-      <img class="enhanced-product-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async" tabindex="0">
+      <img class="enhanced-product-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">
       <div>
         <span>${escapeHtml(categoryLabels[item.section] || "РњРµР±Рµль")}</span>
         <h3>${escapeHtml(item.title)}</h3>
@@ -3782,7 +3782,6 @@ initPortfolioNavScroller();
 initServiceCatalogSidebar();
 initPortfolioLightbox();
 initTentProductLightbox();
-initEquipmentLightbox();
 initStageGalleryLightbox();
 initStandSliders();
 initStandLightbox();
