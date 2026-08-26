@@ -10600,6 +10600,185 @@ main > .old-home-hero:first-child,
   }
 }
 
+/* Final portfolio/request alignment requested from the annotated layout. */
+.home-portfolio-side,
+.home-portfolio-request-side {
+  display: grid;
+  grid-template-rows: 64px 587px;
+  min-width: 0;
+}
+
+.home-portfolio-head,
+.home-portfolio-request-title {
+  position: static;
+  display: flex;
+  align-items: flex-end;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  text-align: left;
+}
+
+.home-portfolio-head .eyebrow {
+  margin: 0;
+  font-size: clamp(16px, 1.3vw, 20px);
+}
+
+.home-portfolio-request-title {
+  color: #ffffff;
+  font-size: clamp(26px, 2.15vw, 38px);
+  line-height: 1;
+}
+
+.home-portfolio-column,
+.home-portfolio-request {
+  width: 100%;
+  height: 587px;
+  min-height: 0;
+}
+
+.home-portfolio-tabs {
+  top: 18px;
+  right: 18px;
+  left: 18px;
+}
+
+.home-portfolio-gallery figcaption {
+  display: none;
+}
+
+.home-portfolio-controls button {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.home-portfolio-column:hover .home-portfolio-controls button,
+.home-portfolio-column:focus-within .home-portfolio-controls button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.home-portfolio-more {
+  right: auto;
+  bottom: 18px;
+  left: 18px;
+  width: max-content;
+  max-width: calc(100% - 36px);
+  min-height: 0;
+  padding: 10px 14px;
+  gap: 12px;
+}
+
+.home-portfolio-request {
+  position: relative;
+  display: block;
+}
+
+.home-portfolio-request__head {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  left: 18px;
+}
+
+.home-portfolio-request__head > p:last-child {
+  max-width: none;
+  margin: 0;
+}
+
+.home-portfolio-form {
+  position: absolute;
+  top: 88px;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.home-portfolio-form input,
+.home-portfolio-form select {
+  flex: 0 0 44px;
+  width: 100%;
+}
+
+.home-portfolio-form .btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 46px;
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .home-portfolio-side,
+  .home-portfolio-request-side {
+    grid-template-rows: auto 500px;
+    gap: 10px;
+  }
+
+  .home-portfolio-head,
+  .home-portfolio-request-title {
+    min-height: 0;
+    padding-bottom: 0;
+  }
+
+  .home-portfolio-column,
+  .home-portfolio-request {
+    height: 500px;
+  }
+
+  .home-portfolio-tabs {
+    top: 12px;
+  }
+
+  .home-portfolio-controls button {
+    display: none;
+  }
+
+  .home-portfolio-more {
+    bottom: 12px;
+    left: 12px;
+    max-width: calc(100% - 24px);
+  }
+
+  .home-portfolio-request__head {
+    top: 14px;
+    right: 14px;
+    left: 14px;
+  }
+
+  .home-portfolio-form {
+    top: 86px;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-portfolio-side,
+  .home-portfolio-request-side {
+    grid-template-rows: auto 470px;
+  }
+
+  .home-portfolio-column,
+  .home-portfolio-request {
+    height: 470px;
+  }
+}
+
 /* Yandex reviews on the home page. */
 .home-reviews-section {
   position: relative;
