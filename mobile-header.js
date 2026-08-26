@@ -4,17 +4,15 @@
   if (!header || !source || document.querySelector(".mobile-sticky-identity")) return;
 
   const servicesGroup = header.querySelector(".main-nav > .nav-group:first-child");
-  const servicesTrigger = servicesGroup?.querySelector(":scope > .nav-trigger");
   const isMobileViewport = window.matchMedia("(max-width: 640px)").matches;
+  const isHomePage = Boolean(document.querySelector(".old-home-hero"));
 
   if (isMobileViewport) {
     header.classList.add("is-mobile-expanded", "mobile-home-menu");
-    if (/service-page\.html$/i.test(window.location.pathname)) header.classList.add("mobile-service-page");
-    servicesGroup?.classList.add("is-open");
-  }
-  if (servicesTrigger && isMobileViewport) {
-    servicesTrigger.textContent = "Каталог продукции";
-    servicesTrigger.setAttribute("aria-expanded", "true");
+    if (/service-page\.html$/i.test(window.location.pathname)) {
+      header.classList.add("mobile-service-page");
+      document.body.classList.add("mobile-service-catalog-page");
+    }
   }
 
   const mobileBar = source.cloneNode(true);
@@ -39,4 +37,55 @@
   mobileBar.appendChild(compactToggle);
 
   document.body.appendChild(mobileBar);
+
+  if (isMobileViewport && isHomePage && servicesGroup) {
+    const homeCatalog = document.createElement("aside");
+    homeCatalog.className = "service-catalog-sidebar mobile-home-product-catalog";
+    homeCatalog.setAttribute("aria-label", "Каталог продукции");
+
+    const catalogToggle = document.createElement("button");
+    catalogToggle.className = "service-catalog-toggle";
+    catalogToggle.type = "button";
+    catalogToggle.setAttribute("aria-expanded", "true");
+    catalogToggle.innerHTML = '<span class="service-catalog-title">Каталог продукции:</span><i aria-hidden="true"></i>';
+
+    const catalogList = document.createElement("nav");
+    catalogList.className = "service-catalog-list";
+    servicesGroup.querySelectorAll(".nav-column").forEach((column) => {
+      const group = document.createElement("div");
+      group.className = "service-catalog-group";
+
+      const groupToggle = document.createElement("button");
+      groupToggle.className = "service-catalog-main";
+      groupToggle.type = "button";
+      groupToggle.setAttribute("aria-expanded", "false");
+      const sourceTitle = column.querySelector(":scope > span")?.textContent.trim() || "Раздел";
+      groupToggle.textContent = sourceTitle === "Стенды" ? "Выставочные стенды" : sourceTitle;
+
+      const sublist = document.createElement("div");
+      sublist.className = "service-catalog-sublist";
+      column.querySelectorAll(":scope > a").forEach((link) => sublist.appendChild(link.cloneNode(true)));
+
+      groupToggle.addEventListener("click", () => {
+        const willOpen = !group.classList.contains("is-open");
+        catalogList.querySelectorAll(".service-catalog-group").forEach((item) => {
+          item.classList.remove("is-open");
+          item.querySelector(".service-catalog-main")?.setAttribute("aria-expanded", "false");
+        });
+        group.classList.toggle("is-open", willOpen);
+        groupToggle.setAttribute("aria-expanded", String(willOpen));
+      });
+
+      group.append(groupToggle, sublist);
+      catalogList.appendChild(group);
+    });
+
+    catalogToggle.addEventListener("click", () => {
+      const isCollapsed = homeCatalog.classList.toggle("is-collapsed");
+      catalogToggle.setAttribute("aria-expanded", String(!isCollapsed));
+    });
+
+    homeCatalog.append(catalogToggle, catalogList);
+    header.insertAdjacentElement("afterend", homeCatalog);
+  }
 })();
