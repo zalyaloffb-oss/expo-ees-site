@@ -11011,10 +11011,10 @@ main > .old-home-hero:first-child,
     position: static;
     width: 100%;
     margin: 8px 0 0;
-    padding: 8px;
-    border: 1px solid rgba(0, 229, 255, 0.22);
-    border-radius: 10px;
-    background: rgba(3, 9, 16, 0.92);
+    padding: 0 10px 4px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     transform: none;
   }
 
@@ -11029,7 +11029,7 @@ main > .old-home-hero:first-child,
   .site-header.mobile-home-menu .nav-mega .nav-column,
   .site-header.mobile-home-menu .nav-mega .nav-column.is-open {
     display: grid;
-    gap: 5px;
+    gap: 0;
   }
 
   .site-header.mobile-home-menu .nav-mega .nav-column > span {
@@ -11037,14 +11037,15 @@ main > .old-home-hero:first-child,
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    min-height: 42px;
-    padding: 9px 11px;
-    border: 1px solid rgba(0, 229, 255, 0.2);
-    border-radius: 8px;
+    min-height: 44px;
+    padding: 10px 8px;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.17);
+    border-radius: 0;
     cursor: pointer;
     pointer-events: auto;
     color: #00e5ff;
-    background: linear-gradient(90deg, rgba(0, 229, 255, 0.09), rgba(126, 83, 255, 0.09));
+    background: transparent;
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
@@ -11071,12 +11072,13 @@ main > .old-home-hero:first-child,
   .site-header.mobile-home-menu .nav-mega .nav-column.is-open > a {
     display: flex !important;
     align-items: center;
-    min-height: 40px;
-    padding: 8px 10px;
-    border: 1px solid rgba(0, 229, 255, 0.14);
-    border-radius: 8px;
+    min-height: 38px;
+    padding: 8px 24px 8px 14px;
+    border: 0;
+    border-bottom: 1px solid rgba(133, 178, 195, 0.1);
+    border-radius: 0;
     color: #dce9f4;
-    background: linear-gradient(90deg, rgba(0, 229, 255, 0.06), rgba(126, 83, 255, 0.07));
+    background: transparent;
     font-size: 13px;
   }
 
