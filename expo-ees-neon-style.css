@@ -1302,6 +1302,7 @@
   cursor: default;
 }
 
+.equipment-product-card > img,
 .equipment-product-card > img.enhanced-product-image {
   display: block;
   width: 100%;
