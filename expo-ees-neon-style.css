@@ -3040,19 +3040,19 @@ h3 {
   .old-service-tile::before {
     inset: 0;
     background-color: transparent;
-    background-image: var(--tile-image);
-    background-position: var(--tile-position, center);
-    background-size: contain !important;
+    background-image: var(--tile-cutout, var(--tile-image));
+    background-position: var(--tile-cutout-position, var(--tile-position, center));
+    background-size: var(--tile-cutout-size, contain) !important;
     background-repeat: no-repeat;
     -webkit-mask-image: none;
     mask-image: none;
     filter: saturate(0.94) contrast(0.98) brightness(0.96);
   }
 
-  .old-service-tile:nth-child(2)::before,
-  .old-service-tile:nth-child(3)::before,
-  .old-service-tile:nth-child(4)::before,
-  .old-service-tile:nth-child(7)::before {
+  .old-service-tile:nth-child(2):not(.has-generated-cutout)::before,
+  .old-service-tile:nth-child(3):not(.has-generated-cutout)::before,
+  .old-service-tile:nth-child(4):not(.has-generated-cutout)::before,
+  .old-service-tile:nth-child(7):not(.has-generated-cutout)::before {
     -webkit-mask-image: linear-gradient(90deg, transparent 10%, #000 17%, #000 83%, transparent 90%);
     mask-image: linear-gradient(90deg, transparent 10%, #000 17%, #000 83%, transparent 90%);
   }
