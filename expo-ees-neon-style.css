@@ -6903,6 +6903,69 @@ b {
   }
 }
 
+/* Full tent configurator migrated from Google Apps Script. */
+.tent-configurator-host {
+  width: min(1880px, calc(100% - 32px));
+  margin: 20px auto 0;
+}
+
+.tent-configurator-host-panel {
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(0, 229, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 96% 0%, rgba(130, 92, 255, 0.14), transparent 38%),
+    rgba(3, 8, 14, 0.9);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.34), 0 0 42px rgba(0, 229, 255, 0.1);
+}
+
+.tent-configurator-host-intro {
+  padding: clamp(18px, 2vw, 28px);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.18);
+}
+
+.tent-configurator-host-intro h1 {
+  margin: 5px 0 8px;
+  color: #f4fbff;
+  font-size: clamp(24px, 2.2vw, 40px);
+  font-weight: 500;
+}
+
+.tent-configurator-host-intro p:last-child {
+  max-width: 980px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.tent-configurator-frame {
+  display: block;
+  width: 100%;
+  height: max(900px, calc(100vh - 190px));
+  border: 0;
+  background: #02060b;
+}
+
+@media (max-width: 760px) {
+  .tent-configurator-host {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+  }
+
+  .tent-configurator-host-intro {
+    padding: 16px;
+  }
+
+  .tent-configurator-host-intro h1 {
+    font-size: 23px;
+  }
+
+  .tent-configurator-frame {
+    height: 1180px;
+  }
+}
+
 /* The exclusive stands page keeps its gallery sliders on mobile only. */
 @media (min-width: 761px) {
   .exclusive-top-slider,
