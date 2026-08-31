@@ -750,7 +750,7 @@
 }
 
 .events-old-shell {
-  width: min(100% - 64px, 1880px);
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -6565,7 +6565,7 @@ b {
 }
 
 .articles-page-shell {
-  width: min(100% - 64px, 1880px);
+  width: 100%;
   margin: 0 auto;
 }
 
