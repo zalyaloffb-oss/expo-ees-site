@@ -6462,7 +6462,7 @@ b {
 }
 
 .article-full {
-  --article-detail-width: min(100%, 1420px);
+  --article-detail-width: 100%;
   padding: 0;
   border: 0;
   border-radius: 0;
