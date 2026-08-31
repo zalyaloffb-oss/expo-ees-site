@@ -3861,9 +3861,9 @@ input:focus {
 }
 
 .portfolio-page {
-  width: min(100%, 1880px);
+  width: min(1880px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 88px clamp(18px, 3vw, 48px) 120px;
+  padding: 88px 0 120px;
   overflow-x: clip;
 }
 
@@ -9773,11 +9773,11 @@ main > .old-home-hero:first-child,
 /* Portfolio event rail: matte glass with simple vertical dividers. */
 .portfolio-project-nav-shell {
   box-sizing: border-box;
-  left: 50%;
-  width: min(1880px, calc(100vw - 32px));
+  left: auto;
+  width: 100%;
   max-width: none;
   margin-inline: auto;
-  transform: translateX(-50%);
+  transform: none;
   overflow: hidden;
   border: 1px solid rgba(0, 229, 255, 0.18);
   border-radius: 8px;
