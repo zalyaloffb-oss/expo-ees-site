@@ -12016,3 +12016,32 @@ main > .old-home-hero:first-child,
     max-width: 320px;
   }
 }
+
+/* Header social icons enlarged by 50%. */
+.site-header .header-social {
+  width: 30px;
+  height: 30px;
+}
+
+.site-header .header-social::before {
+  width: 26px;
+  height: 26px;
+}
+
+.site-header .header-social-chat::before {
+  width: auto;
+  height: auto;
+  font-size: 11px;
+}
+
+@media (min-width: 1361px) {
+  .site-header .header-top-row {
+    grid-template-columns: minmax(500px, 1.08fr) minmax(250px, 0.5fr) minmax(170px, 0.25fr) minmax(360px, 0.72fr);
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1360px) {
+  .site-header .header-top-row {
+    grid-template-columns: minmax(340px, 0.94fr) minmax(220px, 0.5fr) minmax(160px, 0.24fr) minmax(300px, 0.72fr);
+  }
+}
