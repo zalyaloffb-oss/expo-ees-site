@@ -11959,3 +11959,60 @@ main > .old-home-hero:first-child,
 .site-footer .footer-bottom {
   width: 100%;
 }
+
+/* Unified monochrome social icons in the desktop and mobile header. */
+.header-social > span,
+.header-social > svg,
+.header-social-tg::after,
+.header-social-chat::after {
+  display: none !important;
+}
+
+.header-social::before {
+  content: "";
+  position: static;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  clip-path: none;
+}
+
+.header-social-tg::before {
+  inset: auto;
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Telegram_white.svg");
+}
+
+.header-social-chat::before {
+  content: "MAX";
+  width: auto;
+  height: auto;
+  color: #fff;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.header-social[aria-label="WhatsApp"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/WhatsApp_white.svg");
+}
+
+.header-social-email::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Gmail_white.svg");
+}
+
+.header-social[aria-label="VK"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/VK_white.svg");
+}
+
+@media (min-width: 1181px) {
+  .site-header .header-search {
+    flex: 0 1 320px;
+    max-width: 320px;
+  }
+}
