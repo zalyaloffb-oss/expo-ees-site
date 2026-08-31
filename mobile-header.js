@@ -16,7 +16,7 @@
     }
   }
 
-  if (mainNav) {
+  if (isMobileViewport && mainNav) {
     const homeLink = document.createElement("a");
     homeLink.className = "mobile-primary-nav-link mobile-primary-home";
     homeLink.href = "expo-ees-neon-concept.html";
