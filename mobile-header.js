@@ -53,7 +53,7 @@
   document.body.appendChild(mobileBar);
 
   const footerSocials = document.querySelector(".footer-socials");
-  if (footerSocials) {
+  if (isMobileViewport && footerSocials) {
     const headerSocials = footerSocials.cloneNode(true);
     headerSocials.classList.add("mobile-header-socials");
     headerSocials.setAttribute("aria-label", "Социальные сети и способы связи");
