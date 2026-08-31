@@ -2199,17 +2199,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 5px;
 }
 
 .header-social {
   position: relative;
-  display: block;
-  width: 24px;
-  height: 24px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
   color: rgba(219, 231, 242, 0.8);
   filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.16));
   transition: color 180ms ease, transform 180ms ease, filter 180ms ease;
+}
+
+.header-social-label span {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.header-social-email svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .header-social:hover {
