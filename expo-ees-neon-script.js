@@ -1375,6 +1375,35 @@ function initNeonCustomSelects(root = document) {
 
 initNeonCustomSelects();
 
+function initHomeReviewsSlider() {
+  const slider = document.querySelector(".home-reviews-slider");
+  const track = slider?.querySelector(".home-reviews-list");
+  const previous = slider?.querySelector(".home-reviews-prev");
+  const next = slider?.querySelector(".home-reviews-next");
+  if (!slider || !track || !previous || !next) return;
+
+  const step = () => {
+    const card = track.querySelector(".home-review-card");
+    if (!card) return track.clientWidth;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  const update = () => {
+    const max = Math.max(0, track.scrollWidth - track.clientWidth);
+    previous.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  };
+
+  previous.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+  next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+  track.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
+  update();
+}
+
+initHomeReviewsSlider();
+
 
 const serviceCardSlugs = [
   "arenda-shatrov-i-tentovyh-konstrukczij-2",

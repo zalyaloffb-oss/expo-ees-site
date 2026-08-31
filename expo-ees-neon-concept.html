@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EventExpoService — neon concept</title>
   <meta name="description" content="Неоновый концепт главной страницы для ИвентЭкспоСервис: шатры, стенды и event-инфраструктура под ключ.">
-  <link rel="stylesheet" href="expo-ees-neon-style.css?v=52">
+  <link rel="stylesheet" href="expo-ees-neon-style.css?v=53">
 </head>
 <body>
   <div class="neon-atmosphere" aria-hidden="true">
@@ -513,9 +513,7 @@
 
   <section class="section project-geo-section qorix-location" id="project-geography">
     <div class="section-head reveal">
-      <p class="eyebrow">География проектов</p>
       <h2>География проектов</h2>
-      <p>Кликабельная карта регионов: выбранная область подсвечивается, а рядом открывается окно с фотографиями и данными по проектам.</p>
     </div>
     <div class="qorix-location__layout reveal">
       <div id="interactive-map-popup" class="s-location__popup" aria-live="polite">
@@ -641,14 +639,17 @@
     </div>
 
     <div class="home-reviews-layout reveal">
-      <aside class="home-reviews-rating" aria-label="Рейтинг компании на Яндекс Картах: 4,7 из 5">
-        <span class="home-reviews-source"><i aria-hidden="true"></i> Яндекс Карты</span>
-        <strong>4,7</strong>
-        <div class="home-reviews-stars" aria-hidden="true">★★★★★</div>
-        <p>14 отзывов · 22 оценки</p>
-      </aside>
+      <div class="home-reviews-slider" aria-label="Отзывы клиентов">
+        <button class="home-reviews-arrow home-reviews-prev" type="button" aria-label="Предыдущий отзыв"></button>
+        <div class="home-reviews-list">
+        <article class="home-review-card">
+          <div class="home-review-card__head">
+            <span class="home-review-card__avatar" aria-hidden="true">ДГ</span>
+            <div><h3>Дружу с головой</h3><span>★★★★★</span></div>
+          </div>
+          <blockquote>«Лучшие застройщики в Татарстане! Сколько раз выручали и проводили мероприятия в срок и качественно. Обратились с нестандартным запросом — выполнить стенд и мебель как из Pinterest. Результат порадовал: макет воплотили в жизнь, руководство осталось довольным».</blockquote>
+        </article>
 
-      <div class="home-reviews-list">
         <article class="home-review-card">
           <div class="home-review-card__head">
             <span class="home-review-card__avatar" aria-hidden="true">ВК</span>
@@ -672,6 +673,8 @@
           </div>
           <blockquote>«Они — настоящие профи! Сделали крутой стенд для нашей компании, учли все пожелания, уложились в сроки. Видно, что люди любят своё дело и знают его. Однозначно рекомендую!»</blockquote>
         </article>
+        </div>
+        <button class="home-reviews-arrow home-reviews-next" type="button" aria-label="Следующий отзыв"></button>
       </div>
     </div>
 
@@ -732,6 +735,6 @@
   </footer>
 
   <script src="mobile-header.js?v=15"></script>
-  <script src="expo-ees-neon-script.js?v=9"></script>
+  <script src="expo-ees-neon-script.js?v=10"></script>
 </body>
 </html>
