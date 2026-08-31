@@ -830,9 +830,10 @@
 }
 
 .events-old-copy {
-  max-width: 1720px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
-  padding: 8px 0 0;
+  padding: 8px 0 0 18px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -6171,7 +6172,7 @@ input:focus {
   }
 
   .events-old-copy {
-    padding: 6px 0 0;
+    padding: 6px 0 0 18px;
   }
 
   .old-material-page {
