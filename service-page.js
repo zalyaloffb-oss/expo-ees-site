@@ -3227,8 +3227,10 @@ function renderArticlePage(article) {
             <p class="article-full-lead">${escapeHtml(lead)}</p>
             <a class="article-back-link" href="service-page.html?slug=news">Все статьи</a>
           </div>
-          ${renderArticleMediaSlider(article)}
-          <div class="article-full-content">${content}</div>
+          <div class="article-full-layout">
+            ${renderArticleMediaSlider(article)}
+            <div class="article-full-content">${content}</div>
+          </div>
         </article>
       </div>
     </section>
