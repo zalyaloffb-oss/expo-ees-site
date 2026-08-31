@@ -3070,7 +3070,26 @@ h3 {
     background:
       linear-gradient(180deg, rgba(4, 8, 18, 0.84) 0%, rgba(4, 8, 18, 0.48) 24%, transparent 52%),
       linear-gradient(115deg, rgba(0, 45, 66, 0.10), rgba(48, 22, 82, 0.12));
+    -webkit-backdrop-filter: blur(0) saturate(1);
+    backdrop-filter: blur(0) saturate(1);
+    box-shadow: inset 0 0 0 1px transparent;
     pointer-events: none;
+    transition:
+      background-color 240ms ease,
+      box-shadow 240ms ease,
+      -webkit-backdrop-filter 240ms ease,
+      backdrop-filter 240ms ease;
+  }
+
+  .old-service-tile:hover::after {
+    background:
+      linear-gradient(180deg, rgba(4, 10, 20, 0.56) 0%, rgba(7, 14, 28, 0.28) 48%, rgba(7, 14, 28, 0.22) 100%),
+      rgba(8, 18, 34, 0.18);
+    -webkit-backdrop-filter: blur(9px) saturate(1.18);
+    backdrop-filter: blur(9px) saturate(1.18);
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 229, 255, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10);
   }
 
   .old-service-tile:hover::before {
@@ -3082,31 +3101,7 @@ h3 {
     z-index: 2;
     align-self: flex-start;
     max-width: calc(100% - 4px);
-    margin: -7px -9px;
-    padding: 7px 9px;
-    border: 1px solid transparent;
-    border-radius: 7px;
-    background: rgba(4, 10, 20, 0);
-    -webkit-backdrop-filter: blur(0) saturate(1);
-    backdrop-filter: blur(0) saturate(1);
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.92), 0 0 24px rgba(0, 0, 0, 0.72);
-    transition:
-      background-color 220ms ease,
-      border-color 220ms ease,
-      box-shadow 220ms ease,
-      -webkit-backdrop-filter 220ms ease,
-      backdrop-filter 220ms ease;
-  }
-
-  .old-service-tile:hover h3 {
-    border-color: rgba(0, 229, 255, 0.28);
-    background: rgba(4, 12, 24, 0.48);
-    -webkit-backdrop-filter: blur(15px) saturate(1.25);
-    backdrop-filter: blur(15px) saturate(1.25);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      0 8px 24px rgba(0, 0, 0, 0.26),
-      0 0 22px rgba(0, 229, 255, 0.08);
   }
 }
 
