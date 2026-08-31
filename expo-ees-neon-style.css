@@ -2372,8 +2372,12 @@ img {
 }
 
 .header-configurator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   min-height: 40px;
+  box-sizing: border-box;
   padding: 10px 14px;
   border: 1px solid rgba(0, 229, 255, 0.42);
   border-radius: 6px;

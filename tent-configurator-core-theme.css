@@ -179,6 +179,20 @@ body {
   }
 }
 
+.stage .view-toggle {
+  position: absolute;
+  z-index: 310;
+  top: 18px;
+  right: 18px;
+  border: 1px solid #d4dce6;
+  background: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+}
+
+.stage .zoom-controls {
+  top: 70px;
+}
+
 @media (max-width: 760px) {
   .top {
     padding: 10px !important;
