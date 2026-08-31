@@ -4930,7 +4930,7 @@ input:focus {
   display: grid;
   grid-template-columns: minmax(260px, 0.95fr) minmax(320px, 1.35fr) minmax(260px, 0.8fr);
   gap: clamp(22px, 3vw, 56px);
-  padding: clamp(26px, 4vw, 54px);
+  padding: clamp(26px, 4vw, 54px) 18px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -4968,6 +4968,30 @@ input:focus {
 
 .footer-main-nav {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.footer-links {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 10px;
+}
+
+.footer-links h2 {
+  grid-column: 1 / -1;
+}
+
+.footer-contact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 10px;
+}
+
+.footer-contact h2,
+.footer-contact p,
+.footer-contact a[href^="mailto:"],
+.footer-contact > span,
+.footer-contact .footer-socials {
+  grid-column: 1 / -1;
 }
 
 .footer-links h2,
@@ -5044,6 +5068,47 @@ input:focus {
 .footer-socials a:hover {
   transform: translateY(-3px);
   border-color: rgba(0, 229, 255, 0.7);
+}
+
+.footer-socials a > span,
+.footer-socials a > svg {
+  display: none;
+}
+
+.footer-socials a::before {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.footer-socials a[aria-label="MAX"]::before {
+  content: "MAX";
+  width: auto;
+  height: auto;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-socials a[aria-label="Telegram"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Telegram_white.svg");
+}
+
+.footer-socials a[aria-label="WhatsApp"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/WhatsApp_white.svg");
+}
+
+.footer-socials a[aria-label="Email"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Gmail_white.svg");
+}
+
+.footer-socials a[aria-label="VK"]::before {
+  background-image: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/VK_white.svg");
 }
 
 .footer-bottom {
@@ -11872,4 +11937,25 @@ main > .old-home-hero:first-child,
     touch-action: pan-x;
     overscroll-behavior-inline: contain;
   }
+}
+
+/* Final text-accent treatment: line only, without a surrounding card. */
+.accent-text-block,
+.furniture-seo-text,
+.tent-text-block,
+.stage-text-block,
+.article-full-content,
+.events-old-copy,
+.services-overview-text,
+.old-material-copy {
+  padding-left: 24px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.site-footer .footer-shell,
+.site-footer .footer-bottom {
+  width: 100%;
 }

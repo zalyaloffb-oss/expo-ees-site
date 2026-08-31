@@ -71,6 +71,7 @@ const pages = {
   "nestandartnye-konstrukczii-2": { kicker: "Реклама", title: "Нестандартные рекламные конструкции", lead: "РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ Р±СЂРµРЅРґРёСЂРѕРІР°РЅРЅС‹Рµ РєРѕРЅСЃС‚СЂСѓРєС†РёРё Рё РЅРµСЃС‚Р°РЅРґР°СЂС‚РЅС‹Рµ С„РѕСЂРјС‹ РґР»СЏ Р·Р°РјРµС‚РЅРѕРіРѕ РїСЂРёСЃСѓС‚СЃС‚РІРёСЏ Р±СЂРµРЅРґР°.", image: "assets/site/case-05.jpg", items: ["Проектирование", "Производство", "Брендирование", "Монтаж"], gallerySlugs: ["nestandartnye-konstrukczii-2", "prochee"] },
   "oformlenie-prazdnikov": { kicker: "Декор", title: "Декорирование и оформление мероприятий", lead: "Визуальное оформление событий: от входной зоны до сцены и фотозон.", image: "assets/site/case-01.jpg", items: ["Концепция", "Декор", "Фотозоны", "Световые акценты"] },
   "shirokoformatnaya-pechat": { kicker: "Печать", title: "Широкоформатная печать", lead: "Печать баннеров, пресс-воллов, навигации и брендированных элементов для площадки.", image: "assets/site/portfolio-02.jpg", items: ["Баннеры", "Пресс-воллы", "Навигация", "РЎС‚РµРЅРґРѕРІР°СЏ РіСЂафика"] },
+  proizvodstvo: { kicker: "Собственное производство", title: "Производство", lead: "Изготавливаем детали и элементы оформления для выставочных стендов, мероприятий и рекламных конструкций на собственном оборудовании.", image: "assets/home/service-production-neon-v1.png", items: ["ЧПУ-фрезеровка", "Широкоформатная печать", "Раскрой материалов", "Изготовление конструкций"] },
   portfolio: { kicker: "Портфолио", title: "Портфолио проектов", lead: "Примеры реализованных мероприятий, выставок, шатровых зон, стендов и event-инфраструктуры со старого сайта.", image: "assets/pages/portfolio-01.jpg", items: ["Выставочные стенды", "Шатровые зоны", "Оформление мероприятий", "Сцены и инфраструктура"], gallerySlugs: ["portfolio"] },
   news: { kicker: "Статьи", title: "Статьи и материалы", lead: "Раздел для полезных материалов, новостей и экспертного контента о мероприятиях.", image: "assets/site/portfolio-03.jpg", items: ["Обзоры", "РРЅСЃС‚СЂСѓРєС†РёРё", "Новости", "Кейсы"], gallerySlugs: ["oformlenie-prazdnikov", "prochee"] },
   meropriyatiya: { kicker: "Мероприятия", title: "Мероприятия", lead: "Форматы событий, площадки, выставки и комплексное оснащение под задачу.", image: "assets/site/portfolio-04.jpg", items: ["Площадки", "Выставки", "Форумы", "Презентации"], gallerySlugs: ["arenda-shatrov-i-tentovyh-konstrukczij-2", "arenda-sczeny-dlya-meropriyatij"] },
@@ -114,7 +115,7 @@ const siteSections = [
     title: "Декор, печать и мероприятия",
     slug: "meropriyatiya",
     image: "assets/site/case-01.jpg",
-    links: ["oformlenie-prazdnikov", "shirokoformatnaya-pechat", "venues-for-events", "vystavki", "meropriyatiya", "news"]
+    links: ["oformlenie-prazdnikov", "shirokoformatnaya-pechat", "proizvodstvo", "venues-for-events", "vystavki", "meropriyatiya", "news"]
   }
 ];
 
