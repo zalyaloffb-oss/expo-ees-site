@@ -118,6 +118,67 @@ body {
   color: var(--ees-text) !important;
 }
 
+/* Keep the object picker light so its compact furniture icons stay readable. */
+.pop.fpop {
+  border-color: #dce3eb !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.24) !important;
+}
+
+.fpop .pt {
+  color: #66758a !important;
+}
+
+.fpop .flist button {
+  border: 1px solid #edf1f5 !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+}
+
+.fpop .flist button:hover {
+  border-color: #bfdbfe !important;
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+@media (min-width: 851px) {
+  .work {
+    grid-template-columns: minmax(0, 1fr) 450px !important;
+  }
+
+  .main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .side {
+    grid-column: 2;
+    grid-row: 1;
+    border-right: 0 !important;
+    border-left: 1px solid var(--ees-line) !important;
+  }
+
+  .side-toggle {
+    right: 397px !important;
+    left: auto !important;
+    transition: right 0.24s ease, width 0.24s ease, color 0.18s ease !important;
+  }
+
+  body.side-collapsed .work {
+    grid-template-columns: minmax(0, 1fr) 0 !important;
+  }
+
+  body.side-collapsed .side {
+    border-left: 0 !important;
+  }
+
+  body.side-collapsed .side-toggle {
+    right: 14px !important;
+    left: auto !important;
+  }
+}
+
 @media (max-width: 760px) {
   .top {
     padding: 10px !important;
