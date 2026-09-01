@@ -1634,7 +1634,7 @@ function initPortfolioNavScroller() {
       nav.scrollTo({ left: targetLeft, behavior });
     };
 
-    const activateMobileProject = (index, behavior = "smooth") => {
+    const activateMobileProject = (index, behavior = "smooth", revealContent = false) => {
       activeIndex = (index + links.length) % links.length;
       links.forEach((link, linkIndex) => {
         const active = linkIndex === activeIndex;
@@ -1647,6 +1647,16 @@ function initPortfolioNavScroller() {
         project.hidden = !active;
       });
       centerLink(activeIndex, behavior);
+      if (revealContent) {
+        requestAnimationFrame(() => {
+          const project = projects[activeIndex];
+          if (!project) return;
+          const shellRect = shell.getBoundingClientRect();
+          const projectRect = project.getBoundingClientRect();
+          const targetTop = shellRect.bottom + 5;
+          window.scrollBy({ top: projectRect.top - targetTop, behavior });
+        });
+      }
     };
 
     const syncMode = () => {
@@ -1668,7 +1678,7 @@ function initPortfolioNavScroller() {
     arrows.forEach((arrow) => {
       arrow.addEventListener("click", () => {
         const direction = Number(arrow.dataset.scrollDirection || 0);
-        if (mobileQuery.matches) activateMobileProject(activeIndex + direction);
+        if (mobileQuery.matches) activateMobileProject(activeIndex + direction, "smooth", true);
         else nav.scrollBy({ left: direction * 460, behavior: "smooth" });
       });
     });
@@ -1677,7 +1687,7 @@ function initPortfolioNavScroller() {
       link.addEventListener("click", (event) => {
         if (!mobileQuery.matches) return;
         event.preventDefault();
-        activateMobileProject(index);
+        activateMobileProject(index, "smooth", true);
       });
     });
 

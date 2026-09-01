@@ -12085,7 +12085,11 @@ main > .old-home-hero:first-child,
   }
 
   #serviceRoot > .portfolio-page:first-child {
+    box-sizing: border-box;
+    width: calc(100% - 20px) !important;
     margin-top: -61px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 
   .portfolio-project-nav-shell {
@@ -12156,5 +12160,23 @@ main > .old-home-hero:first-child,
 
   .portfolio-page.is-mobile-project-switcher .portfolio-project.is-active {
     display: block;
+    margin-top: 54px;
+  }
+
+  .portfolio-page.is-mobile-project-switcher .portfolio-project-head h2 {
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .portfolio-page.is-mobile-project-switcher .portfolio-project-head h2::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--cyan), #2e91ff 54%, #765cff);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.34);
   }
 }
