@@ -1644,7 +1644,7 @@ function initPortfolioNavScroller() {
       projects.forEach((project, projectIndex) => {
         const active = projectIndex === activeIndex;
         project.classList.toggle("is-active", active);
-        project.hidden = !active;
+        project.hidden = false;
       });
       centerLink(activeIndex, behavior);
       if (revealContent) {
@@ -1653,7 +1653,7 @@ function initPortfolioNavScroller() {
           if (!project) return;
           const shellRect = shell.getBoundingClientRect();
           const projectRect = project.getBoundingClientRect();
-          const targetTop = shellRect.bottom + 5;
+          const targetTop = shellRect.bottom + 10;
           window.scrollBy({ top: projectRect.top - targetTop, behavior });
         });
       }

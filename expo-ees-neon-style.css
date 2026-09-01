@@ -12152,15 +12152,15 @@ main > .old-home-hero:first-child,
   }
 
   .portfolio-page.is-mobile-project-switcher .portfolio-project {
-    display: none;
-    margin-top: 8px;
-    padding-top: 0;
-    border-top: 0;
+    display: block;
+    margin-top: 28px;
+    padding-top: 18px;
   }
 
-  .portfolio-page.is-mobile-project-switcher .portfolio-project.is-active {
-    display: block;
-    margin-top: 54px;
+  .portfolio-page.is-mobile-project-switcher .portfolio-project:first-of-type {
+    margin-top: 62px;
+    padding-top: 0;
+    border-top: 0;
   }
 
   .portfolio-page.is-mobile-project-switcher .portfolio-project-head h2 {
