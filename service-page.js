@@ -1675,6 +1675,23 @@ function initPortfolioNavScroller() {
       }
     };
 
+    let scrollFrame = 0;
+    const syncActiveProjectFromScroll = () => {
+      scrollFrame = 0;
+      if (!mobileQuery.matches || !projects.length) return;
+      const marker = shell.getBoundingClientRect().bottom + 20;
+      let nextIndex = 0;
+      projects.forEach((project, projectIndex) => {
+        if (project.getBoundingClientRect().top <= marker) nextIndex = projectIndex;
+      });
+      if (nextIndex !== activeIndex) activateMobileProject(nextIndex, "auto");
+    };
+
+    const requestScrollSync = () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(syncActiveProjectFromScroll);
+    };
+
     arrows.forEach((arrow) => {
       arrow.addEventListener("click", () => {
         const direction = Number(arrow.dataset.scrollDirection || 0);
@@ -1698,8 +1715,11 @@ function initPortfolioNavScroller() {
       nav.scrollLeft += event.deltaY;
     }, { passive: false });
 
+    window.addEventListener("scroll", requestScrollSync, { passive: true });
+    window.addEventListener("resize", requestScrollSync, { passive: true });
     mobileQuery.addEventListener?.("change", syncMode);
     syncMode();
+    requestScrollSync();
   });
 }
 
