@@ -12049,15 +12049,27 @@ main > .old-home-hero:first-child,
 /* Mobile services overview: compact two-column menu cards. */
 @media (max-width: 760px) {
   .services-overview-page {
-    width: calc(100% - 20px);
+    box-sizing: border-box;
+    width: calc(100% - 20px) !important;
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .services-overview-grid {
+    width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    justify-items: stretch;
     gap: 8px;
   }
 
   .services-overview-card {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    justify-self: stretch;
     aspect-ratio: 1.35 / 1;
     min-height: 0;
     border-radius: 7px;
