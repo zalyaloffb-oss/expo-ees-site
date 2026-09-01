@@ -12084,7 +12084,12 @@ main > .old-home-hero:first-child,
     margin-top: 5px !important;
   }
 
+  #serviceRoot > .portfolio-page:first-child {
+    margin-top: -61px !important;
+  }
+
   .portfolio-project-nav-shell {
+    top: calc(max(8px, env(safe-area-inset-top)) + 71px) !important;
     height: 55px;
     min-height: 55px;
     margin-bottom: 8px !important;
