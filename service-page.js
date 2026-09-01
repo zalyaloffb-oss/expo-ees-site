@@ -2226,7 +2226,7 @@ function initServiceCatalogSidebar() {
         sidebar.classList.add("is-collapsed");
         toggle?.setAttribute("aria-expanded", "false");
       }
-      if (mobileQuery.matches && currentScrollY <= 4) {
+      if (mobileQuery.matches && (currentScrollY < lastScrollY - 4 || currentScrollY <= 4)) {
         sidebar.classList.remove("is-collapsed");
         toggle?.setAttribute("aria-expanded", "true");
       }

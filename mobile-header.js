@@ -127,7 +127,7 @@
           homeCatalog.classList.add("is-collapsed");
           catalogToggle.setAttribute("aria-expanded", "false");
         }
-        if (currentScrollY <= 4) {
+        if (currentScrollY < catalogScrollY - 4 || currentScrollY <= 4) {
           homeCatalog.classList.remove("is-collapsed");
           catalogToggle.setAttribute("aria-expanded", "true");
         }
