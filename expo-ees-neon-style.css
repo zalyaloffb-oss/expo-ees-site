@@ -12101,7 +12101,7 @@ main > .old-home-hero:first-child,
     top: 9px;
     right: 8px;
     left: 9px;
-    font-size: clamp(10px, 2.9vw, 12px);
+    font-size: clamp(7px, 2.03vw, 8.4px);
     line-height: 1.08;
   }
 
