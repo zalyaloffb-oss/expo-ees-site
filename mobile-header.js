@@ -110,4 +110,25 @@
     homeCatalog.append(catalogToggle, catalogList);
     header.insertAdjacentElement("afterend", homeCatalog);
   }
+
+  const backToTop = document.createElement("button");
+  backToTop.className = "back-to-top";
+  backToTop.type = "button";
+  backToTop.setAttribute("aria-label", "Вернуться наверх");
+  backToTop.innerHTML = '<span aria-hidden="true"></span>';
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  let backToTopFrame = 0;
+  const updateBackToTop = () => {
+    backToTopFrame = 0;
+    backToTop.classList.toggle("is-visible", window.scrollY > 360);
+  };
+  window.addEventListener("scroll", () => {
+    if (backToTopFrame) return;
+    backToTopFrame = requestAnimationFrame(updateBackToTop);
+  }, { passive: true });
+  document.body.appendChild(backToTop);
+  updateBackToTop();
 })();
