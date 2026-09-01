@@ -12079,4 +12079,67 @@ main > .old-home-hero:first-child,
   .services-overview-card:hover img {
     transform: scale(1);
   }
+
+  #serviceRoot:has(> .portfolio-page) {
+    margin-top: 5px !important;
+  }
+
+  .portfolio-project-nav-shell {
+    height: 55px;
+    min-height: 55px;
+    margin-bottom: 8px !important;
+    padding-inline: 40px !important;
+  }
+
+  .portfolio-project-nav {
+    height: 53px;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+    scroll-snap-type: none;
+  }
+
+  .portfolio-project-nav a {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    min-height: 53px;
+    padding: 6px 8px;
+    font-size: 9px;
+    line-height: 1.12;
+  }
+
+  .portfolio-project-nav a.is-active {
+    color: #fff;
+    background: rgba(0, 229, 255, 0.06);
+  }
+
+  .portfolio-nav-arrow {
+    width: 40px;
+  }
+
+  .portfolio-nav-arrow::before {
+    width: 18px;
+    height: 18px;
+    border-width: 2px;
+  }
+
+  .portfolio-nav-prev::before {
+    left: 14px;
+  }
+
+  .portfolio-nav-next::before {
+    right: 14px;
+  }
+
+  .portfolio-page.is-mobile-project-switcher .portfolio-project {
+    display: none;
+    margin-top: 8px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .portfolio-page.is-mobile-project-switcher .portfolio-project.is-active {
+    display: block;
+  }
 }

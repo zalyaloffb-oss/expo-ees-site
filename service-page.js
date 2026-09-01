@@ -1619,20 +1619,77 @@ function renderPortfolioPage() {
 function initPortfolioNavScroller() {
   document.querySelectorAll("[data-scroll-nav]").forEach((shell) => {
     const nav = shell.querySelector(".portfolio-project-nav");
-    const arrows = shell.querySelectorAll("[data-scroll-direction]");
-    if (!nav || !arrows.length) return;
+    const arrows = [...shell.querySelectorAll("[data-scroll-direction]")];
+    const links = [...nav?.querySelectorAll("a") || []];
+    const page = shell.closest(".portfolio-page");
+    const projects = [...page?.querySelectorAll(".portfolio-project") || []];
+    const mobileQuery = window.matchMedia("(max-width: 760px)");
+    let activeIndex = Math.max(0, links.findIndex((link) => link.hash === window.location.hash));
+    if (!nav || !arrows.length || !links.length) return;
+
+    const centerLink = (index, behavior = "smooth") => {
+      const link = links[index];
+      if (!link) return;
+      const targetLeft = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
+      nav.scrollTo({ left: targetLeft, behavior });
+    };
+
+    const activateMobileProject = (index, behavior = "smooth") => {
+      activeIndex = (index + links.length) % links.length;
+      links.forEach((link, linkIndex) => {
+        const active = linkIndex === activeIndex;
+        link.classList.toggle("is-active", active);
+        link.setAttribute("aria-current", active ? "true" : "false");
+      });
+      projects.forEach((project, projectIndex) => {
+        const active = projectIndex === activeIndex;
+        project.classList.toggle("is-active", active);
+        project.hidden = !active;
+      });
+      centerLink(activeIndex, behavior);
+    };
+
+    const syncMode = () => {
+      const mobile = mobileQuery.matches;
+      page?.classList.toggle("is-mobile-project-switcher", mobile);
+      if (mobile) activateMobileProject(activeIndex, "auto");
+      else {
+        links.forEach((link) => {
+          link.classList.remove("is-active");
+          link.removeAttribute("aria-current");
+        });
+        projects.forEach((project) => {
+          project.classList.remove("is-active");
+          project.hidden = false;
+        });
+      }
+    };
 
     arrows.forEach((arrow) => {
       arrow.addEventListener("click", () => {
-        nav.scrollBy({ left: Number(arrow.dataset.scrollDirection || 0) * 460, behavior: "smooth" });
+        const direction = Number(arrow.dataset.scrollDirection || 0);
+        if (mobileQuery.matches) activateMobileProject(activeIndex + direction);
+        else nav.scrollBy({ left: direction * 460, behavior: "smooth" });
+      });
+    });
+
+    links.forEach((link, index) => {
+      link.addEventListener("click", (event) => {
+        if (!mobileQuery.matches) return;
+        event.preventDefault();
+        activateMobileProject(index);
       });
     });
 
     nav.addEventListener("wheel", (event) => {
+      if (mobileQuery.matches) return;
       if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
       event.preventDefault();
       nav.scrollLeft += event.deltaY;
     }, { passive: false });
+
+    mobileQuery.addEventListener?.("change", syncMode);
+    syncMode();
   });
 }
 
