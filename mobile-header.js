@@ -10,6 +10,12 @@
 
   if (isMobileViewport) {
     header.classList.add("is-mobile-expanded", "mobile-home-menu");
+    const requestButton = header.querySelector(".header-request");
+    const configuratorButton = header.querySelector(".header-configurator");
+    if (requestButton && configuratorButton) {
+      requestButton.insertAdjacentElement("afterend", configuratorButton);
+      configuratorButton.style.setProperty("display", "inline-flex", "important");
+    }
     if (/service-page\.html$/i.test(window.location.pathname)) {
       header.classList.add("mobile-service-page");
       document.body.classList.add("mobile-service-catalog-page");
