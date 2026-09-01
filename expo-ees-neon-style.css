@@ -10038,29 +10038,51 @@ main > .old-home-hero:first-child,
   background: #05080d;
 }
 
-.services-overview-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.services-overview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #05080d var(--overview-image) center / cover no-repeat;
   transition: transform 0.45s ease, filter 0.45s ease;
 }
 
-.services-overview-card:hover img {
-  transform: scale(1.15);
+.services-overview-card.has-generated-cutout::before {
+  background:
+    radial-gradient(circle at 18% 72%, rgba(0, 135, 255, 0.28), transparent 42%),
+    radial-gradient(circle at 88% 65%, rgba(202, 39, 255, 0.25), transparent 44%),
+    linear-gradient(115deg, #18263c 0%, #2c2b42 52%, #39264a 100%);
+}
+
+.services-overview-card:hover::before {
+  transform: scale(1.04);
   filter: brightness(1.12) saturate(1.08);
+}
+
+.services-overview-card-cutout {
+  position: absolute;
+  z-index: 1;
+  inset: 5px;
+  background: var(--overview-cutout) var(--overview-cutout-position, center bottom) / var(--overview-cutout-size, contain) no-repeat;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.services-overview-card:hover .services-overview-card-cutout {
+  transform: scale(1.025);
+  filter: brightness(1.06) saturate(1.05);
 }
 
 .services-overview-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.08) 66%, rgba(0, 0, 0, 0));
+  background: linear-gradient(180deg, rgba(2, 6, 14, 0.9) 0%, rgba(2, 6, 14, 0.62) 30%, rgba(0, 0, 0, 0.08) 62%, rgba(0, 0, 0, 0));
   pointer-events: none;
+  z-index: 2;
 }
 
 .services-overview-card-title {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: 14px;
   left: 18px;
   right: 16px;
@@ -12083,13 +12105,12 @@ main > .old-home-hero:first-child,
     line-height: 1.08;
   }
 
-  .services-overview-card img {
-    transform: scale(0.94);
-    object-fit: contain;
+  .services-overview-card::before {
+    background-size: cover;
   }
 
-  .services-overview-card:hover img {
-    transform: scale(1);
+  .services-overview-card-cutout {
+    inset: 5px;
   }
 
   #serviceRoot:has(> .portfolio-page) {

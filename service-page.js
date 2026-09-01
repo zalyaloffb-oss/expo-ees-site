@@ -3639,47 +3639,79 @@ function renderServicesOverviewPage() {
     {
       title: "Эксклюзивные выставочные стенды",
       slug: "eksklyuzivnyye_vystavochnyye_stendy",
-      image: "assets/home/service-exclusive-stand-neon-v3.jpg"
+      image: "assets/home/service-exclusive-stand-neon-v3.jpg",
+      cutout: "assets/home/service-exclusive-cutout-v1.png",
+      cutoutPosition: "center center",
+      cutoutSize: "contain"
     },
     {
       title: "Стандартные выставочные стенды",
       slug: "standartnyye_vystavochnyye_stendy",
-      image: "assets/home/service-standard-stand-neon-v3.png"
+      image: "assets/home/service-standard-stand-neon-v3.png",
+      cutout: "assets/home/service-standard-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "auto 72%"
     },
     {
       title: "Аренда шатров и тентовых конструкций",
       slug: "arenda-shatrov-i-tentovyh-konstrukczij",
-      image: "assets/home/service-tents-neon-v3.png"
+      image: "assets/home/service-tents-neon-v3.png",
+      cutout: "assets/home/service-tents-cutout-v1.png",
+      cutoutPosition: "center center",
+      cutoutSize: "contain"
     },
     {
       title: "Аренда мебели",
       slug: "arenda-mebeli-i-oborudovaniya",
-      image: "assets/home/service-furniture-neon-v2.png"
+      image: "assets/home/service-furniture-neon-v2.png",
+      cutout: "assets/home/service-furniture-cutout-v1.png",
+      cutoutPosition: "center center",
+      cutoutSize: "contain"
     },
     {
       title: "Аренда гардероба",
       slug: "garderob",
-      image: "assets/home/service-wardrobe-neon.jpg"
+      image: "assets/home/service-wardrobe-neon.jpg",
+      cutout: "assets/home/service-wardrobe-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "auto 74%"
     },
     {
       title: "Аренда мультимедийного оборудования",
-      slug: "multimedia",
-      image: "assets/home/service-media-neon.jpg"
+      slug: "arenda-multimedijnogo-oborudovaniya",
+      image: "assets/home/service-media-neon.jpg",
+      cutout: "assets/home/service-media-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "auto 82%"
     },
     {
       title: "Аренда климатического оборудования",
       slug: "klimaticheskoe-oborudovanie",
-      image: "assets/home/service-climate-neon.jpg"
+      image: "assets/home/service-climate-neon.jpg",
+      cutout: "assets/home/service-climate-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "auto 78%"
     },
     {
       title: "Сцены, пресс-воллы, оформление галерей",
       slug: "arenda-sczen-press-volov-ofrmlenie-kartinnyh-galerej",
-      image: "assets/home/service-stage-neon-v3.jpg"
+      image: "assets/home/service-stage-neon-v3.jpg",
+      cutout: "assets/home/service-stage-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "auto 82%"
     },
     {
-      title: "Другое",
-      slug: "dop_oborudovanie",
-      image: "assets/home/service-extra-old.jpg"
+      title: "Холодильное и дополнительное оборудование",
+      slug: "arenda-holodilnogo-oborudovaniya",
+      image: "assets/home/service-extra-neon-v3.png?v=2",
+      cutout: "assets/home/service-extra-cutout-v1.png",
+      cutoutPosition: "center bottom",
+      cutoutSize: "72% auto"
+    },
+    {
+      title: "Производство",
+      slug: "proizvodstvo",
+      image: "assets/home/service-production-neon-v1.png"
     }
   ];
 
@@ -3708,8 +3740,8 @@ function renderServicesOverviewPage() {
   });
 
   const cardsHtml = cards.map((card) => `
-    <a class="services-overview-card reveal is-visible" href="${localUrl(card.slug)}">
-      <img src="${escapeHtml(card.image)}" alt="${escapeHtml(card.title)}">
+    <a class="services-overview-card${card.cutout ? " has-generated-cutout" : ""} reveal is-visible" href="${localUrl(card.slug)}" style="--overview-image: url('${escapeHtml(card.image)}');${card.cutout ? ` --overview-cutout: url('${escapeHtml(card.cutout)}'); --overview-cutout-position: ${escapeHtml(card.cutoutPosition)}; --overview-cutout-size: ${escapeHtml(card.cutoutSize)};` : ""}">
+      ${card.cutout ? `<span class="services-overview-card-cutout" aria-hidden="true"></span>` : ""}
       <span class="services-overview-card-title">${escapeHtml(card.title)}</span>
     </a>
   `).join("");
