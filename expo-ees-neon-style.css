@@ -11449,6 +11449,24 @@ main > .old-home-hero:first-child,
     display: none;
   }
 
+  .site-header.mobile-home-menu.is-mobile-aux-open .header-request {
+    order: 4;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .site-header.mobile-home-menu.is-mobile-aux-open .header-configurator {
+    order: 5;
+    display: inline-flex !important;
+    width: calc(100% + 20px);
+    min-height: 46px;
+    margin: 0 -10px -10px;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 0 0 8px 8px;
+  }
+
   .site-header.mobile-home-menu .main-nav > a,
   .site-header.mobile-home-menu .main-nav > .nav-group:not(:first-child) > .nav-trigger {
     display: flex;
