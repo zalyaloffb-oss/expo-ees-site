@@ -11250,20 +11250,21 @@ main > .old-home-hero:first-child,
 
   .service-catalog-toggle .service-catalog-title {
     font-weight: 300;
+    font-size: clamp(12.6px, 3.55vw, 16.8px);
     text-transform: uppercase;
     letter-spacing: 0.035em;
   }
 
   .service-catalog-list {
-    gap: 4px;
+    gap: 5.2px;
   }
 
   .service-catalog-group {
-    gap: 4px;
+    gap: 5.2px;
   }
 
   .service-catalog-main {
-    min-height: 19px;
+    min-height: 25px;
   }
 
   .service-catalog-sidebar {

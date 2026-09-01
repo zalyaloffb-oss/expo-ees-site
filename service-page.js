@@ -2215,6 +2215,27 @@ function initServiceCatalogSidebar() {
       const isCollapsed = sidebar.classList.toggle("is-collapsed");
       toggle.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
     });
+
+    const mobileQuery = window.matchMedia("(max-width: 640px)");
+    let lastScrollY = window.scrollY;
+    let scrollFrame = 0;
+    const collapseOnScroll = () => {
+      scrollFrame = 0;
+      const currentScrollY = window.scrollY;
+      if (mobileQuery.matches && currentScrollY > lastScrollY + 4 && currentScrollY > 24) {
+        sidebar.classList.add("is-collapsed");
+        toggle?.setAttribute("aria-expanded", "false");
+      }
+      if (mobileQuery.matches && currentScrollY <= 4) {
+        sidebar.classList.remove("is-collapsed");
+        toggle?.setAttribute("aria-expanded", "true");
+      }
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(collapseOnScroll);
+    }, { passive: true });
   });
 
   const groups = [...document.querySelectorAll(".service-catalog-group")];

@@ -115,6 +115,25 @@
 
     homeCatalog.append(catalogToggle, catalogList);
     header.insertAdjacentElement("afterend", homeCatalog);
+
+    let catalogScrollY = window.scrollY;
+    let catalogScrollFrame = 0;
+    window.addEventListener("scroll", () => {
+      if (catalogScrollFrame) return;
+      catalogScrollFrame = requestAnimationFrame(() => {
+        catalogScrollFrame = 0;
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > catalogScrollY + 4 && currentScrollY > 24) {
+          homeCatalog.classList.add("is-collapsed");
+          catalogToggle.setAttribute("aria-expanded", "false");
+        }
+        if (currentScrollY <= 4) {
+          homeCatalog.classList.remove("is-collapsed");
+          catalogToggle.setAttribute("aria-expanded", "true");
+        }
+        catalogScrollY = currentScrollY;
+      });
+    }, { passive: true });
   }
 
   const backToTop = document.createElement("button");
