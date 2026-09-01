@@ -12045,3 +12045,38 @@ main > .old-home-hero:first-child,
     grid-template-columns: minmax(340px, 0.94fr) minmax(220px, 0.5fr) minmax(160px, 0.24fr) minmax(300px, 0.72fr);
   }
 }
+
+/* Mobile services overview: compact two-column menu cards. */
+@media (max-width: 760px) {
+  .services-overview-page {
+    width: calc(100% - 20px);
+  }
+
+  .services-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .services-overview-card {
+    aspect-ratio: 1.35 / 1;
+    min-height: 0;
+    border-radius: 7px;
+  }
+
+  .services-overview-card-title {
+    top: 9px;
+    right: 8px;
+    left: 9px;
+    font-size: clamp(10px, 2.9vw, 12px);
+    line-height: 1.08;
+  }
+
+  .services-overview-card img {
+    transform: scale(0.94);
+    object-fit: contain;
+  }
+
+  .services-overview-card:hover img {
+    transform: scale(1);
+  }
+}
