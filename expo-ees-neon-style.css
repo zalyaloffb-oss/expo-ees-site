@@ -11249,8 +11249,21 @@ main > .old-home-hero:first-child,
   }
 
   .service-catalog-toggle .service-catalog-title {
-    font-weight: 400;
-    text-transform: lowercase;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+  }
+
+  .service-catalog-list {
+    gap: 4px;
+  }
+
+  .service-catalog-group {
+    gap: 4px;
+  }
+
+  .service-catalog-main {
+    min-height: 19px;
   }
 
   .service-catalog-sidebar {

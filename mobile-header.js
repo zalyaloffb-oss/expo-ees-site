@@ -75,7 +75,7 @@
     catalogToggle.className = "service-catalog-toggle";
     catalogToggle.type = "button";
     catalogToggle.setAttribute("aria-expanded", "true");
-    catalogToggle.innerHTML = '<span class="service-catalog-title">каталог продукции:</span><i aria-hidden="true"></i>';
+    catalogToggle.innerHTML = '<span class="service-catalog-title">КАТАЛОГ ПРОДУКЦИИ:</span><i aria-hidden="true"></i>';
 
     const catalogList = document.createElement("nav");
     catalogList.className = "service-catalog-list";

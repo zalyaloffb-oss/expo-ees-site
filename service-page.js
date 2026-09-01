@@ -2185,7 +2185,7 @@ function renderServiceCatalogSidebar() {
   return `
     <aside class="service-catalog-sidebar reveal is-visible" aria-label="Каталог продукции">
       <button class="service-catalog-toggle" type="button" aria-expanded="true">
-        <span class="service-catalog-title">РљР°С‚Р°Р»РѕРі РїСЂРѕРґСѓРєС†РёРё:</span>
+        <span class="service-catalog-title">КАТАЛОГ ПРОДУКЦИИ:</span>
         <i aria-hidden="true"></i>
       </button>
       <nav class="service-catalog-list">
