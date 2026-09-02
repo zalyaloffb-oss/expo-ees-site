@@ -12770,6 +12770,11 @@ body,
   font-size: 13px;
 }
 
+/* Match the header social spacing to the footer row. */
+.site-header .header-socials {
+  gap: 10px;
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
