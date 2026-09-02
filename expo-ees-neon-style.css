@@ -7115,6 +7115,14 @@ b {
   }
 }
 
+/* Top-level desktop navigation sits one small step above service-card labels. */
+@media (min-width: 901px) {
+  .site-header .main-nav > a,
+  .site-header .main-nav > .nav-group > .nav-trigger {
+    font-size: clamp(16px, 1.08vw, 20px) !important;
+  }
+}
+
 /* Full tent configurator migrated from Google Apps Script. */
 .tent-configurator-host {
   width: min(1880px, calc(100% - 32px));
