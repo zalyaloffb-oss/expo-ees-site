@@ -217,6 +217,8 @@ if (homeSlider) {
     if (!tabs.length) return;
     const tabWidth = tabs[0].offsetWidth || 74;
     const travel = Math.max(0, homeSlider.clientWidth - tabWidth * tabs.length);
+    homeSlider.style.setProperty("--home-left-tabs-width", `${tabWidth * (activeSlide + 1)}px`);
+    homeSlider.style.setProperty("--home-right-tabs-width", `${tabWidth * (tabs.length - activeSlide - 1)}px`);
     tabs.forEach((tab, tabIndex) => {
       tab.style.setProperty("--tab-index", tabIndex);
       tab.style.setProperty("--tabs-total", tabs.length);

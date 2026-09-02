@@ -5581,11 +5581,12 @@ input:focus {
 
 /* Home slider: project stages over the image */
 .old-home-slider .home-slide figcaption {
-  left: clamp(96px, 11vw, 176px);
-  right: auto;
+  left: calc(var(--home-left-tabs-width, 74px) + 28px);
+  right: calc(var(--home-right-tabs-width, 222px) + 28px);
   bottom: clamp(34px, 6vh, 72px);
   display: grid;
-  width: min(520px, calc(100% - 370px));
+  width: auto;
+  max-width: 560px;
   gap: 10px;
   padding: 20px 22px;
   border: 0;
@@ -5694,7 +5695,7 @@ input:focus {
   min-height: min(620px, calc(100vh - 118px));
   object-fit: cover;
   object-position: 34% 50%;
-  filter: saturate(1.12) contrast(1.06) brightness(0.82);
+  filter: saturate(1.06) contrast(1.02);
   transform: none;
 }
 
@@ -5702,11 +5703,7 @@ input:focus {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(3, 4, 7, 0.92) 0%, rgba(3, 4, 7, 0.72) 38%, rgba(3, 4, 7, 0.28) 72%),
-    linear-gradient(180deg, rgba(3, 4, 7, 0.25), rgba(3, 4, 7, 0.74)),
-    linear-gradient(135deg, rgba(0, 229, 255, 0.24), transparent 42%),
-    linear-gradient(315deg, rgba(138, 92, 255, 0.2), transparent 44%);
+  background: transparent;
   mix-blend-mode: normal;
 }
 
