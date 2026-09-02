@@ -12801,6 +12801,14 @@ body,
   color: var(--lime) !important;
 }
 
+/* Dark labels on bright gradient controls. */
+body .header-request,
+.home-slider-tabs button.is-active,
+.home-slider-tabs button.is-active span {
+  color: #05070b !important;
+  text-shadow: none;
+}
+
 /* Equal desktop navigation typography for links and dropdown triggers. */
 @media (min-width: 981px) {
   .site-header .main-nav > a,
