@@ -246,6 +246,7 @@
   text-shadow: 0 0 22px rgba(0, 229, 255, 0.36), 0 0 46px rgba(138, 92, 255, 0.18);
 }
 
+
 .service-catalog-toggle {
   display: flex;
   align-items: center;
@@ -12426,5 +12427,53 @@ main > .old-home-hero:first-child,
     width: auto;
     margin-left: auto;
     padding: 0 4px;
+  }
+}
+
+/* Final header geometry: no upper rounding in any visible desktop/mobile state. */
+html body .site-header,
+html body .site-header.mobile-home-menu,
+html body .mobile-sticky-identity,
+html body .mobile-sticky-identity:has(.mobile-sticky-menu.is-open) {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+html body .site-header::before,
+html body .site-header::after,
+html body .mobile-sticky-identity::before,
+html body .mobile-sticky-identity::after {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+@media (max-width: 640px) {
+  html body .mobile-sticky-identity {
+    top: 0 !important;
+  }
+
+  html body .site-header.mobile-home-menu.is-mobile-aux-open {
+    top: 62px !important;
+  }
+}
+
+/* Keep the first desktop slider in the document flow while fonts and images load. */
+@media (min-width: 981px) {
+  html,
+  body,
+  .site-header,
+  .old-home-hero,
+  .old-home-slider {
+    overflow-anchor: none;
+  }
+
+  .site-header + main {
+    position: relative;
+    z-index: 1;
+  }
+
+  main > .old-home-hero:first-child {
+    position: relative;
+    margin-top: 0 !important;
   }
 }
