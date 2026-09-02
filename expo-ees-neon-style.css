@@ -8210,6 +8210,23 @@ body.is-geo-modal-open {
   margin-top: 10px;
 }
 
+/* Header sits flush with the top edge; only its lower corners remain rounded. */
+.site-header {
+  margin-top: 0 !important;
+  border-radius: 0 0 10px 10px !important;
+}
+
+@media (max-width: 640px) {
+  .mobile-sticky-identity {
+    top: 0 !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+
+  .site-header.mobile-home-menu.is-mobile-aux-open {
+    top: 62px;
+  }
+}
+
 @media (max-width: 980px) {
   .tent-subnav,
   .tent-direction-grid,
