@@ -6727,6 +6727,37 @@ b {
   backdrop-filter: blur(18px);
 }
 
+.article-year-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-year-select {
+  min-width: 150px;
+  height: 38px;
+  padding: 0 38px 0 14px;
+  border: 1px solid rgba(0, 229, 255, 0.42);
+  border-radius: 7px;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  background: #09121d;
+  cursor: pointer;
+}
+
+.article-year-select option {
+  color: #fff;
+  background: #09121d;
+}
+
 .article-count {
   margin-left: auto;
   padding: 0 12px;
@@ -12292,5 +12323,47 @@ main > .old-home-hero:first-child,
     bottom: max(10px, env(safe-area-inset-bottom));
     width: 50px;
     height: 40px;
+  }
+}
+
+/* Articles index: match the outer header width and keep its year control compact. */
+#serviceRoot:has(> .articles-detail-body) {
+  margin-top: 5px !important;
+}
+
+.articles-detail-body,
+.articles-detail-body .articles-page-shell {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.articles-detail-body .articles-page-shell {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.articles-detail-body .article-year-filter {
+  margin-bottom: 10px !important;
+}
+
+@media (max-width: 720px) {
+  .articles-detail-body .article-year-filter {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .article-year-select-wrap {
+    flex: 1 1 auto;
+  }
+
+  .article-year-select {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .articles-detail-body .article-count {
+    width: auto;
+    margin-left: auto;
+    padding: 0 4px;
   }
 }
