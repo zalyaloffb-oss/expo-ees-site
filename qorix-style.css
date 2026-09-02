@@ -6409,3 +6409,14 @@ body { font-size: var(--type-m); }
 .qorix-location svg text {
   font-family: "Manrope", Arial, sans-serif !important;
 }
+
+/* Recommended font-color palette. */
+:root {
+  --text: #f6fbff; --muted: #9facbc; --text-soft: #738297;
+  --cyan: #00e5ff; --blue: #2f6bff; --violet: #8a5cff;
+  --lime: #b6ff4d; --text-on-light: #061018; --danger: #ff5b6e;
+}
+body, :where(h1, h2, h3, h4, h5, h6) { color: var(--text); }
+:where(p, .copy, .description, .hint) { color: var(--muted); }
+:where(.meta, small) { color: var(--text-soft) !important; }
+:where(.is-active, [aria-current="true"], a:hover) { color: var(--cyan) !important; }
