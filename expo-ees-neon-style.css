@@ -7062,6 +7062,39 @@ b {
   }
 }
 
+/* Unified rule: all branded vertical separators are 2px with square ends. */
+.accent-text-block::before,
+.furniture-seo-text::before,
+.tent-text-block::before,
+.stage-text-block::before,
+.article-full-content::before,
+.events-old-copy::before,
+.services-overview-text::before,
+.old-material-copy::before,
+.old-site-copy-lead::before,
+.old-site-copy-body::before,
+.old-site-copy .accent-text-block p::before,
+.site-footer .footer-links::before,
+.site-footer .footer-contact::before,
+.portfolio-page.is-mobile-project-switcher .portfolio-project-head h2::before {
+  width: 2px !important;
+  border-radius: 0 !important;
+}
+
+@media (min-width: 761px) {
+  .home-stats article + article::before {
+    width: 2px !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-stats article + article::before {
+    height: 2px !important;
+    border-radius: 0 !important;
+  }
+}
+
 /* Full tent configurator migrated from Google Apps Script. */
 .tent-configurator-host {
   width: min(1880px, calc(100% - 32px));
