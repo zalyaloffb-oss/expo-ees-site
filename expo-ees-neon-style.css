@@ -12920,6 +12920,42 @@ body,
   box-shadow: 0 0 14px rgba(0, 229, 255, 0.4), 0 0 20px rgba(138, 92, 255, 0.18);
 }
 
+/* Desktop navigation uses a gradient underline instead of a filled hover state. */
+@media (min-width: 901px) {
+  .main-nav > a,
+  .main-nav > .nav-group > .nav-trigger {
+    position: relative;
+  }
+
+  .main-nav > a:hover,
+  .main-nav > .nav-group:hover > .nav-trigger,
+  .main-nav > .nav-group:focus-within > .nav-trigger {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .main-nav > a::after,
+  .main-nav > .nav-group > .nav-trigger::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    left: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--button-gradient);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 180ms ease;
+  }
+
+  .main-nav > a:hover::after,
+  .main-nav > .nav-group:hover > .nav-trigger::after,
+  .main-nav > .nav-group:focus-within > .nav-trigger::after {
+    transform: scaleX(1);
+  }
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
