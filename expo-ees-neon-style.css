@@ -12682,10 +12682,92 @@ body,
   }
   .production-service-tile::before {
     background-position: right 5px bottom 5px !important;
-    background-size: cover !important;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%);
-    mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%);
+    background-size: auto 88% !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
   }
+}
+
+/* Text section stays open: no card fill, outline, radius or shadow. */
+.old-site-copy {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Gradient type is reserved for the highlighted footer identity elements. */
+.site-footer .footer-brand > p,
+.site-footer .footer-links > h2,
+.site-footer .footer-contact > h2 {
+  color: var(--cyan);
+  background-image: var(--button-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Social pictograms: 30% larger and filled with the shared cyan-violet gradient. */
+.header-social::before,
+.footer-socials a::before {
+  background-image: var(--button-gradient) !important;
+  background-size: 100% 100% !important;
+}
+
+.header-social-tg::before,
+.footer-socials a[aria-label="Telegram"]::before {
+  -webkit-mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Telegram_white.svg") center / contain no-repeat;
+  mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Telegram_white.svg") center / contain no-repeat;
+}
+
+.header-social[aria-label="WhatsApp"]::before,
+.footer-socials a[aria-label="WhatsApp"]::before {
+  -webkit-mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/WhatsApp_white.svg") center / contain no-repeat;
+  mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/WhatsApp_white.svg") center / contain no-repeat;
+}
+
+.header-social-email::before,
+.footer-socials a[aria-label="Email"]::before {
+  -webkit-mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Gmail_white.svg") center / contain no-repeat;
+  mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/Gmail_white.svg") center / contain no-repeat;
+}
+
+.header-social[aria-label="VK"]::before,
+.footer-socials a[aria-label="VK"]::before {
+  -webkit-mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/VK_white.svg") center / contain no-repeat;
+  mask: url("https://raw.githubusercontent.com/gauravghongde/social-icons/master/SVG/White/VK_white.svg") center / contain no-repeat;
+}
+
+.site-header .header-social::before {
+  width: 34px;
+  height: 34px;
+}
+
+.footer-socials a::before {
+  width: 27px;
+  height: 27px;
+}
+
+.header-social-chat::before,
+.footer-socials a[aria-label="MAX"]::before {
+  -webkit-mask: none;
+  mask: none;
+  background: var(--button-gradient) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.site-header .header-social-chat::before {
+  width: auto;
+  height: auto;
+  font-size: 14px;
+}
+
+.footer-socials a[aria-label="MAX"]::before {
+  width: auto;
+  height: auto;
+  font-size: 13px;
 }
 
 /* Footer column separators use the same 4px accent treatment as text blocks. */
