@@ -7119,7 +7119,7 @@ b {
 @media (min-width: 901px) {
   .site-header .main-nav > a,
   .site-header .main-nav > .nav-group > .nav-trigger {
-    font-size: clamp(16px, 1.08vw, 20px) !important;
+    font-size: clamp(21px, 1.45vw, 27px) !important;
   }
 }
 
