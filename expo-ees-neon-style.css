@@ -7095,6 +7095,18 @@ b {
   }
 }
 
+/* Footer description follows the approved small body-text level and neutral palette. */
+.site-footer .footer-brand > p {
+  color: var(--muted) !important;
+  font-size: var(--type-s) !important;
+  font-weight: 400;
+  line-height: 1.55;
+  background: none !important;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: var(--muted) !important;
+}
+
 /* Full tent configurator migrated from Google Apps Script. */
 .tent-configurator-host {
   width: min(1880px, calc(100% - 32px));
