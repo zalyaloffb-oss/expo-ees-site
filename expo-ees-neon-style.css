@@ -12610,3 +12610,10 @@ body,
     line-height: 1.2 !important;
   }
 }
+
+/* Footer column headings match the company description text size. */
+.site-footer .footer-links h2,
+.site-footer .footer-contact h2 {
+  font-size: var(--type-l) !important;
+  line-height: 1.35 !important;
+}
