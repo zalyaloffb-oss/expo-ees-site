@@ -12876,6 +12876,50 @@ body,
   -webkit-text-fill-color: #ffffff !important;
 }
 
+/* White outline, transparent resting surface, and glow only on interaction. */
+.site-header .header-social,
+.footer-socials a {
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none;
+}
+
+.site-header .header-social:hover,
+.footer-socials a:hover {
+  border-color: #ffffff !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), 0 0 18px rgba(138, 92, 255, 0.16) !important;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.18));
+}
+
+/* In the company copy, every accent line follows its paragraph only. */
+.old-site-copy-lead,
+.old-site-copy-body {
+  padding-left: 0 !important;
+}
+
+.old-site-copy-lead::before,
+.old-site-copy-body::before {
+  display: none !important;
+}
+
+.old-site-copy .accent-text-block p {
+  position: relative;
+  padding-left: 24px;
+}
+
+.old-site-copy .accent-text-block p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--button-gradient);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.4), 0 0 20px rgba(138, 92, 255, 0.18);
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
