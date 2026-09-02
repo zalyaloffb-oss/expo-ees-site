@@ -7107,6 +7107,14 @@ b {
   -webkit-text-fill-color: var(--muted) !important;
 }
 
+/* Desktop footer: three equal horizontal columns. */
+@media (min-width: 761px) {
+  .site-footer .footer-shell {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(22px, 3vw, 56px);
+  }
+}
+
 /* Full tent configurator migrated from Google Apps Script. */
 .tent-configurator-host {
   width: min(1880px, calc(100% - 32px));
