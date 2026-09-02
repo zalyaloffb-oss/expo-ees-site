@@ -12783,7 +12783,13 @@ body,
   border: 1px solid rgba(0, 229, 255, 0.28);
   border-radius: 50%;
   background: rgba(2, 8, 14, 0.76);
+  box-shadow: none;
+  filter: none;
+}
+
+.site-header .header-social:hover {
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.14), inset 0 0 16px rgba(138, 92, 255, 0.08);
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.16));
 }
 
 .site-header .header-social::before {
