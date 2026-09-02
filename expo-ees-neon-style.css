@@ -5741,6 +5741,32 @@ input:focus {
   transform: none;
 }
 
+.home-slide.is-active img {
+  animation: home-slide-focus-out 2s cubic-bezier(0.22, 0.72, 0.2, 1) both;
+  transform-origin: center center;
+}
+
+@keyframes home-slide-focus-out {
+  0% {
+    filter: blur(20px) saturate(1.02) contrast(1.01);
+    transform: scale(1.28);
+  }
+  45% {
+    filter: blur(8px) saturate(1.04) contrast(1.01);
+    transform: scale(1.1);
+  }
+  100% {
+    filter: blur(0) saturate(1.06) contrast(1.02);
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-slide.is-active img {
+    animation: none;
+  }
+}
+
 .home-slide::after {
   content: "";
   position: absolute;
