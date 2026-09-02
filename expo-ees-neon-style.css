@@ -12819,6 +12819,48 @@ body,
   }
 }
 
+/* Desktop materials: a true 50/50 layout with controls over the photograph. */
+@media (min-width: 761px) {
+  .article-full-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  .article-full-layout .article-media-slider {
+    min-width: 0;
+  }
+
+  .article-media-main {
+    position: relative;
+    display: block;
+  }
+
+  .article-media-main figure {
+    width: 100%;
+  }
+
+  .article-media-main img {
+    object-fit: cover;
+  }
+
+  .article-media-arrow {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    width: 52px;
+    background: linear-gradient(90deg, rgba(2, 8, 15, 0.74), transparent);
+  }
+
+  .article-media-prev {
+    left: 0;
+  }
+
+  .article-media-next {
+    right: 0;
+    background: linear-gradient(270deg, rgba(2, 8, 15, 0.74), transparent);
+  }
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
