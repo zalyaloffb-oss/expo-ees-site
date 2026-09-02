@@ -12803,6 +12803,22 @@ body,
   font-size: 13px;
 }
 
+/* Material intro: no outline and a title at half of the previous display height. */
+.article-full-head.article-intro-block,
+.article-intro-block {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 761px) {
+  .article-full-head h1,
+  .article-intro-block h1 {
+    font-size: clamp(14px, 1.125vw, 18px) !important;
+    line-height: 1.12 !important;
+  }
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
