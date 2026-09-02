@@ -12775,6 +12775,28 @@ body,
   gap: 10px;
 }
 
+/* Header social buttons use the same shape and treatment as footer buttons. */
+.site-header .header-social {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(2, 8, 14, 0.76);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.14), inset 0 0 16px rgba(138, 92, 255, 0.08);
+}
+
+.site-header .header-social::before {
+  width: 27px;
+  height: 27px;
+}
+
+.site-header .header-social-chat::before {
+  width: auto;
+  height: auto;
+  font-size: 13px;
+}
+
 /* Footer column separators use the same 4px accent treatment as text blocks. */
 @media (min-width: 761px) {
   .site-footer .footer-links,
