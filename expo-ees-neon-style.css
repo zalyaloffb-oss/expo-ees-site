@@ -12617,3 +12617,108 @@ body,
   font-size: var(--type-l) !important;
   line-height: 1.35 !important;
 }
+
+/* Reviews: header-wide viewport, four cards and automatic movement without arrows. */
+.home-reviews-section { width: min(1880px, calc(100% - 32px)) !important; }
+.home-reviews-slider { padding-inline: 0 !important; overflow: hidden; }
+.home-reviews-list { gap: 18px; overflow-x: hidden !important; scroll-snap-type: none !important; }
+.home-review-card { flex: 0 0 calc((100% - 54px) / 4) !important; }
+
+/* Accent lines belong to paragraph groups rather than their headings. */
+.old-site-copy .accent-text-block { padding-left: 0 !important; }
+.old-site-copy .accent-text-block::before { display: none !important; }
+.old-site-copy-lead,
+.old-site-copy-body { position: relative; padding-left: 24px; }
+.old-site-copy-lead::before,
+.old-site-copy-body::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--button-gradient);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.44), 0 0 20px rgba(138, 92, 255, 0.2);
+}
+
+/* Home statistics: no outlines, only gradient separators. */
+.home-stats { border: 0 !important; }
+.home-stats article { position: relative; border: 0 !important; outline: 0 !important; }
+.home-stats article + article { border-left: 0 !important; }
+.home-stats article + article::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  left: -2px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--button-gradient);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.38), 0 0 20px rgba(138, 92, 255, 0.18);
+}
+
+/* Material headers have no fill and use half of the largest type level. */
+.article-full-head,
+.article-intro-block {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.article-full-head h1,
+.article-intro-block h1 {
+  font-size: clamp(20px, 2.25vw, 36px) !important;
+}
+
+/* Service titles match the desktop header phone typography; production blends with the set. */
+@media (min-width: 901px) {
+  .old-service-tile h3 {
+    font-size: clamp(14px, 0.98vw, 18px) !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+  }
+  .production-service-tile {
+    background:
+      radial-gradient(circle at 18% 72%, rgba(0, 135, 255, 0.28), transparent 42%),
+      radial-gradient(circle at 88% 65%, rgba(202, 39, 255, 0.25), transparent 44%),
+      linear-gradient(115deg, #18263c 0%, #2c2b42 52%, #39264a 100%) !important;
+  }
+  .production-service-tile::before {
+    background-position: right 5px bottom 5px !important;
+    background-size: cover !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 100%);
+  }
+}
+
+/* Footer column separators use the same 4px accent treatment as text blocks. */
+@media (min-width: 761px) {
+  .site-footer .footer-links,
+  .site-footer .footer-contact {
+    position: relative;
+    padding-left: 28px;
+  }
+  .site-footer .footer-links::before,
+  .site-footer .footer-contact::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: var(--button-gradient);
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.4), 0 0 20px rgba(138, 92, 255, 0.18);
+  }
+}
+
+@media (max-width: 760px) {
+  .home-reviews-section { width: min(100% - 20px, 1880px) !important; }
+  .home-review-card { flex-basis: 100% !important; }
+  .article-full-head h1,
+  .article-intro-block h1 { font-size: clamp(20px, 5.5vw, 24px) !important; }
+  .home-stats article + article::before {
+    top: 0;
+    bottom: auto;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+  }
+}

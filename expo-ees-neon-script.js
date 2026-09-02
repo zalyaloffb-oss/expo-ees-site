@@ -1378,9 +1378,20 @@ initNeonCustomSelects();
 function initHomeReviewsSlider() {
   const slider = document.querySelector(".home-reviews-slider");
   const track = slider?.querySelector(".home-reviews-list");
-  const previous = slider?.querySelector(".home-reviews-prev");
-  const next = slider?.querySelector(".home-reviews-next");
-  if (!slider || !track || !previous || !next) return;
+  if (!slider || !track) return;
+
+  const originals = Array.from(track.querySelectorAll(".home-review-card"));
+  if (originals.length < 2) return;
+  const cloneCount = Math.min(4, originals.length);
+  originals.slice(0, cloneCount).forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+  });
+
+  let index = 0;
+  let timer = 0;
+  let resetTimer = 0;
 
   const step = () => {
     const card = track.querySelector(".home-review-card");
@@ -1389,17 +1400,37 @@ function initHomeReviewsSlider() {
     return card.getBoundingClientRect().width + gap;
   };
 
-  const update = () => {
-    const max = Math.max(0, track.scrollWidth - track.clientWidth);
-    previous.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= max - 2;
+  const moveNext = () => {
+    index += 1;
+    track.scrollTo({ left: index * step(), behavior: "smooth" });
+    if (index === originals.length) {
+      clearTimeout(resetTimer);
+      resetTimer = window.setTimeout(() => {
+        track.style.scrollBehavior = "auto";
+        index = 0;
+        track.scrollLeft = 0;
+        track.style.scrollBehavior = "smooth";
+      }, 750);
+    }
   };
 
-  previous.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-  next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
-  track.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update, { passive: true });
-  update();
+  const start = () => {
+    clearInterval(timer);
+    timer = window.setInterval(moveNext, 4200);
+  };
+  const stop = () => clearInterval(timer);
+
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  slider.addEventListener("focusin", stop);
+  slider.addEventListener("focusout", start);
+  document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+  window.addEventListener("resize", () => {
+    track.style.scrollBehavior = "auto";
+    track.scrollLeft = index * step();
+    track.style.scrollBehavior = "smooth";
+  }, { passive: true });
+  start();
 }
 
 initHomeReviewsSlider();
