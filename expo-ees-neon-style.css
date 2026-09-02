@@ -5581,8 +5581,8 @@ input:focus {
 
 /* Home slider: project stages over the image */
 .old-home-slider .home-slide figcaption {
-  left: auto;
-  right: calc(var(--home-right-tabs-width, 222px) + 36px);
+  left: calc(var(--home-left-tabs-width, 74px) + 36px);
+  right: auto;
   bottom: 36px;
   display: grid;
   width: min(728px, calc(100% - var(--home-left-tabs-width, 74px) - var(--home-right-tabs-width, 222px) - 72px));
