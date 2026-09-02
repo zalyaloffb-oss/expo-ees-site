@@ -12855,10 +12855,25 @@ body,
     left: 0;
   }
 
-  .article-media-next {
+.article-media-next {
     right: 0;
     background: linear-gradient(270deg, rgba(2, 8, 15, 0.74), transparent);
   }
+}
+
+/* Social icons stay neutral at rest; interaction glow remains on hover. */
+.header-social::before,
+.footer-socials a::before {
+  background: #ffffff !important;
+}
+
+.header-social-chat::before,
+.footer-socials a[aria-label="MAX"]::before {
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 /* Footer column separators use the same 4px accent treatment as text blocks. */
