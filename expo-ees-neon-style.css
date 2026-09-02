@@ -12477,3 +12477,69 @@ html body .mobile-sticky-identity::after {
     margin-top: 0 !important;
   }
 }
+
+/* Unified Manrope type scale from the typography audit. */
+:root {
+  --type-xs: 12px;
+  --type-s: 14px;
+  --type-m: 16px;
+  --type-l: 18px;
+  --type-xl: clamp(20px, 1.4vw, 24px);
+  --type-2xl: clamp(28px, 2.35vw, 36px);
+  --type-3xl: clamp(40px, 4.5vw, 72px);
+}
+
+body {
+  font-size: var(--type-m);
+}
+
+:where(.eyebrow, .kicker, .overline, .meta, .article-meta, .article-card-meta,
+  .article-date, .project-meta, .portfolio-meta, .home-slider-dots,
+  .gallery-count, .slide-count, figcaption small, .footer-note) {
+  font-size: var(--type-xs) !important;
+}
+
+:where(button, .btn, input, select, textarea, .main-nav, .nav-trigger,
+  .nav-dropdown, .header-search, .header-contact, .header-phone,
+  .catalog-card-label, .service-card-label, .home-slider-tabs,
+  .portfolio-filter, .article-year-filter, .footer-main-nav,
+  .footer-links, .footer-contact) {
+  font-size: var(--type-s) !important;
+}
+
+:where(p, li, label, .lead-small, .card-copy, .service-copy,
+  .article-card p, .article-full-content p, .article-full-content li,
+  .project-copy, .portfolio-copy, .contact-copy) {
+  font-size: var(--type-m);
+}
+
+:where(.lead, .hero-subtitle, .section-intro, .detail-copy > p,
+  .home-slider-content .lead, .footer-brand p) {
+  font-size: var(--type-l) !important;
+}
+
+:where(h3, .card-title, .service-card h3, .catalog-card h3,
+  .article-card h2, .portfolio-card h3, .project-card h3) {
+  font-size: var(--type-xl) !important;
+}
+
+:where(h2, .section-title, .detail-copy h2, .article-full-content h2,
+  .portfolio-section h2, .home-reviews-head h2) {
+  font-size: var(--type-2xl) !important;
+}
+
+:where(h1, .hero-title, .detail-copy h1, .home-slider-content h1,
+  .portfolio-page-hero h1, .old-material-hero h1,
+  .article-full-header h1, .project-geo-title) {
+  font-size: var(--type-3xl) !important;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --type-m: 15px;
+    --type-l: 17px;
+    --type-xl: clamp(20px, 5.6vw, 22px);
+    --type-2xl: clamp(28px, 8vw, 32px);
+    --type-3xl: clamp(40px, 11vw, 48px);
+  }
+}

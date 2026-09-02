@@ -11,6 +11,24 @@
   --ees-muted: #9facbd;
 }
 
+/* Shared Manrope type scale. */
+:root {
+  --type-xs: 12px;
+  --type-s: 14px;
+  --type-m: 16px;
+  --type-l: 18px;
+  --type-xl: clamp(20px, 1.4vw, 24px);
+  --type-2xl: clamp(28px, 2.35vw, 36px);
+  --type-3xl: clamp(40px, 4.5vw, 72px);
+}
+
+body { font-size: var(--type-m); }
+:where(button, input, select, textarea, label) { font-size: var(--type-s); }
+:where(.eyebrow, .meta, small) { font-size: var(--type-xs) !important; }
+:where(h3, .panel-title, .card-title) { font-size: var(--type-xl) !important; }
+:where(h2, .section-title) { font-size: var(--type-2xl) !important; }
+:where(h1, .hero-title) { font-size: var(--type-3xl) !important; }
+
 html,
 body {
   background:
@@ -222,3 +240,11 @@ textarea,
 svg text {
   font-family: "Manrope", Arial, sans-serif !important;
 }
+
+/* Final type-role overrides. */
+body { font-size: var(--type-m) !important; }
+:where(button, input, select, textarea, label) { font-size: var(--type-s) !important; }
+:where(.eyebrow, .meta, small) { font-size: var(--type-xs) !important; }
+:where(h3, .panel-title, .card-title) { font-size: var(--type-xl) !important; }
+:where(h2, .section-title) { font-size: var(--type-2xl) !important; }
+:where(h1, .hero-title) { font-size: var(--type-3xl) !important; }
