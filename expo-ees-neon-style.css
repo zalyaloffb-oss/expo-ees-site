@@ -5581,14 +5581,14 @@ input:focus {
 
 /* Home slider: project stages over the image */
 .old-home-slider .home-slide figcaption {
-  left: calc(var(--home-left-tabs-width, 74px) + 28px);
-  right: calc(var(--home-right-tabs-width, 222px) + 28px);
-  bottom: clamp(34px, 6vh, 72px);
+  left: auto;
+  right: calc(var(--home-right-tabs-width, 222px) + 36px);
+  bottom: 36px;
   display: grid;
-  width: auto;
-  max-width: 560px;
-  gap: 10px;
-  padding: 20px 22px;
+  width: min(728px, calc(100% - var(--home-left-tabs-width, 74px) - var(--home-right-tabs-width, 222px) - 72px));
+  max-width: none;
+  gap: 14px;
+  padding: 27px 30px;
   border: 0;
   border-left: 2px solid var(--cyan);
   border-radius: 0;
@@ -5600,7 +5600,7 @@ input:focus {
 .home-slide-steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 7px 12px;
+  gap: 10px 16px;
   margin: 2px 0 0;
   padding: 0;
   list-style: none;
@@ -5610,21 +5610,50 @@ input:focus {
 .home-slide-steps li {
   position: relative;
   min-width: 0;
-  padding: 7px 8px 7px 30px;
+  padding: 9px 10px 9px 38px;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   color: rgba(238, 248, 255, 0.82);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 500;
   line-height: 1.25;
 }
 
 .home-slide-steps li::before {
   position: absolute;
-  left: 8px;
+  left: 10px;
   color: var(--cyan);
   font-weight: 700;
   counter-increment: home-stage;
   content: counter(home-stage, decimal-leading-zero);
+}
+
+.old-home-slider .home-slide figcaption span {
+  font-size: 16px;
+}
+
+.old-home-slider .home-slide figcaption strong {
+  font-size: 24px;
+}
+
+.home-slide-cta {
+  justify-self: start;
+  margin-top: 2px;
+  padding: 12px 22px;
+  border: 1px solid rgba(0, 229, 255, 0.72);
+  border-radius: 5px;
+  color: #071018;
+  background: linear-gradient(90deg, var(--cyan), #2a74ff 58%, var(--magenta));
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.home-slide-cta:hover,
+.home-slide-cta:focus-visible {
+  box-shadow: 0 0 22px rgba(0, 229, 255, 0.38);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 980px) {
@@ -5634,12 +5663,25 @@ input:focus {
     bottom: 120px;
     display: grid;
     width: auto;
-    padding: 14px 16px;
+    padding: 16px 18px;
+  }
+
+  .old-home-slider .home-slide figcaption span {
+    font-size: 12px;
+  }
+
+  .old-home-slider .home-slide figcaption strong {
+    font-size: 18px;
   }
 
   .home-slide-steps li {
     padding: 6px 6px 6px 27px;
     font-size: 11px;
+  }
+
+  .home-slide-cta {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 
   .home-slide-steps li::before {
