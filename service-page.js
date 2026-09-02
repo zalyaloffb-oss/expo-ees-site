@@ -3291,6 +3291,8 @@ function renderArticlesIndex() {
     <section class="section detail-body articles-detail-body">
       <div class="articles-page-shell">
         <div class="article-year-filter reveal is-visible" aria-label="Фильтр статей по годам">
+          <button class="is-active" type="button" data-article-year="all">Все годы</button>
+          ${years.map((year) => `<button type="button" data-article-year="${escapeHtml(year)}">${escapeHtml(year)}</button>`).join("")}
           <label class="article-year-select-wrap">
             <span>Год</span>
             <select class="article-year-select" data-article-year-select aria-label="Выберите год публикации">
@@ -3576,13 +3578,21 @@ function initNeonCustomSelects(root = document) {
 function initArticleYearFilter() {
   const filter = document.querySelector(".article-year-filter");
   if (!filter) return;
+  const buttons = [...filter.querySelectorAll("[data-article-year]")];
   const select = filter.querySelector("[data-article-year-select]");
   const cards = [...document.querySelectorAll(".article-card[data-year]")];
-  select?.addEventListener("change", () => {
-    const year = select.value;
+  const applyYear = (year) => {
+    buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.articleYear === year));
+    if (select && select.value !== year) select.value = year;
     cards.forEach((card) => {
       card.hidden = year !== "all" && card.dataset.year !== year;
     });
+  };
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => applyYear(button.dataset.articleYear || "all"));
+  });
+  select?.addEventListener("change", () => {
+    applyYear(select.value);
   });
 }
 
