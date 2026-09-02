@@ -5608,6 +5608,7 @@ input:focus {
   }
 }
 
+
 @keyframes homeHorizontalCurtainBack {
   0% {
     transform: translateX(0) scale(1);
@@ -12541,5 +12542,18 @@ body {
     --type-xl: clamp(20px, 5.6vw, 22px);
     --type-2xl: clamp(28px, 8vw, 32px);
     --type-3xl: clamp(40px, 11vw, 48px);
+  }
+}
+
+/* Article/material titles use half of the global display scale. */
+.article-full-header h1,
+.old-material-hero h1 {
+  font-size: clamp(20px, 2.25vw, 36px) !important;
+}
+
+@media (max-width: 640px) {
+  .article-full-header h1,
+  .old-material-hero h1 {
+    font-size: clamp(20px, 5.5vw, 24px) !important;
   }
 }
