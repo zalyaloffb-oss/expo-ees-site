@@ -9302,6 +9302,8 @@ main > .old-home-hero:first-child,
 }
 
 /* Catalog pages: keep the left catalog and top subsection filter visible while scrolling. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
 :root {
   --catalog-sticky-top: 188px;
 }

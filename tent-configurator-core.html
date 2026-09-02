@@ -491,7 +491,7 @@
         margin: 0;
         background: #eef2f6;
         color: #172033;
-        font-family: Arial, sans-serif;
+        font-family: "Manrope", Arial, sans-serif;
       }
       button,
       select {
@@ -567,7 +567,7 @@
         top: 0;
         width: 1123px;
         color: #172033;
-        font-family: Arial, sans-serif;
+        font-family: "Manrope", Arial, sans-serif;
       }
       .pdf-page {
         box-sizing: border-box;
@@ -1494,7 +1494,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="tent-configurator-core-theme.css?v=2" />
+    <link rel="stylesheet" href="tent-configurator-core-theme.css?v=3" />
   </head>
   <body>
     <header class="top">
@@ -2287,7 +2287,7 @@
         const parts = [],
           viewLabelFont = Math.max(0.65, 12 / cellSize),
           viewLabelGap = Math.max(1.2, 24 / cellSize),
-          viewLabelStyle = `font-family="Arial,sans-serif" font-size="${svgNumber(viewLabelFont)}" font-weight="700" fill="#64748b" letter-spacing=".06em"`;
+          viewLabelStyle = `font-family="Manrope,Arial,sans-serif" font-size="${svgNumber(viewLabelFont)}" font-weight="700" fill="#64748b" letter-spacing=".06em"`;
         const segments = [];
         if ($("#type")?.value === "Пагода") {
           const modules = normalizedPagodaModules(),
@@ -2327,7 +2327,7 @@
                 const cx = r.x + r.w / 2,
                   cy = r.y + r.h / 2,
                   rotate = r.vertical ? ` transform="rotate(-90 ${svgNumber(cx)} ${svgNumber(cy)})"` : "";
-                parts.push(`<text x="${svgNumber(cx)}" y="${svgNumber(cy + .07)}"${rotate} text-anchor="middle" font-family="Arial,sans-serif" font-size=".17" font-weight="700" fill="#1d4ed8">БРЕНДИРОВАННЫЙ БАННЕР</text>`);
+                parts.push(`<text x="${svgNumber(cx)}" y="${svgNumber(cy + .07)}"${rotate} text-anchor="middle" font-family="Manrope,Arial,sans-serif" font-size=".17" font-weight="700" fill="#1d4ed8">БРЕНДИРОВАННЫЙ БАННЕР</text>`);
               }
               return;
             }
