@@ -12920,6 +12920,25 @@ body,
   box-shadow: 0 0 14px rgba(0, 229, 255, 0.4), 0 0 20px rgba(138, 92, 255, 0.18);
 }
 
+.header-address {
+  text-decoration: none;
+}
+
+.site-header .header-search input {
+  border-radius: 14px;
+}
+
+/* Desktop alignment requested for the brand/search group. */
+@media (min-width: 1181px) {
+  .site-header .header-left-stack .brand {
+    margin-left: clamp(18px, 1.5vw, 30px);
+  }
+
+  .site-header .header-search {
+    margin-left: clamp(8px, 0.8vw, 16px);
+  }
+}
+
 /* Desktop navigation uses a gradient underline instead of a filled hover state. */
 @media (min-width: 901px) {
   .main-nav > a,
