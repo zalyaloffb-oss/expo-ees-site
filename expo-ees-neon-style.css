@@ -8170,6 +8170,46 @@ body.is-geo-modal-open {
   }
 }
 
+/* Footer: one vertical rhythm for navigation, services and contacts. */
+.site-footer {
+  --footer-row-height: 42px;
+}
+
+.footer-main-nav,
+.footer-links,
+.footer-contact {
+  align-content: start;
+  row-gap: 0;
+}
+
+.footer-main-nav a,
+.footer-links a,
+.footer-contact > a,
+.footer-contact > p,
+.footer-contact > span {
+  box-sizing: border-box;
+  min-height: var(--footer-row-height);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  line-height: 1.35;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.08);
+}
+
+.footer-links h2,
+.footer-contact h2 {
+  min-height: var(--footer-row-height);
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.footer-contact .footer-socials {
+  margin-top: 10px;
+}
+
 @media (max-width: 980px) {
   .tent-subnav,
   .tent-direction-grid,
