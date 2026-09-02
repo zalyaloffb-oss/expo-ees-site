@@ -3764,7 +3764,10 @@ function renderServicesOverviewPage() {
     {
       title: "Производство",
       slug: "proizvodstvo",
-      image: "assets/home/service-production-neon-v1.png"
+      image: "assets/home/service-production-neon-v1.png",
+      cutout: "assets/home/service-production-cutout-v2.png",
+      cutoutPosition: "right bottom",
+      cutoutSize: "contain"
     }
   ];
 

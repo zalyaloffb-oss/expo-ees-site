@@ -7130,6 +7130,31 @@ b {
   }
 }
 
+/* New uniform artwork: 30% smaller with a true 20px card-edge inset. */
+.old-service-tile.has-generated-cutout::before {
+  inset: 20px !important;
+  background-position: right bottom !important;
+  background-size: contain !important;
+  transform: scale(0.7) !important;
+  transform-origin: right bottom !important;
+}
+
+.old-service-tile.has-generated-cutout:hover::before {
+  transform: scale(0.76) !important;
+}
+
+.services-overview-card-cutout {
+  inset: 20px !important;
+  background-position: right bottom !important;
+  background-size: contain !important;
+  transform: scale(0.7) !important;
+  transform-origin: right bottom !important;
+}
+
+.services-overview-card:hover .services-overview-card-cutout {
+  transform: scale(0.76) !important;
+}
+
 /* Full tent configurator migrated from Google Apps Script. */
 .tent-configurator-host {
   width: min(1880px, calc(100% - 32px));
