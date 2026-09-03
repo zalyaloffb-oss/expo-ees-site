@@ -12894,6 +12894,24 @@ body .header-request,
   .old-home-slider .home-slide figcaption {
     bottom: 18px;
   }
+
+  .old-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .old-service-tile {
+    width: 100%;
+    min-width: 0;
+    min-height: 0 !important;
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .old-service-tile h3 {
+    max-width: 100%;
+    font-size: clamp(10px, 2.8vw, 13px) !important;
+    line-height: 1.1 !important;
+  }
 }
 
 /* Equal desktop navigation typography for links and dropdown triggers. */
