@@ -12871,6 +12871,29 @@ body .header-request,
     right: 0 !important;
     width: 100% !important;
   }
+
+  html body .mobile-sticky-identity {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+
+  html body .site-header.mobile-home-menu:not(.is-mobile-aux-open) {
+    margin-top: 118px !important;
+  }
+
+  .mobile-home-product-catalog {
+    position: relative;
+    z-index: 2;
+  }
+
+  .old-home-slider .home-slider-tabs {
+    display: none !important;
+  }
+
+  .old-home-slider .home-slide figcaption {
+    bottom: 18px;
+  }
 }
 
 /* Equal desktop navigation typography for links and dropdown triggers. */
