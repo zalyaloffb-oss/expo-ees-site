@@ -2420,8 +2420,11 @@
         $("#planSize").textContent = W + " × " + L + " м";
         $("#mt").textContent = L + " м";
         $("#ml").textContent = W + " м";
-        $(".legend").innerHTML =
-          "□ &nbsp;Шаг сетки = 0,125 м<br>■ &nbsp;Столбы 125 × 125 мм по углам и через 5 м<br>▯ &nbsp;Стеклянная рама: 1218,75 × 3000 мм";
+        const legend = $(".legend");
+        if (legend) {
+          legend.innerHTML =
+            "□ &nbsp;Шаг сетки = 0,125 м<br>■ &nbsp;Столбы 125 × 125 мм по углам и через 5 м<br>▯ &nbsp;Стеклянная рама: 1218,75 × 3000 мм";
+        }
         document
           .querySelectorAll(".wall")
           .forEach((x) => {
