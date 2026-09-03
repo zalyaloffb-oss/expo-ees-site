@@ -12835,6 +12835,44 @@ body .header-request,
   text-shadow: none;
 }
 
+/* Mobile layout uses the complete viewport width. */
+@media (max-width: 760px) {
+  html body .site-header,
+  html body .site-header.mobile-home-menu,
+  .mobile-sticky-identity,
+  main > .section,
+  .old-home-hero,
+  .portfolio-page,
+  .events-old-shell,
+  .old-material-shell,
+  .services-overview-page,
+  .mobile-home-product-catalog,
+  .home-reviews-section,
+  .articles-detail-body,
+  .articles-page-shell,
+  .site-footer,
+  .site-footer .footer-shell,
+  .site-footer .footer-bottom {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  html body .site-header,
+  html body .site-header.mobile-home-menu {
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  html body .site-header.mobile-home-menu.is-mobile-aux-open {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+}
+
 /* Equal desktop navigation typography for links and dropdown triggers. */
 @media (min-width: 981px) {
   .site-header .main-nav > a,
