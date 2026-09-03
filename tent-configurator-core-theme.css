@@ -29,6 +29,12 @@ body { font-size: var(--type-m); }
 :where(h2, .section-title) { font-size: var(--type-2xl) !important; }
 :where(h1, .hero-title) { font-size: var(--type-3xl) !important; }
 
+/* Compact configurator title: it must not overlap the workspace. */
+.top h1 {
+  font-size: clamp(14px, 1.5vw, 24px) !important;
+  line-height: 1.15 !important;
+}
+
 /* Recommended font-color palette. */
 :root {
   --text: #f6fbff; --muted: #9facbc; --text-soft: #738297;
@@ -171,6 +177,30 @@ body {
 }
 
 .fpop .flist button:hover {
+  border-color: #bfdbfe !important;
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+/* Restore the original light wall-material picker. */
+.pop.wpop {
+  border-color: #dce3eb !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.24) !important;
+}
+
+.wpop .pt {
+  color: #66758a !important;
+}
+
+.wpop button {
+  border: 1px solid #edf1f5 !important;
+  background: #ffffff !important;
+  color: #172033 !important;
+}
+
+.wpop button:hover {
   border-color: #bfdbfe !important;
   background: #eff6ff !important;
   color: #1d4ed8 !important;

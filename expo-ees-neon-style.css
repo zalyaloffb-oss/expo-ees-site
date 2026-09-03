@@ -3122,6 +3122,13 @@ h3 {
     max-width: calc(100% - 4px);
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.92), 0 0 24px rgba(0, 0, 0, 0.72);
   }
+
+  .mobile-home-product-catalog .service-catalog-title {
+    font-size: clamp(9px, 2.5vw, 12px) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+  }
 }
 
 .old-advantages {
