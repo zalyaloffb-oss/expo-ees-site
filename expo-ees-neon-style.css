@@ -13337,7 +13337,7 @@ body .header-request,
     top: var(--desktop-catalog-top) !important;
     left: var(--desktop-catalog-left);
     width: var(--desktop-catalog-width);
-    height: calc(100dvh - var(--desktop-catalog-top) - 16px);
+    height: auto;
     max-height: calc(100dvh - var(--desktop-catalog-top) - 16px) !important;
     margin: 0;
     box-sizing: border-box;
