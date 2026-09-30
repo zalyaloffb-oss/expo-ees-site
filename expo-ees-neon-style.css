@@ -13372,3 +13372,23 @@ body .header-request,
     overflow-wrap: anywhere;
   }
 }
+
+/* A collapsed mobile catalog meets the actual bottom edge of the identity bar. */
+@media (max-width: 640px) {
+  html body:has(.service-catalog-sidebar.is-collapsed) .site-header.mobile-home-menu:not(.is-mobile-aux-open) {
+    margin-top: var(--mobile-identity-bottom, 66px) !important;
+  }
+  body:has(.service-catalog-sidebar.is-collapsed) main:has(.service-catalog-sidebar) {
+    margin-top: 0 !important;
+  }
+  .section:has(.service-catalog-sidebar.is-collapsed) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  html body .service-catalog-sidebar.is-collapsed {
+    position: sticky !important;
+    top: var(--mobile-identity-bottom, 66px) !important;
+    margin-top: 0 !important;
+    z-index: 118;
+  }
+}
