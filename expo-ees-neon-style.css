@@ -13392,3 +13392,36 @@ body .header-request,
     z-index: 118;
   }
 }
+
+/* Mobile category artwork fills the tile and is cropped at its edges. */
+@media (max-width: 640px) {
+  .old-service-tile,
+  .services-overview-card { overflow: hidden; isolation: isolate; }
+  .old-service-tile.has-generated-cutout::before,
+  .services-overview-card .services-overview-card-cutout {
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center 65% !important;
+    background-repeat: no-repeat;
+    transform: scale(1.25) translate(4%, 8%) !important;
+    transform-origin: center;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    filter: none !important;
+  }
+  .old-service-tile::after,
+  .services-overview-card::after {
+    content: "";
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(3,6,13,.94) 0%, rgba(3,6,13,.72) 28%, rgba(3,6,13,.12) 63%, transparent 100%) !important;
+    backdrop-filter: none !important;
+    pointer-events: none;
+  }
+  .old-service-tile h3,
+  .services-overview-card-title { z-index: 2; text-shadow: 0 2px 8px #000; }
+}
