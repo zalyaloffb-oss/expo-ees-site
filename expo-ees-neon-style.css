@@ -13328,3 +13328,27 @@ body .header-request,
     height: 4px;
   }
 }
+
+/* Desktop service navigation: identical viewport position on every service page. */
+@media (min-width: 1101px) {
+  .service-catalog-slot { min-width: 0; }
+  body > .service-catalog-sidebar.service-catalog-fixed {
+    position: fixed !important;
+    top: var(--desktop-catalog-top) !important;
+    left: var(--desktop-catalog-left);
+    width: var(--desktop-catalog-width);
+    height: calc(100dvh - var(--desktop-catalog-top) - 16px);
+    max-height: calc(100dvh - var(--desktop-catalog-top) - 16px) !important;
+    margin: 0;
+    box-sizing: border-box;
+    transform: none;
+    overflow: auto !important;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    z-index: 72;
+  }
+}
+
+@media (min-width: 1101px) {
+  .service-catalog-fixed .service-catalog-title { font-size: 20px; font-weight: 700; white-space: normal; }
+}

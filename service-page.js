@@ -2210,6 +2210,38 @@ function renderServiceCatalogSidebar() {
 
 function initServiceCatalogSidebar() {
   document.querySelectorAll(".service-catalog-sidebar").forEach((sidebar) => {
+    // Desktop navigation belongs to the viewport, not a section's slider or height.
+    // Keep its grid cell so the content column never moves; restore on mobile.
+    const desktopQuery = window.matchMedia("(min-width: 1101px)");
+    const slot = document.createElement("div");
+    slot.className = "service-catalog-slot";
+    slot.setAttribute("aria-hidden", "true");
+    const shell = sidebar.parentElement;
+    const header = document.querySelector(".site-header");
+    const updateDesktopCatalog = () => {
+      if (!desktopQuery.matches) {
+        if (slot.isConnected) slot.replaceWith(sidebar);
+        sidebar.classList.remove("service-catalog-fixed");
+        return;
+      }
+      if (!slot.isConnected) {
+        sidebar.before(slot);
+        document.body.append(sidebar);
+      }
+      const cell = slot.getBoundingClientRect();
+      const top = Math.ceil(header?.getBoundingClientRect().bottom || 0) + 20;
+      sidebar.style.setProperty("--desktop-catalog-left", `${cell.left}px`);
+      sidebar.style.setProperty("--desktop-catalog-width", `${cell.width}px`);
+      sidebar.style.setProperty("--desktop-catalog-top", `${top}px`);
+      sidebar.classList.add("service-catalog-fixed");
+    };
+    updateDesktopCatalog();
+    desktopQuery.addEventListener("change", updateDesktopCatalog);
+    window.addEventListener("resize", updateDesktopCatalog);
+    const catalogResizeObserver = new ResizeObserver(updateDesktopCatalog);
+    catalogResizeObserver.observe(shell);
+    if (header) catalogResizeObserver.observe(header);
+
     const toggle = sidebar.querySelector(".service-catalog-toggle");
     toggle?.addEventListener("click", () => {
       const isCollapsed = sidebar.classList.toggle("is-collapsed");
