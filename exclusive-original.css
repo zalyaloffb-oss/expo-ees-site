@@ -23,3 +23,12 @@
 .exclusive-original-lightbox [data-forward] { right: 5px; top: 45%; }
 @media(max-width:1024px) { .exclusive-original-slide { flex-basis:100%; width:100%; } .exclusive-original-controls { opacity:1; } }
 @media(max-width:640px) { .exclusive-original-text { font-size:15px; } .exclusive-original-lightbox { padding:45px 12px; } }
+
+.exclusive-original-content [hidden] { display: none !important; }
+.exclusive-original-text h6 { margin: 0 0 18px; font-size: 16px; line-height: 1.6; font-weight: 600; }
+.original-stand-image { margin: 24px 0; }
+.original-stand-image img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.original-stand-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+.original-stand-dots button { width: 8px; height: 8px; border: 0; border-radius: 50%; padding: 0; background: #72818c; cursor: pointer; }
+.original-stand-dots button[aria-current="true"] { background: #00e5ff; }
+.has-source-navigation .exclusive-original-controls { opacity: 1; bottom: 40px; }
