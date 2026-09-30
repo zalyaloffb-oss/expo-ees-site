@@ -2229,6 +2229,15 @@ function initServiceCatalogSidebar() {
         document.body.append(sidebar);
       }
       const cell = slot.getBoundingClientRect();
+      const main = shell.closest("main");
+      const content = shell.querySelector(".service-content");
+      if (main && content) {
+        const mainBox = main.getBoundingClientRect();
+        const contentBox = content.getBoundingClientRect();
+        main.classList.add("service-desktop-columns");
+        main.style.setProperty("--service-content-left", `${contentBox.left - mainBox.left}px`);
+        main.style.setProperty("--service-content-right", `${mainBox.right - contentBox.right}px`);
+      }
       const top = Math.ceil(header?.getBoundingClientRect().bottom || 0) + 20;
       sidebar.style.setProperty("--desktop-catalog-left", `${cell.left}px`);
       sidebar.style.setProperty("--desktop-catalog-width", `${cell.width}px`);

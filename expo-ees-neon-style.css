@@ -13352,3 +13352,22 @@ body .header-request,
 @media (min-width: 1101px) {
   .service-catalog-fixed .service-catalog-title { font-size: 20px; font-weight: 700; white-space: normal; }
 }
+
+/* Keep service introduction media and copy in the same right column as products. */
+@media (min-width: 1101px) {
+  .service-desktop-columns > .detail-hero {
+    width: calc(100% - var(--service-content-left) - var(--service-content-right));
+    max-width: none;
+    margin-left: var(--service-content-left);
+    margin-right: var(--service-content-right);
+    padding: 24px 0;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(20px, 2vw, 32px);
+  }
+  .service-desktop-columns > .detail-hero > * { min-width: 0; }
+  .service-desktop-columns > .detail-hero h1 {
+    font-size: clamp(28px, 2.6vw, 44px) !important;
+    overflow-wrap: anywhere;
+  }
+}
