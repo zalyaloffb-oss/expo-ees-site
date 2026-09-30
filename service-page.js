@@ -3011,6 +3011,7 @@ standPages["nestandartnye-konstrukczii-2"] = {
 const standSlugs = new Set(Object.keys(standPages));
 
 function renderStandPage() {
+  if (slug === "eksklyuzivnyye_vystavochnyye_stendy") return window.renderOriginalExclusivePage(renderServiceCatalogSidebar());
   const data = standPages[slug] || standPages.eksklyuzivnyye_vystavochnyye_stendy;
   const projectCards = data.images.map((image, index) => `
     <article class="stand-project-card ${index === 0 ? "is-wide" : ""}">
@@ -3148,6 +3149,7 @@ Object.assign(standPages, {
 });
 
 function renderStandPage() {
+  if (slug === "eksklyuzivnyye_vystavochnyye_stendy") return window.renderOriginalExclusivePage(renderServiceCatalogSidebar());
   const data = standPages[slug] || standPages.eksklyuzivnyye_vystavochnyye_stendy;
   const standGallerySliders = (data.sliders || [{
     title: data.title,

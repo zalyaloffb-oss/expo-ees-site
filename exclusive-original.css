@@ -1,0 +1,25 @@
+.exclusive-original-content { min-width: 0; }
+.exclusive-original-content > h1 { margin: 0 0 24px; font-size: clamp(24px, 2.5vw, 40px) !important; line-height: 1.2; }
+.exclusive-original-content > h2 { margin: 24px 0 18px; font-size: clamp(22px, 2vw, 30px); line-height: 1.3; }
+.exclusive-original-text { margin: 20px 0; font-size: 16px; line-height: 1.7; color: #d8e2ea; }
+.exclusive-original-text p { margin: 0 0 14px; }
+.exclusive-original-text ul,.exclusive-original-text ol { padding-left: 26px; margin: 12px 0 18px; }
+.exclusive-original-text strong,.exclusive-original-text b { color: #f1f7fc; }
+.exclusive-original-carousel { position: relative; width: 100%; margin: 20px 0; }
+.exclusive-original-viewport { overflow: hidden; border-radius: 8px; background: #070c12; }
+.exclusive-original-track { display: flex; transition: transform 500ms ease; }
+.exclusive-original-slide { display: block; flex: 0 0 50%; width: 50%; min-width: 0; border: 0; margin: 0; padding: 0; background: #070c12; cursor: zoom-in; }
+.exclusive-original-slide img { display: block; width: 100%; aspect-ratio: 1.5; object-fit: contain; }
+.exclusive-original-controls { position: absolute; bottom: 10px; right: 10px; display: flex; gap: 6px; opacity: 0; transition: opacity .2s; }
+.exclusive-original-carousel:hover .exclusive-original-controls,.exclusive-original-carousel:focus-within .exclusive-original-controls { opacity: 1; }
+.exclusive-original-controls button { width: 34px; height: 34px; padding: 0; border: 1px solid #6195a5; border-radius: 5px; background: #071019e6; color: white; cursor: pointer; }
+.exclusive-original-lightbox { width: 94vw; max-width: 1600px; max-height: 94vh; padding: 50px; border: 1px solid #227b98; border-radius: 8px; background: #060b11; color: white; }
+.exclusive-original-lightbox::backdrop { background: #000d; }
+.exclusive-original-lightbox img { display: block; width: 100%; height: 72vh; object-fit: contain; }
+.exclusive-original-lightbox p { margin: 12px 0 0; text-align: center; }
+.exclusive-original-lightbox button { position: absolute; width: 40px; height: 40px; background: #122834; color: white; border: 0; border-radius: 4px; cursor: pointer; font-size: 26px; }
+.exclusive-original-lightbox [data-close] { top: 6px; right: 6px; }
+.exclusive-original-lightbox [data-back] { left: 5px; top: 45%; }
+.exclusive-original-lightbox [data-forward] { right: 5px; top: 45%; }
+@media(max-width:1024px) { .exclusive-original-slide { flex-basis:100%; width:100%; } .exclusive-original-controls { opacity:1; } }
+@media(max-width:640px) { .exclusive-original-text { font-size:15px; } .exclusive-original-lightbox { padding:45px 12px; } }
