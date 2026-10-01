@@ -75,13 +75,13 @@
 
   if (isMobileViewport && isHomePage && servicesGroup) {
     const homeCatalog = document.createElement("aside");
-    homeCatalog.className = "service-catalog-sidebar mobile-home-product-catalog";
+    homeCatalog.className = "service-catalog-sidebar mobile-home-product-catalog is-collapsed";
     homeCatalog.setAttribute("aria-label", "Каталог продукции");
 
     const catalogToggle = document.createElement("button");
     catalogToggle.className = "service-catalog-toggle";
     catalogToggle.type = "button";
-    catalogToggle.setAttribute("aria-expanded", "true");
+    catalogToggle.setAttribute("aria-expanded", "false");
     catalogToggle.innerHTML = '<span class="service-catalog-title">КАТАЛОГ ПРОДУКЦИИ:</span><i aria-hidden="true"></i>';
 
     const catalogList = document.createElement("nav");

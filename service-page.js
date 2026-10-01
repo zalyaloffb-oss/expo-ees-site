@@ -2209,6 +2209,9 @@ function renderServiceCatalogSidebar() {
 }
 
 function initServiceCatalogSidebar() {
+  if (window.matchMedia("(max-width: 640px)").matches && !document.querySelector(".service-catalog-sidebar")) {
+    document.querySelector("main")?.insertAdjacentHTML("afterbegin", renderServiceCatalogSidebar());
+  }
   document.querySelectorAll(".service-catalog-sidebar").forEach((sidebar) => {
     // Desktop navigation belongs to the viewport, not a section's slider or height.
     // Keep its grid cell so the content column never moves; restore on mobile.
@@ -2217,12 +2220,27 @@ function initServiceCatalogSidebar() {
     slot.className = "service-catalog-slot";
     slot.setAttribute("aria-hidden", "true");
     const shell = sidebar.parentElement;
+    const mobileHome = document.createComment("catalog original position");
+    sidebar.before(mobileHome);
+    const mobileQuery = window.matchMedia("(max-width: 640px)");
+    if (mobileQuery.matches) {
+      sidebar.classList.add("is-collapsed");
+      sidebar.querySelector(".service-catalog-toggle")?.setAttribute("aria-expanded", "false");
+    }
     const header = document.querySelector(".site-header");
     const content = shell.querySelector(".service-content");
     const intro = shell.closest("main")?.querySelector(":scope > .detail-hero");
     const introHome = document.createComment("service introduction original position");
     if (intro) intro.before(introHome);
     const updateDesktopCatalog = () => {
+      if (mobileQuery.matches) {
+        if (intro && intro.parentElement === content) introHome.after(intro);
+        slot.remove();
+        header.after(sidebar);
+        sidebar.classList.remove("service-catalog-fixed");
+        return;
+      }
+      if (sidebar.previousSibling !== mobileHome && !slot.isConnected) mobileHome.after(sidebar);
       if (!desktopQuery.matches) {
         if (intro && intro.parentElement === content) introHome.after(intro);
         if (slot.isConnected) slot.replaceWith(sidebar);

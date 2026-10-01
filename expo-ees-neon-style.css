@@ -13425,3 +13425,47 @@ body .header-request,
   .old-service-tile h3,
   .services-overview-card-title { z-index: 2; text-shadow: 0 2px 8px #000; }
 }
+
+/* Mobile catalog is one attached panel in both disclosure states. */
+@media (max-width: 640px) {
+  html body:has(> .service-catalog-sidebar) .site-header.mobile-home-menu:not(.is-mobile-aux-open) {
+    margin-top: var(--mobile-identity-bottom, 66px) !important;
+    margin-bottom: 0 !important;
+  }
+  html body > .service-catalog-sidebar,
+  html body > .service-catalog-sidebar.is-collapsed {
+    position: sticky !important;
+    top: var(--mobile-identity-bottom, 66px) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    height: auto !important;
+    min-height: 40px !important;
+    max-height: calc(100dvh - var(--mobile-identity-bottom, 66px) - 8px) !important;
+    border-top: 0 !important;
+    border-radius: 0 0 8px 8px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    z-index: 118;
+    transform: none !important;
+    transition: none !important;
+  }
+  html body > .service-catalog-sidebar .service-catalog-toggle {
+    min-height: 40px;
+    height: 40px;
+    margin: 0;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+  html body > .service-catalog-sidebar .service-catalog-title { font-size: 14px; }
+  html body > .service-catalog-sidebar .service-catalog-list { padding: 10px 0 20px; }
+  html body:has(> .service-catalog-sidebar) main { margin-top: 10px !important; }
+  html body:has(> .service-catalog-sidebar) main > .section:first-child { padding-top: 0 !important; }
+}
+@media (max-width: 640px) {
+  html body.mobile-service-catalog-page > .service-catalog-sidebar {
+    top: var(--mobile-identity-bottom, 66px) !important;
+    max-height: calc(100dvh - var(--mobile-identity-bottom, 66px) - 8px) !important;
+  }
+}
