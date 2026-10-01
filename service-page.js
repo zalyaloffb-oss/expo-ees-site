@@ -2266,6 +2266,12 @@ function initServiceCatalogSidebar() {
     catalogResizeObserver.observe(shell);
     if (header) catalogResizeObserver.observe(header);
 
+    const updateMobileCatalogHeight = () => {
+      if (mobileQuery.matches) document.documentElement.style.setProperty("--mobile-catalog-height", `${sidebar.getBoundingClientRect().height}px`);
+    };
+    new ResizeObserver(updateMobileCatalogHeight).observe(sidebar);
+    updateMobileCatalogHeight();
+
     const toggle = sidebar.querySelector(".service-catalog-toggle");
     toggle?.addEventListener("click", () => {
       const isCollapsed = sidebar.classList.toggle("is-collapsed");

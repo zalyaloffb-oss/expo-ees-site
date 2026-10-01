@@ -13482,3 +13482,24 @@ body .header-request,
     border-color: #03131b;
   }
 }
+
+/* Mobile portfolio navigation sits directly below the catalog panel. */
+@media (max-width: 640px) {
+  html body #serviceRoot:has(> .portfolio-page) { margin-top: 0 !important; }
+  html body #serviceRoot > .portfolio-page:first-child {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  html body .portfolio-project-nav-shell {
+    top: calc(var(--mobile-identity-bottom, 66px) + var(--mobile-catalog-height, 41px)) !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    transform: none !important;
+  }
+  html body .portfolio-project-nav,
+  html body .portfolio-project-nav a {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+}
