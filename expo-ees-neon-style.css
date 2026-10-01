@@ -13469,3 +13469,16 @@ body .header-request,
     max-height: calc(100dvh - var(--mobile-identity-bottom, 66px) - 8px) !important;
   }
 }
+
+/* Match the primary button only while the mobile catalog is closed. */
+@media (max-width: 640px) {
+  html body > .service-catalog-sidebar.is-collapsed {
+    background: var(--button-gradient) !important;
+  }
+  html body > .service-catalog-sidebar.is-collapsed .service-catalog-title {
+    color: #03131b;
+  }
+  html body > .service-catalog-sidebar.is-collapsed .service-catalog-toggle i {
+    border-color: #03131b;
+  }
+}
