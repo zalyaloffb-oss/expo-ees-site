@@ -13503,3 +13503,13 @@ body .header-request,
     border-top-right-radius: 0 !important;
   }
 }
+
+/* Portfolio mobile headings: 40 percent smaller. */
+@media (max-width:640px) {
+  .portfolio-page .portfolio-project-head h2 {
+    font-size:calc(var(--type-2xl) * .6)!important;
+  }
+  .portfolio-page .portfolio-page-hero h1 {
+    font-size:calc(var(--type-3xl) * .6)!important;
+  }
+}
