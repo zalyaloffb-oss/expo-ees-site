@@ -105,3 +105,20 @@
 @media (prefers-reduced-motion:reduce) and (max-width:640px) {
   .old-service-tile::after, .services-overview-card::after { transition:none; }
 }
+
+/* Keep approved mobile artwork scale fixed through all interaction states. */
+@media (max-width:640px) {
+  html body .old-service-tile,
+  html body .old-service-tile:is(:hover,:active,:focus-visible),
+  html body .services-overview-card,
+  html body .services-overview-card:is(:hover,:active,:focus-visible) {
+    transform:none!important;
+  }
+  html body .old-service-tile.has-generated-cutout::before,
+  html body .old-service-tile.has-generated-cutout:is(:hover,:active,:focus-visible)::before,
+  html body .services-overview-card .services-overview-card-cutout,
+  html body .services-overview-card:is(:hover,:active,:focus-visible) .services-overview-card-cutout {
+    transform:none!important;
+    transition:filter 240ms ease;
+  }
+}
