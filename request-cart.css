@@ -79,3 +79,21 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
 .furniture-catalog-breadcrumbs span{color:#658291}
 #furniture-products{scroll-margin-top:170px}
 @media(max-width:640px){html body .rental-detail-body{padding-top:0!important;margin-top:0!important}.furniture-catalog-breadcrumbs{font-size:12px;margin-bottom:8px;padding:2px 8px}html body .rental-detail-body .service-content{gap:0}#furniture-products{scroll-margin-top:115px}}
+
+/* Article year disclosure matches the mobile product catalog. */
+.article-year-toggle{display:none!important}.article-year-options{display:contents}
+@media(max-width:640px){
+ html body #serviceRoot:has(> .articles-detail-body){margin-top:0!important}
+ html body .articles-detail-body{padding-top:0!important;margin-top:0!important}
+ html body .articles-detail-body .article-year-filter{display:block;padding:0!important;border-radius:0 0 8px 8px!important;top:calc(var(--mobile-identity-bottom,66px) + var(--mobile-catalog-height,41px))!important;transform:none!important;background:radial-gradient(circle at 5% 20%,#00e5ff2e,transparent 38%),radial-gradient(circle at 96% 8%,#8a5cff29,transparent 38%),#030407f5;max-height:calc(100dvh - var(--mobile-identity-bottom,66px) - var(--mobile-catalog-height,41px) - 8px);overflow:auto}
+ html body .articles-detail-body .article-year-filter.year-collapsed{background:var(--button-gradient)!important}
+ html body .article-year-filter .article-year-toggle{display:flex!important;align-items:center;justify-content:flex-end;gap:24px;width:100%;min-height:40px;padding:8px 24px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#eafcff!important;font-size:13px;text-shadow:none;font-weight:400;letter-spacing:0}
+ html body .article-year-filter.year-collapsed .article-year-toggle{color:#03131b!important}
+ .article-year-toggle i{width:10px;height:10px;flex-shrink:0;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-3px) rotate(45deg)}
+ .year-collapsed .article-year-toggle i{transform:rotate(-45deg)}
+ html body .article-year-filter .article-year-select-wrap,html body .article-year-filter .article-count{display:none!important}
+ html body .article-year-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:10px 20px 20px}
+ html body .year-collapsed .article-year-options{display:none}
+ html body .article-year-options button{display:block!important;min-height:40px;padding:8px;border-radius:8px;background:#132631!important;border:1px solid #00e5ff33;color:#dcebf0!important;box-shadow:none}
+ html body .article-year-options button.is-active{background:#00e5ff22!important;color:#00e5ff!important;border-color:#00e5ff88}
+}
