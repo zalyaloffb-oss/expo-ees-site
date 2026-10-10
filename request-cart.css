@@ -113,15 +113,19 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .article-year-filter,html body .portfolio-project-nav-shell{box-shadow:0 10px 20px -7px #000c,0 2px 3px #0005!important}
 }
 
-/* Join the cascade edges without corner gaps between levels. */
+/* Overlap mobile cascade panels while preserving rounded corners. */
 @media(max-width:640px){
- html body:has(> .service-catalog-sidebar) .mobile-sticky-identity {
-   border-bottom-left-radius:0!important;
-   border-bottom-right-radius:0!important;
+ html body > .service-catalog-sidebar,
+ html body > .service-catalog-sidebar.is-collapsed,
+ html body.mobile-service-catalog-page > .service-catalog-sidebar {
+  margin-top:-8px!important;
+  padding-top:8px!important;
+  top:calc(var(--mobile-identity-bottom,66px) - 8px)!important;
  }
- html body:has(.portfolio-project-nav-shell) > .service-catalog-sidebar,
- html body:has(.article-year-filter) > .service-catalog-sidebar {
-   border-bottom-left-radius:0!important;
-   border-bottom-right-radius:0!important;
+ html body .portfolio-project-nav-shell,
+ html body .articles-detail-body .article-year-filter {
+  margin-top:-8px!important;
+  padding-top:8px!important;
+  top:calc(var(--mobile-identity-bottom,66px) + var(--mobile-catalog-height,49px) - 16px)!important;
  }
 }
