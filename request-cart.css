@@ -10,7 +10,6 @@ html body .product-card .product-cart-controls,html body .tent-product-card .pro
 html body .product-card .request-quantity,html body .tent-product-card .request-quantity{display:flex!important;flex-direction:row!important;min-height:0!important;padding:0!important;gap:0!important;grid-template-rows:none}
 html body .product-card>div:not(.product-cart-controls){min-height:0}
 @media(max-width:640px){html body .product-card>div:not(.product-cart-controls){display:flex;flex-direction:column;gap:8px;min-height:0!important}html body .product-card .product-cart-controls{padding:8px!important;gap:4px!important}}
-
 /* Keep product photography landscape in the two-column mobile catalog. */
 @media (max-width: 640px) {
   html body .product-card .product-image-zoom-frame,
@@ -29,7 +28,6 @@ html body .product-card>div:not(.product-cart-controls){min-height:0}
     object-fit: cover;
   }
 }
-
 /* Unified quantity stepper and cart actions. */
 html body .request-quantity{border:1px solid #54718b66;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#172739,#0b1624);box-shadow:inset 0 1px 0 #ffffff0d;flex-shrink:0}
 html body .request-quantity button{width:34px;height:42px;border:0;border-radius:0;background:transparent;color:#a9deee;font-size:21px;font-weight:400;transition:background .18s,color .18s;touch-action:manipulation}
@@ -50,7 +48,6 @@ html body .request-cart-fab span{min-width:22px;height:22px;box-sizing:border-bo
 @media(max-width:640px){html body .request-quantity button{width:29px}html body .request-quantity input{width:30px}html body .product-cart-add{width:42px;height:44px}html body .product-card .product-cart-controls{gap:6px!important}}
 @media(max-width:350px){html body .request-quantity button{width:25px}html body .request-quantity input{width:26px}html body .product-cart-add{width:38px}}
 @media(prefers-reduced-motion:reduce){html body .request-quantity button,html body .product-cart-add,html body .request-cart-fab{transition:none}}
-
 /* Align both floating actions on one vertical axis. */
 html body .back-to-top {
   width: 62px;
@@ -69,9 +66,8 @@ html body .back-to-top {
     bottom: calc(90px + env(safe-area-inset-bottom)) !important;
   }
 }
-
 /* Press and hold a product photo to inspect its details. */
 .product-hold-image{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;cursor:zoom-in}
 html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
-.product-hold-lens{position:fixed;width:150px;height:150px;box-sizing:border-box;z-index:1600;border:2px solid #9ef4ff;border-radius:50%;background-color:#68696a;background-repeat:no-repeat;box-shadow:0 8px 30px #0009,0 0 0 4px #00cfff30;pointer-events:none}
+.product-hold-lens{position:fixed;width:450px;height:450px;box-sizing:border-box;z-index:1600;border:2px solid #9ef4ff;border-radius:0;background-color:#68696a;background-repeat:no-repeat;box-shadow:0 8px 30px #0009,0 0 0 4px #00cfff30;pointer-events:none}
 .product-hold-lens[hidden]{display:none}

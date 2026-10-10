@@ -15,12 +15,14 @@
       const w = target.naturalWidth * scale, h = target.naturalHeight * scale;
       const x = Math.max(0, Math.min(rect.width, point.x - rect.left));
       const y = Math.max(0, Math.min(rect.height, point.y - rect.top));
-      const diameter = 150, zoom = 2.5;
+      const diameter = Math.max(1, Math.min(450, innerWidth - 16, innerHeight - 16));
+      const zoom = Math.max(diameter / w, diameter / h) * 1.3;
+      lens.style.width = lens.style.height = `${diameter}px`;
       lens.style.left = `${Math.max(4, Math.min(innerWidth - diameter - 4, point.x - diameter / 2))}px`;
       lens.style.top = `${Math.max(4, Math.min(innerHeight - diameter - 4, point.y - diameter - 24))}px`;
       lens.style.backgroundImage = `url("${target.currentSrc}")`;
       lens.style.backgroundSize = `${w * zoom}px ${h * zoom}px`;
-      lens.style.backgroundPosition = `${diameter / 2 - (x - (rect.width - w) / 2) * zoom}px ${diameter / 2 - (y - (rect.height - h) / 2) * zoom}px`;
+      lens.style.backgroundPosition = `${Math.min(0, Math.max(diameter - w * zoom, diameter / 2 - (x - (rect.width - w) / 2) * zoom))}px ${Math.min(0, Math.max(diameter - h * zoom, diameter / 2 - (y - (rect.height - h) / 2) * zoom))}px`;
     };
     document.querySelectorAll('.product-card img,.tent-product-card img').forEach(img => {
       img.classList.add('product-hold-image'); img.draggable = false;
