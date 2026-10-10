@@ -11,3 +11,69 @@
 .old-service-tile[href*="slug=arenda-holodilnogo-oborudovaniya"]::before, .services-overview-card[href*="slug=arenda-holodilnogo-oborudovaniya"] .services-overview-card-cutout{inset:auto!important;left:21.22745087491535%!important;top:40.76899619330733%!important;width:96.99903194155526%!important;height:64.63414569344833%!important;transform:none!important;background-size:100% 100%!important;background-position:center!important;}
 .old-service-tile[href*="slug=proizvodstvo"]::before, .services-overview-card[href*="slug=proizvodstvo"] .services-overview-card-cutout{inset:auto!important;left:17.48469682626839%!important;top:35.07580764910529%!important;width:109.90170500304937%!important;height:68.28815142931788%!important;transform:none!important;background-size:100% 100%!important;background-position:center!important;}
 }
+
+/* The homepage is the shared mobile card reference; geometry above stays from Corel. */
+@media (max-width:640px) {
+  .old-service-grid, .services-overview-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  .old-service-tile, .services-overview-card {
+    box-sizing:border-box!important;
+    position:relative;
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:1.35 / 1!important;
+    padding:18px!important;
+    overflow:hidden;
+    isolation:isolate;
+    border:1px solid rgba(0,229,255,.26)!important;
+    border-radius:8px!important;
+    background:
+      radial-gradient(circle at 18% 72%,rgba(0,135,255,.28),transparent 42%),
+      radial-gradient(circle at 88% 65%,rgba(202,39,255,.25),transparent 44%),
+      linear-gradient(115deg,#18263c 0%,#2c2b42 52%,#39264a 100%)!important;
+    box-shadow:0 0 28px rgba(0,229,255,.16),0 0 70px rgba(138,92,255,.08)!important;
+  }
+  .old-service-tile.has-generated-cutout:not([href*="slug=standartnyye_vystavochnyye_stendy"])::before {
+    background-image:var(--tile-cutout)!important;
+    background-color:transparent!important;
+  }
+  .services-overview-card.has-generated-cutout::before { display:none!important; }
+  .old-service-tile.has-generated-cutout::before,
+  .services-overview-card .services-overview-card-cutout {
+    z-index:0!important;
+    background-color:transparent!important;
+    opacity:1!important;
+    mix-blend-mode:normal;
+    filter:saturate(.94) contrast(.98) brightness(.96)!important;
+    pointer-events:none;
+  }
+  .old-service-tile::after, .services-overview-card::after {
+    z-index:1!important;
+    background:
+      linear-gradient(180deg,rgba(4,8,18,.84) 0%,rgba(4,8,18,.48) 24%,transparent 52%),
+      linear-gradient(115deg,rgba(0,45,66,.10),rgba(48,22,82,.12))!important;
+  }
+  .old-service-tile h3, .services-overview-card-title {
+    position:relative!important;
+    inset:auto!important;
+    display:block;
+    width:auto!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    z-index:2!important;
+    color:#fff;
+    font-size:clamp(10px,2.8vw,13px)!important;
+    font-weight:600!important;
+    line-height:1.1!important;
+    letter-spacing:normal!important;
+    text-transform:uppercase;
+    text-shadow:0 2px 8px #000!important;
+  }
+}
