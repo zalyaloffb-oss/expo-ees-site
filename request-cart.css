@@ -112,3 +112,16 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body > .service-catalog-sidebar{box-shadow:0 9px 18px -7px #000c,0 2px 3px #0005!important}
  html body .article-year-filter,html body .portfolio-project-nav-shell{box-shadow:0 10px 20px -7px #000c,0 2px 3px #0005!important}
 }
+
+/* Join the cascade edges without corner gaps between levels. */
+@media(max-width:640px){
+ html body:has(> .service-catalog-sidebar) .mobile-sticky-identity {
+   border-bottom-left-radius:0!important;
+   border-bottom-right-radius:0!important;
+ }
+ html body:has(.portfolio-project-nav-shell) > .service-catalog-sidebar,
+ html body:has(.article-year-filter) > .service-catalog-sidebar {
+   border-bottom-left-radius:0!important;
+   border-bottom-right-radius:0!important;
+ }
+}
