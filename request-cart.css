@@ -155,7 +155,6 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .portfolio-lightbox .portfolio-lightbox-arrow::before{width:10px;height:10px;border-width:2px;position:static}
 }
 @media(max-width:640px){html body .portfolio-lightbox .portfolio-lightbox-close{font-size:0!important;color:transparent!important}}
-
 /* Portfolio events use a horizontal slider instead of a disclosure. */
 @media(max-width:640px){
  html body .portfolio-project-nav-shell .portfolio-menu-toggle{display:none!important}
@@ -166,3 +165,4 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .portfolio-project-nav-shell .portfolio-nav-arrow{display:grid!important;position:relative;inset:auto;width:40px;height:44px;background:transparent!important;border:0;box-shadow:none;color:#03131b}
  html body .portfolio-project-nav-shell .portfolio-nav-arrow::before{width:10px;height:10px;border-color:currentColor;top:auto;left:auto;right:auto;position:relative}
 }
+@media(max-width:640px){html body .portfolio-project-nav-shell .portfolio-nav-arrow{place-items:center;padding:0}html body .portfolio-project-nav-shell .portfolio-nav-prev::before{transform:rotate(-45deg);filter:none}html body .portfolio-project-nav-shell .portfolio-nav-next::before{transform:rotate(135deg);filter:none}}
