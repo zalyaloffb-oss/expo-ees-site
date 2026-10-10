@@ -13513,3 +13513,12 @@ body .header-request,
     font-size:calc(var(--type-3xl) * .6)!important;
   }
 }
+
+/* Mobile home benefits use the portfolio heading size. */
+@media (max-width:640px) {
+  .old-benefits-strip h2 {
+    font-size:calc(var(--type-2xl) * .6)!important;
+    overflow-wrap:anywhere;
+    hyphens:auto;
+  }
+}
