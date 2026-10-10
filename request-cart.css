@@ -10,3 +10,22 @@ html body .product-card .product-cart-controls,html body .tent-product-card .pro
 html body .product-card .request-quantity,html body .tent-product-card .request-quantity{display:flex!important;flex-direction:row!important;min-height:0!important;padding:0!important;gap:0!important;grid-template-rows:none}
 html body .product-card>div:not(.product-cart-controls){min-height:0}
 @media(max-width:640px){html body .product-card>div:not(.product-cart-controls){display:flex;flex-direction:column;gap:8px;min-height:0!important}html body .product-card .product-cart-controls{padding:8px!important;gap:4px!important}}
+
+/* Keep product photography landscape in the two-column mobile catalog. */
+@media (max-width: 640px) {
+  html body .product-card .product-image-zoom-frame,
+  html body .product-card > img,
+  html body .tent-product-media > img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3;
+    flex-shrink: 0;
+  }
+  html body .product-card .product-image-zoom-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover;
+  }
+}
