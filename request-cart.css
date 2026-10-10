@@ -112,7 +112,6 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body > .service-catalog-sidebar{box-shadow:0 9px 18px -7px #000c,0 2px 3px #0005!important}
  html body .article-year-filter,html body .portfolio-project-nav-shell{box-shadow:0 10px 20px -7px #000c,0 2px 3px #0005!important}
 }
-
 /* Overlap mobile cascade panels while preserving rounded corners. */
 @media(max-width:640px){
  html body > .service-catalog-sidebar,
@@ -128,4 +127,16 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
   padding-top:8px!important;
   top:calc(var(--mobile-identity-bottom,66px) + var(--mobile-catalog-height,49px) - 16px)!important;
  }
+}
+/* Third cascade level: darker gradient and a swipeable year strip. */
+.article-years-track{display:contents}.article-year-arrow{display:none!important}
+@media(max-width:640px){
+ html body .portfolio-project-nav-shell.portfolio-menu-collapsed,
+ html body .articles-detail-body .article-year-filter{background:linear-gradient(#0002,#0002),var(--button-gradient)!important}
+ html body .articles-detail-body .article-year-filter{display:flex!important;flex-wrap:nowrap;align-items:center;gap:0;padding:8px 0 0!important;overflow:hidden}
+ html body .article-year-filter .article-years-track{display:flex;flex:1;min-width:0;gap:6px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;padding:4px 0;touch-action:pan-x}
+ .article-years-track::-webkit-scrollbar{display:none}
+ html body .article-years-track button{display:block!important;flex:0 0 auto;min-width:60px;min-height:36px;padding:7px 10px;border:0;border-radius:7px;background:transparent!important;box-shadow:none!important;color:#03131b!important;font-size:13px;text-shadow:none;scroll-snap-align:center}
+ html body .article-years-track button.is-active{background:#051426bb!important;color:#fff!important}
+ html body .article-year-filter .article-year-arrow{display:block!important;flex:0 0 30px;min-width:30px;height:44px;padding:0;border:0;border-radius:0;background:transparent!important;color:#03131b!important;box-shadow:none!important;font-size:28px;text-shadow:none}
 }
