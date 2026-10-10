@@ -16,3 +16,19 @@
   nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',close));shell.addEventListener('keydown',e=>{if(e.key==='Escape'){close();toggle.focus();}});
  };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+/* Swipe through photos using the same navigation as the arrow buttons. */
+(() => {
+ let gesture=null;
+ document.addEventListener('touchstart',e=>{
+  const viewer=e.target.closest('.portfolio-lightbox.is-open');
+  if(!viewer||e.touches.length!==1||!e.target.matches('img')){gesture=null;return;}
+  const p=e.touches[0];gesture={viewer,x:p.clientX,y:p.clientY};
+ },{passive:true});
+ document.addEventListener('touchend',e=>{
+  const start=gesture;gesture=null;if(!start||!start.viewer.classList.contains('is-open')||!e.changedTouches.length)return;
+  const p=e.changedTouches[0],dx=p.clientX-start.x,dy=p.clientY-start.y;
+  if(Math.abs(dx)<45||Math.abs(dx)<Math.abs(dy)*1.3)return;
+  start.viewer.querySelector(dx<0?'.portfolio-lightbox-next':'.portfolio-lightbox-prev')?.click();
+ },{passive:true});
+ document.addEventListener('touchcancel',()=>gesture=null,{passive:true});
+})();

@@ -166,6 +166,6 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .portfolio-project-nav-shell .portfolio-nav-arrow::before{width:10px;height:10px;border-color:currentColor;top:auto;left:auto;right:auto;position:relative}
 }
 @media(max-width:640px){html body .portfolio-project-nav-shell .portfolio-nav-arrow{place-items:center;padding:0}html body .portfolio-project-nav-shell .portfolio-nav-prev::before{transform:rotate(-45deg);filter:none}html body .portfolio-project-nav-shell .portfolio-nav-next::before{transform:rotate(135deg);filter:none}}
-
 /* Bare close icon in the mobile photo viewer. */
 @media(max-width:640px){html body .portfolio-lightbox .portfolio-lightbox-close{background:transparent!important;border:0!important;box-shadow:none!important}}
+@media(max-width:640px){html body .portfolio-lightbox figure>img{touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none}}
