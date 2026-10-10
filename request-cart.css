@@ -69,3 +69,9 @@ html body .back-to-top {
     bottom: calc(90px + env(safe-area-inset-bottom)) !important;
   }
 }
+
+/* Press and hold a product photo to inspect its details. */
+.product-hold-image{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;cursor:zoom-in}
+html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
+.product-hold-lens{position:fixed;width:150px;height:150px;box-sizing:border-box;z-index:1600;border:2px solid #9ef4ff;border-radius:50%;background-color:#68696a;background-repeat:no-repeat;box-shadow:0 8px 30px #0009,0 0 0 4px #00cfff30;pointer-events:none}
+.product-hold-lens[hidden]{display:none}
