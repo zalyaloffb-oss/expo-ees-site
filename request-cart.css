@@ -140,7 +140,6 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .article-years-track button.is-active{background:#051426bb!important;color:#fff!important}
  html body .article-year-filter .article-year-arrow{display:block!important;flex:0 0 30px;min-width:30px;height:44px;padding:0;border:0;border-radius:0;background:transparent!important;color:#03131b!important;box-shadow:none!important;font-size:28px;text-shadow:none}
 }
-
 /* Mobile photo viewer: edge-to-edge image with nearby controls. */
 @media(max-width:640px){
  html body .portfolio-lightbox{padding:0!important;display:grid;grid-template-columns:minmax(0,1fr) 44px 44px 12px;grid-template-rows:44px auto auto;align-content:center;align-items:start;gap:10px 0}
@@ -155,3 +154,4 @@ html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
  html body .portfolio-lightbox .portfolio-lightbox-next{grid-column:3;border-radius:0 12px 12px 0;border-left:0}
  html body .portfolio-lightbox .portfolio-lightbox-arrow::before{width:10px;height:10px;border-width:2px;position:static}
 }
+@media(max-width:640px){html body .portfolio-lightbox .portfolio-lightbox-close{font-size:0!important;color:transparent!important}}
