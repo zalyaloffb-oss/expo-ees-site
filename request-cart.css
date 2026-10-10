@@ -71,3 +71,11 @@ html body .back-to-top {
 html body .product-image-zoom-frame:hover .product-hold-image{transform:none}
 .product-hold-lens{position:fixed;width:450px;height:450px;box-sizing:border-box;z-index:1600;border:2px solid #9ef4ff;border-radius:0;background-color:#68696a;background-repeat:no-repeat;box-shadow:0 8px 30px #0009,0 0 0 4px #00cfff30;pointer-events:none}
 .product-hold-lens[hidden]{display:none}
+
+/* Compact furniture catalog navigation directly above the products. */
+.furniture-catalog-breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 12px;padding:4px 0;font-size:14px;line-height:1.4}
+.furniture-catalog-breadcrumbs a{color:#c7e3ed;text-decoration:none}
+.furniture-catalog-breadcrumbs a:hover{color:var(--cyan);text-decoration:underline}
+.furniture-catalog-breadcrumbs span{color:#658291}
+#furniture-products{scroll-margin-top:170px}
+@media(max-width:640px){html body .rental-detail-body{padding-top:0!important;margin-top:0!important}.furniture-catalog-breadcrumbs{font-size:12px;margin-bottom:8px;padding:2px 8px}html body .rental-detail-body .service-content{gap:0}#furniture-products{scroll-margin-top:115px}}

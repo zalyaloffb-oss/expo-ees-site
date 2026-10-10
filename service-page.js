@@ -2400,12 +2400,10 @@ function renderFurnitureCatalog() {
   const seoText = furnitureSeoText[slug] || furnitureSeoText["arenda-mebeli-i-oborudovaniya"];
 
   return `
-    <div class="section-head product-catalog-head reveal is-visible">
-      <p class="eyebrow">Каталог мебели</p>
-      <h2>${escapeHtml(titleBySlug[slug] || "Каталог мебели")}</h2>
-      <p>${slug === "arenda-mebeli-i-oborudovaniya" ? "Все реальные позиции из раздела аренды мебели." : "Сразу показываем выбранную категорию, без подмешивания чужих товаров и случайной галереи."}</p>
-    </div>
-    <div class="product-catalog reveal is-visible">${cards}</div>
+    <nav class="furniture-catalog-breadcrumbs" aria-label="Навигация по каталогу мебели">
+      <a href="${localUrl("arenda-mebeli-i-oborudovaniya")}">Каталог мебели</a><span aria-hidden="true">/</span><a href="#furniture-products" aria-current="page">${escapeHtml(titleBySlug[slug] || "Весь каталог мебели")}</a>
+    </nav>
+    <div id="furniture-products" class="product-catalog reveal is-visible">${cards}</div>
     <article class="furniture-seo-text reveal is-visible">
       ${seoText.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
     </article>
