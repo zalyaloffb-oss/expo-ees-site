@@ -50,3 +50,22 @@ html body .request-cart-fab span{min-width:22px;height:22px;box-sizing:border-bo
 @media(max-width:640px){html body .request-quantity button{width:29px}html body .request-quantity input{width:30px}html body .product-cart-add{width:42px;height:44px}html body .product-card .product-cart-controls{gap:6px!important}}
 @media(max-width:350px){html body .request-quantity button{width:25px}html body .request-quantity input{width:26px}html body .product-cart-add{width:38px}}
 @media(prefers-reduced-motion:reduce){html body .request-quantity button,html body .product-cart-add,html body .request-cart-fab{transition:none}}
+
+/* Align both floating actions on one vertical axis. */
+html body .back-to-top {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  right: 20px;
+  bottom: 94px !important;
+  z-index: 150;
+  border: 1px solid #b3f7ff99;
+  background: linear-gradient(140deg,#16e7ef,#3884fc 58%,#8b59ef);
+  box-shadow: inset 0 2px 0 #ffffff66,0 8px 26px #0066ff40,0 3px 12px #0008;
+}
+@media(max-width:640px) {
+  html body .back-to-top {
+    right: 16px;
+    bottom: calc(90px + env(safe-area-inset-bottom)) !important;
+  }
+}
