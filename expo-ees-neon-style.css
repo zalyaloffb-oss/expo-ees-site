@@ -13522,3 +13522,12 @@ body .header-request,
     hyphens:auto;
   }
 }
+
+/* Catalog price is a plain footnote, without a badge frame. */
+html body .product-price {
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  padding:0!important;
+}

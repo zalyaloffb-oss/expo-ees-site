@@ -1554,7 +1554,7 @@ function productPriceLabel(value) {
     const amount = raw.match(/\d[\d\s]*/)?.[0]?.trim();
     raw = amount ? `\u043e\u0442 ${amount} \u0440` : "\u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443";
   }
-  return `\u0426\u0435\u043d\u0430 ${raw || "\u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443"}`;
+  return `*цена ${raw || "\u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443"}`;
 }
 
 function galleryImage(slugName, index) {
