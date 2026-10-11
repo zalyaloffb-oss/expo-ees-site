@@ -1,0 +1,51 @@
+.tent-original-content { min-width:0; }
+.tent-original-content > h1 { margin:0 0 24px; font-size:clamp(24px,2.5vw,40px)!important; line-height:1.2; }
+.tent-original-directions { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; margin-bottom:28px; }
+.tent-original-direction-photo { position:relative; display:block; height:200px; overflow:hidden; border-radius:8px; }
+.tent-original-direction-photo > img { width:100%; height:100%; object-fit:cover; }
+.tent-original-direction-photo > span { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:16px; padding:12px; background:#0005; color:#fff; }
+.tent-original-direction-photo strong { font-size:20px; line-height:1.25; }
+.tent-original-direction-photo small { color:#fff; background:#07101988; padding:8px 16px; border:1px solid white; border-radius:4px; }
+.tent-original-direction-label { display:block; margin-top:12px; padding:10px; text-align:center; color:#fff; border:1px solid #15576b; border-radius:6px; background:#0c2839; }
+.tent-original-text { margin:20px 0; font-size:16px; line-height:1.7; color:#d8e2ea; }
+.tent-original-text p { margin:0 0 14px; }
+.tent-original-text ul,.tent-original-text ol { padding-left:26px; margin:12px 0 18px; }
+.tent-original-text strong,.tent-original-text b { color:#f1f7fc; }
+.tent-original-carousel { position:relative; width:100%; min-width:0; margin:20px 0; --tent-slides:2; }
+.tent-original-viewport { overflow:hidden; border-radius:8px; background:#070c12; touch-action:pan-y pinch-zoom; }
+.tent-original-track { display:flex; align-items:center; transition:transform 500ms ease; }
+.tent-original-slide { display:block; flex:0 0 calc(100% / var(--tent-slides)); width:calc(100% / var(--tent-slides)); min-width:0; border:0; margin:0; padding:0; background:#070c12; cursor:zoom-in; }
+.tent-original-slide img { display:block; width:100%; aspect-ratio:1.5; object-fit:contain; }
+.tent-original-controls { position:absolute; right:10px; bottom:40px; display:flex; gap:6px; }
+.tent-original-controls button { width:34px; height:34px; padding:0; border:1px solid #6195a5; border-radius:5px; background:#071019e6; color:#fff; cursor:pointer; }
+.tent-original-dots { display:flex; justify-content:center; flex-wrap:wrap; gap:8px; margin:14px 0; }
+.tent-original-dots button { width:8px; height:8px; border:0; border-radius:50%; padding:0; background:#72818c; cursor:pointer; }
+.tent-original-dots button[aria-current="true"] { background:#00e5ff; }
+.tent-original-products { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:start; }
+.tent-original-products .tent-original-product { display:flex; flex-direction:column; min-width:0; padding:12px; }
+.tent-original-product .tent-product-copy { padding:0; }
+.tent-original-product h3 { margin:0; font-size:20px!important; line-height:1.3; }
+.tent-original-product .tent-original-carousel { margin:14px 0 0; }
+.tent-original-product .tent-original-text { margin:12px 0; }
+.tent-original-lightbox { width:94vw; max-width:1600px; max-height:94vh; padding:45px 50px 20px; border:1px solid #227b98; border-radius:8px; background:#060b11; color:#fff; }
+.tent-original-lightbox::backdrop { background:#000d; }
+.tent-original-lightbox img { display:block; width:100%; height:72vh; object-fit:contain; touch-action:pan-y pinch-zoom; }
+.tent-original-lightbox p { margin:12px 0 0; text-align:center; }
+.tent-original-lightbox button { position:absolute; width:40px; height:40px; background:#122834; color:#fff; border:0; border-radius:4px; cursor:pointer; font-size:26px; }
+.tent-original-lightbox [data-close] { top:4px; right:6px; background:transparent; }
+.tent-original-lightbox [data-prev] { left:4px; top:45%; }
+.tent-original-lightbox [data-next] { right:4px; top:45%; }
+@media(max-width:1024px) { .tent-original-directions { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:640px) {
+ .tent-original-page { width:100%; padding:12px 0!important; }
+ .tent-original-content > h1 { font-size:24px!important; margin:0 10px 18px; }
+ .tent-original-directions { gap:8px; }
+ .tent-original-direction-photo { height:160px; }
+ .tent-original-direction-photo strong { font-size:16px; }
+ .tent-original-direction-label { font-size:13px; padding:8px; }
+ .tent-original-text { font-size:15px; padding:0 12px; }
+ .tent-original-products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+ .tent-original-product h3 { font-size:14px!important; }
+ .tent-original-product-text { display:none!important; }
+ .tent-original-lightbox { padding:45px 12px 15px; }
+}

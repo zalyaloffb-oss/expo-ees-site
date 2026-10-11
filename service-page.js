@@ -2538,6 +2538,7 @@ function renderTentLandingCards() {
 }
 
 function renderTentPage() {
+  if (window.originalTentPages?.[slug]) return window.renderOriginalTentPage(renderServiceCatalogSidebar());
   const data = tentPageData[slug] || tentPageData["arenda-shatrov-i-tentovyh-konstrukczij"];
   const isRentCatalog = slug === "arenda-shatrov-i-tentovyh-konstrukczij-2";
   const isLanding = slug === "arenda-shatrov-i-tentovyh-konstrukczij";
